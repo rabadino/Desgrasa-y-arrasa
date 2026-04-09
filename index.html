@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Track8 · Peso Tracker</title>
-  <meta name="theme-color" content="#0b1020" />
+  <title>PicaFit · Tracker travieso</title>
+  <meta name="theme-color" content="#120b2b" />
 
   <link
     rel="icon"
@@ -25,19 +25,12 @@
           </feMerge>
         </filter>
       </defs>
-      <rect width="128" height="128" rx="28" fill="%230B1020"/>
-      <path d="M64 17
-               C43 17 28 30 28 49
-               c0 13 7 23 19 29
-               C34 84 26 95 26 108
-               h22
-               c0-10 7-18 16-18s16 8 16 18h22
-               c0-13-8-24-21-30
-               c12-6 19-16 19-29
-               C100 30 85 17 64 17zm0 18
-               c9 0 16 6 16 14s-7 14-16 14-16-6-16-14 7-14 16-14zm0 43
-               c9 0 16 7 16 16s-7 16-16 16-16-7-16-16 7-16 16-16z"
-            fill="none" stroke="url(%23g)" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" filter="url(%23glow)"/>
+      <rect width="128" height="128" rx="30" fill="%23120B2B"/>
+      <path d="M49 27c-12 0-22 9-22 21 0 10 6 17 15 21-10 4-17 12-17 24 0 0 0 0 0 0h18c0-8 6-14 13-14s13 6 13 14h18c0-12-7-20-17-24 9-4 15-11 15-21 0-12-10-21-22-21H49zm1 14c6 0 11 4 11 10s-5 10-11 10-11-4-11-10 5-10 11-10zm13 32c7 0 13 5 13 12s-6 12-13 12-13-5-13-12 6-12 13-12z"
+            fill="none" stroke="url(%23g)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" filter="url(%23glow)"/>
+      <circle cx="88" cy="38" r="5" fill="%23FFDE59"/>
+      <path d="M80 52c5 2 10 2 15 0" stroke="%23FFDE59" stroke-width="4" stroke-linecap="round"/>
+      <path d="M38 47h10" stroke="%23FFDE59" stroke-width="4" stroke-linecap="round"/>
     </svg>'
   />
 
@@ -46,21 +39,23 @@
 
   <style>
     :root{
-      --bg1:#0a0e27;
-      --bg2:#1a1f3a;
-      --bg3:#16213e;
-      --cyan:#00ffff;
-      --cyan2:#00d4ff;
-      --pink:#ff0080;
-      --pink2:#ff1493;
+      --bg1:#120b2b;
+      --bg2:#1a1643;
+      --bg3:#101d43;
+      --cyan:#00f5ff;
+      --cyan2:#3fd3ff;
+      --pink:#ff2e93;
+      --pink2:#ff71ba;
       --violet:#7b61ff;
       --green:#00ff88;
-      --red:#ff4081;
+      --red:#ff5a7a;
       --yellow:#ffd166;
       --text:#ffffff;
-      --muted:#9fd9ff;
-      --card:rgba(20, 30, 60, 0.82);
-      --line:rgba(0,255,255,.18);
+      --muted:#addfff;
+      --card:rgba(18, 23, 63, 0.88);
+      --line:rgba(0,245,255,.16);
+      --field-bg:rgba(14, 43, 96, 0.68);
+      --field-line:rgba(0, 212, 255, .48);
     }
 
     *{
@@ -69,20 +64,26 @@
       box-sizing:border-box;
     }
 
+    html, body{
+      width:100%;
+      overflow-x:hidden;
+    }
+
     body{
       font-family:'Outfit',sans-serif;
       background:
-        radial-gradient(circle at top left, rgba(123,97,255,.15), transparent 28%),
-        radial-gradient(circle at top right, rgba(255,0,128,.12), transparent 24%),
-        linear-gradient(135deg, var(--bg1) 0%, var(--bg2) 50%, var(--bg3) 100%);
+        radial-gradient(circle at top left, rgba(123,97,255,.18), transparent 30%),
+        radial-gradient(circle at top right, rgba(255,46,147,.14), transparent 24%),
+        linear-gradient(135deg, var(--bg1) 0%, var(--bg2) 48%, var(--bg3) 100%);
       min-height:100vh;
-      padding:20px;
+      padding:18px;
       color:var(--text);
     }
 
     .container{
       max-width:560px;
       margin:0 auto;
+      width:100%;
     }
 
     .hero{
@@ -90,53 +91,64 @@
       align-items:center;
       gap:14px;
       margin-bottom:24px;
+      width:100%;
+      min-width:0;
     }
 
     .app-icon{
-      width:58px;
-      height:58px;
-      border-radius:18px;
+      width:64px;
+      height:64px;
+      border-radius:20px;
       display:grid;
       place-items:center;
-      background:linear-gradient(145deg, rgba(0,255,255,.10), rgba(255,0,128,.12));
+      background:linear-gradient(145deg, rgba(0,255,255,.10), rgba(255,0,128,.14));
       border:1px solid rgba(255,255,255,.08);
-      box-shadow:0 12px 30px rgba(0,0,0,.25);
+      box-shadow:0 14px 32px rgba(0,0,0,.24);
       flex-shrink:0;
     }
 
     .app-icon svg{
-      width:42px;
-      height:42px;
+      width:46px;
+      height:46px;
       display:block;
     }
 
+    .hero-copy{
+      min-width:0;
+      flex:1;
+    }
+
     .hero-copy h1{
-      background:linear-gradient(135deg, #00ffff 0%, #7b61ff 50%, #ff1493 100%);
+      background:linear-gradient(135deg, #00ffff 0%, #7b61ff 50%, #ff5db2 100%);
       -webkit-background-clip:text;
       -webkit-text-fill-color:transparent;
       background-clip:text;
-      font-size:2.4em;
+      font-size:2.35em;
       font-weight:800;
       letter-spacing:-1px;
       line-height:1;
+      word-break:break-word;
     }
 
     .hero-copy p{
       color:var(--muted);
       margin-top:6px;
       font-weight:500;
-      font-size:.95rem;
+      font-size:.96rem;
+      line-height:1.3;
     }
 
     .card{
       background:var(--card);
       backdrop-filter:blur(20px);
       border-radius:24px;
-      padding:24px;
+      padding:22px;
       margin-bottom:18px;
       box-shadow:0 12px 48px rgba(0,255,255,.08);
       border:1.5px solid var(--line);
       animation:fadeIn .45s ease-in;
+      width:100%;
+      overflow:hidden;
     }
 
     @keyframes fadeIn{
@@ -147,14 +159,16 @@
     h3{
       color:var(--cyan);
       margin-bottom:16px;
-      font-size:1.05em;
+      font-size:1.02em;
       font-weight:800;
       text-transform:uppercase;
-      letter-spacing:1.2px;
+      letter-spacing:1.4px;
+      word-break:break-word;
     }
 
     .field{
       margin-bottom:14px;
+      min-width:0;
     }
 
     .field:last-child{
@@ -167,6 +181,7 @@
       font-size:.92rem;
       font-weight:700;
       color:#e8fbff;
+      line-height:1.25;
     }
 
     .hint{
@@ -175,40 +190,7 @@
       color:var(--muted);
       font-size:.82rem;
       line-height:1.35;
-    }
-
-    input, select{
-      width:100%;
-      padding:15px 16px;
-      border:1.5px solid rgba(0,212,255,.45);
-      border-radius:14px;
-      font-size:15px;
-      transition:all .25s ease;
-      background:rgba(10,50,100,.55);
-      color:#fff;
-      font-family:'Outfit',sans-serif;
-      font-weight:600;
-    }
-
-    input::placeholder{
-      color:#79d8ff;
-      opacity:.75;
-    }
-
-    select{
-      color:#fff;
-    }
-
-    select option{
-      background:#1a1f3a;
-      color:#fff;
-    }
-
-    input:focus, select:focus{
-      border-color:var(--cyan);
-      outline:none;
-      box-shadow:0 0 0 4px rgba(0,255,255,.08), 0 0 25px rgba(0,255,255,.18);
-      background:rgba(10,50,100,.85);
+      word-break:break-word;
     }
 
     .input-row{
@@ -216,20 +198,88 @@
       grid-template-columns:1fr 1fr;
       gap:12px;
       align-items:start;
+      width:100%;
+    }
+
+    .input-row > *{
+      min-width:0;
     }
 
     .input-row.single{
       grid-template-columns:1fr;
     }
 
+    input,
+    select{
+      width:100%;
+      max-width:100%;
+      min-width:0;
+      padding:15px 16px;
+      border:1.5px solid var(--field-line);
+      border-radius:14px;
+      font-size:15px;
+      transition:all .25s ease;
+      background:var(--field-bg);
+      color:#fff;
+      font-family:'Outfit',sans-serif;
+      font-weight:600;
+      display:block;
+      appearance:none;
+      -webkit-appearance:none;
+      -moz-appearance:none;
+    }
+
+    input::placeholder{
+      color:#79d8ff;
+      opacity:.78;
+    }
+
+    select{
+      color:#fff;
+      background-image:
+        linear-gradient(45deg, transparent 50%, #7fdcff 50%),
+        linear-gradient(135deg, #7fdcff 50%, transparent 50%);
+      background-position:
+        calc(100% - 24px) calc(50% - 3px),
+        calc(100% - 17px) calc(50% - 3px);
+      background-size:7px 7px, 7px 7px;
+      background-repeat:no-repeat;
+      padding-right:44px;
+    }
+
+    select option{
+      background:#1a1f3a;
+      color:#fff;
+    }
+
+    input[type="date"]{
+      text-align:center;
+      text-align-last:center;
+    }
+
+    input[type="date"]::-webkit-calendar-picker-indicator{
+      opacity:.9;
+      cursor:pointer;
+    }
+
+    input:focus,
+    select:focus{
+      border-color:var(--cyan);
+      outline:none;
+      box-shadow:0 0 0 4px rgba(0,255,255,.08), 0 0 25px rgba(0,255,255,.18);
+      background:rgba(14, 43, 96, 0.9);
+    }
+
     .actions{
       display:grid;
       grid-template-columns:1fr 1fr;
       gap:10px;
+      width:100%;
     }
 
     button{
       width:100%;
+      max-width:100%;
       padding:15px 16px;
       margin-top:10px;
       background:linear-gradient(135deg, #00ffff, #00d4ff);
@@ -273,25 +323,28 @@
       padding:8px 14px;
       font-size:12px;
       margin:0;
+      flex-shrink:0;
     }
 
     #frase{
       text-align:center;
-      font-size:1.14em;
+      font-size:1.12em;
       font-style:italic;
       font-weight:700;
       color:#fff;
       animation:pulse 2.8s infinite;
-      padding:24px;
+      padding:24px 18px;
       background:linear-gradient(135deg, #ff0080, #7b61ff);
       border-radius:18px;
       text-shadow:0 3px 6px rgba(0,0,0,.45);
       letter-spacing:.2px;
       line-height:1.55;
-      min-height:118px;
+      min-height:124px;
       display:flex;
       align-items:center;
       justify-content:center;
+      word-break:break-word;
+      overflow-wrap:anywhere;
     }
 
     @keyframes pulse{
@@ -306,6 +359,7 @@
       border:1.5px solid rgba(0,255,255,.25);
       margin-bottom:14px;
       text-align:center;
+      overflow:hidden;
     }
 
     .grasa-box{
@@ -315,6 +369,7 @@
       border:1.5px solid rgba(255,0,128,.25);
       margin-bottom:14px;
       text-align:center;
+      overflow:hidden;
     }
 
     .imc-label,
@@ -324,6 +379,7 @@
       text-transform:uppercase;
       letter-spacing:1px;
       margin-bottom:8px;
+      word-break:break-word;
     }
 
     .imc-label{ color:#00ffff; }
@@ -335,6 +391,7 @@
       font-weight:800;
       display:block;
       margin:10px 0;
+      word-break:break-word;
     }
 
     .grasa-value{
@@ -343,6 +400,7 @@
       font-weight:800;
       display:block;
       margin:10px 0;
+      word-break:break-word;
     }
 
     .imc-class,
@@ -350,6 +408,8 @@
       color:#dffcff;
       font-size:1.02em;
       font-weight:700;
+      line-height:1.35;
+      word-break:break-word;
     }
 
     .imc-range{
@@ -357,6 +417,8 @@
       font-size:.88em;
       font-weight:600;
       margin-top:8px;
+      line-height:1.3;
+      word-break:break-word;
     }
 
     #stats{
@@ -364,13 +426,16 @@
       grid-template-columns:repeat(2, 1fr);
       gap:12px;
       text-align:center;
+      width:100%;
     }
 
     .stat{
       background:rgba(255,255,255,.03);
-      padding:18px;
+      padding:18px 10px;
       border-radius:16px;
       border:1px solid rgba(255,255,255,.06);
+      min-width:0;
+      overflow:hidden;
     }
 
     .stat-val{
@@ -380,6 +445,7 @@
       -webkit-background-clip:text;
       -webkit-text-fill-color:transparent;
       background-clip:text;
+      word-break:break-word;
     }
 
     .stat-lab{
@@ -389,6 +455,7 @@
       text-transform:uppercase;
       letter-spacing:.8px;
       font-weight:700;
+      word-break:break-word;
     }
 
     #progress{
@@ -414,12 +481,16 @@
       color:#9fd9ff;
       font-size:.9em;
       font-weight:700;
-      letter-spacing:.6px;
+      letter-spacing:.4px;
+      line-height:1.35;
+      word-break:break-word;
     }
 
     .chart-wrap{
       min-height:280px;
       position:relative;
+      width:100%;
+      overflow:hidden;
     }
 
     canvas{
@@ -428,6 +499,8 @@
       margin-bottom:0;
       background:rgba(255,255,255,.02);
       padding:8px;
+      width:100% !important;
+      max-width:100%;
     }
 
     .entry{
@@ -440,16 +513,21 @@
       border-radius:14px;
       border:1px solid rgba(255,255,255,.08);
       gap:10px;
+      width:100%;
+      min-width:0;
+      overflow:hidden;
     }
 
     .entry-text{
       flex:1;
+      min-width:0;
     }
 
     .entry-date{
       font-size:.88em;
       color:#9fd9ff;
       font-weight:600;
+      word-break:break-word;
     }
 
     .entry-weight{
@@ -457,18 +535,21 @@
       font-weight:800;
       color:#00ffff;
       margin-top:4px;
+      word-break:break-word;
     }
 
     .entry-meta{
       font-size:.8em;
       color:#9fb9cf;
       margin-top:4px;
+      word-break:break-word;
     }
 
     .entry-change{
       font-size:.9em;
       margin:0 8px;
       font-weight:700;
+      white-space:nowrap;
     }
 
     .up{ color:var(--red); }
@@ -480,14 +561,33 @@
       color:#9fd9ff;
       font-size:.95em;
       padding:18px;
+      word-break:break-word;
     }
 
     @media (max-width:560px){
-      body{padding:14px}
-      .card{padding:18px}
-      .hero-copy h1{font-size:2rem}
+      body{ padding:14px; }
+      .card{ padding:18px; }
+      .hero-copy h1{ font-size:2rem; }
       .input-row,
       .actions{
+        grid-template-columns:1fr;
+      }
+      #stats{
+        grid-template-columns:1fr 1fr;
+      }
+    }
+
+    @media (max-width:390px){
+      .hero{
+        align-items:flex-start;
+      }
+      .hero-copy h1{
+        font-size:1.8rem;
+      }
+      .hero-copy p{
+        font-size:.9rem;
+      }
+      #stats{
         grid-template-columns:1fr;
       }
     }
@@ -512,28 +612,21 @@
               </feMerge>
             </filter>
           </defs>
-          <path d="M64 17
-                   C43 17 28 30 28 49
-                   c0 13 7 23 19 29
-                   C34 84 26 95 26 108
-                   h22
-                   c0-10 7-18 16-18s16 8 16 18h22
-                   c0-13-8-24-21-30
-                   c12-6 19-16 19-29
-                   C100 30 85 17 64 17zm0 18
-                   c9 0 16 6 16 14s-7 14-16 14-16-6-16-14 7-14 16-14zm0 43
-                   c9 0 16 7 16 16s-7 16-16 16-16-7-16-16 7-16 16-16z"
+          <path d="M49 27c-12 0-22 9-22 21 0 10 6 17 15 21-10 4-17 12-17 24h18c0-8 6-14 13-14s13 6 13 14h18c0-12-7-20-17-24 9-4 15-11 15-21 0-12-10-21-22-21H49zm1 14c6 0 11 4 11 10s-5 10-11 10-11-4-11-10 5-10 11-10zm13 32c7 0 13 5 13 12s-6 12-13 12-13-5-13-12 6-12 13-12z"
                 fill="none"
                 stroke="url(#logoG)"
-                stroke-width="10"
+                stroke-width="8"
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 filter="url(#logoGlow)"/>
+          <circle cx="88" cy="38" r="5" fill="#FFDE59"/>
+          <path d="M80 52c5 2 10 2 15 0" stroke="#FFDE59" stroke-width="4" stroke-linecap="round"/>
+          <path d="M38 47h10" stroke="#FFDE59" stroke-width="4" stroke-linecap="round"/>
         </svg>
       </div>
       <div class="hero-copy">
-        <h1>Track8</h1>
-        <p>Tu peso, tus métricas y tus citas célebres.</p>
+        <h1>PicaFit</h1>
+        <p>Tu peso, tus métricas y tus citas con mala leche fina.</p>
       </div>
     </div>
 
@@ -877,7 +970,7 @@
 
     function obtenerRotaciones() {
       try {
-        const guardado = JSON.parse(localStorage.getItem("rotacionesFrasesTrack8") || "{}");
+        const guardado = JSON.parse(localStorage.getItem("rotacionesFrasesPicaFit") || "{}");
         return {
           contexto: Array.isArray(guardado.contexto) ? guardado.contexto : [],
           general: Array.isArray(guardado.general) ? guardado.general : []
@@ -888,7 +981,7 @@
     }
 
     function guardarRotaciones(rotaciones) {
-      localStorage.setItem("rotacionesFrasesTrack8", JSON.stringify(rotaciones));
+      localStorage.setItem("rotacionesFrasesPicaFit", JSON.stringify(rotaciones));
     }
 
     function contieneAlguna(frase, terminos) {
@@ -961,7 +1054,7 @@
           "estancamiento",
           "pausa",
           "consistencia",
-          "detalle",
+          "detalles",
           "enfoque"
         ];
       } else if (contexto === "subida") {
@@ -979,7 +1072,7 @@
           "ajusta el sistema",
           "precisión",
           "culpa",
-          "estructura, menos emoción"
+          "más estructura"
         ];
       } else if (contexto === "granSubida") {
         terminos = [
@@ -1050,8 +1143,8 @@
       if (!el) return;
 
       const hoy = hoyClave();
-      const ultimaFechaFrase = localStorage.getItem("track8UltimaFechaFrase") || "";
-      const fraseGuardada = localStorage.getItem("track8FraseActual") || "";
+      const ultimaFechaFrase = localStorage.getItem("picafitUltimaFechaFrase") || "";
+      const fraseGuardada = localStorage.getItem("picafitFraseActual") || "";
 
       if (!forzarNueva && fraseGuardada && ultimaFechaFrase === hoy) {
         el.textContent = fraseGuardada;
@@ -1089,8 +1182,8 @@
         frase = sacarFraseSinRepetir("general", frasesSoez);
       }
 
-      localStorage.setItem("track8FraseActual", frase);
-      localStorage.setItem("track8UltimaFechaFrase", hoy);
+      localStorage.setItem("picafitFraseActual", frase);
+      localStorage.setItem("picafitUltimaFechaFrase", hoy);
       el.textContent = frase;
     }
 
@@ -1235,23 +1328,23 @@
       if (!altura || altura <= 0) return { val: 0, clas: "N/A" };
 
       const imc = peso / (altura * altura);
-      let clas;
+      let clas = "N/A";
 
       if (edad < 18 && edad > 0) {
-        if (imc < 16) clas = "BAJO PESO";
-        else if (imc < 24) clas = "NORMAL";
-        else if (imc < 28) clas = "SOBREPESO";
-        else clas = "OBESIDAD";
+        if (imc < 16) clas = "BAJO";
+        else if (imc < 24) clas = "EQUILIBRADO";
+        else if (imc < 28) clas = "ALTO";
+        else clas = "MUY ALTO";
       } else if (edad >= 65) {
-        if (imc < 20) clas = "BAJO PESO";
-        else if (imc < 27) clas = "NORMAL";
-        else if (imc < 32) clas = "SOBREPESO";
-        else clas = "OBESIDAD";
+        if (imc < 20) clas = "BAJO";
+        else if (imc < 27) clas = "EQUILIBRADO";
+        else if (imc < 32) clas = "ALTO";
+        else clas = "MUY ALTO";
       } else {
-        if (imc < 18.5) clas = "BAJO PESO";
-        else if (imc < 25) clas = "NORMAL";
-        else if (imc < 30) clas = "SOBREPESO";
-        else clas = "OBESIDAD";
+        if (imc < 18.5) clas = "BAJO";
+        else if (imc < 25) clas = "EQUILIBRADO";
+        else if (imc < 30) clas = "ALTO";
+        else clas = "MUY ALTO";
       }
 
       return { val: imc.toFixed(1), clas };
@@ -1285,8 +1378,8 @@
       const datos = obtenerDatos();
       if (!datos.length) {
         document.getElementById("stats").innerHTML = '<div class="empty">Sin datos todavía</div>';
-        document.getElementById("imc-display").innerHTML = '<div class="empty">Guarda tu primer registro para ver el IMC</div>';
-        document.getElementById("grasa-display").innerHTML = '<div class="empty">Guarda tu primer registro para ver la grasa corporal estimada</div>';
+        document.getElementById("imc-display").innerHTML = '<div class="empty">Guarda tu primer registro para ver el IMC.</div>';
+        document.getElementById("grasa-display").innerHTML = '<div class="empty">Guarda tu primer registro para ver la grasa corporal estimada.</div>';
         document.getElementById("barra").style.width = "0%";
         document.querySelector(".progress-label").textContent = "Progreso: 0%";
         return;
@@ -1328,27 +1421,27 @@
 
       if (parseFloat(imc.val) < 18.5) {
         imcFaltaProximo = (18.5 * altura * altura - ultimo).toFixed(1);
-        estadoTexto += ` · +${imcFaltaProximo}kg → NORMAL`;
+        estadoTexto += ` · +${imcFaltaProximo}kg para entrar en EQUILIBRADO`;
       } else if (parseFloat(imc.val) < 25) {
-        estadoTexto += " · Mantener";
+        estadoTexto += " · rango cómodo";
       } else if (parseFloat(imc.val) < 30) {
         imcFaltaProximo = Math.abs((24.9 * altura * altura - ultimo).toFixed(1));
-        estadoTexto += ` · -${imcFaltaProximo}kg → NORMAL`;
+        estadoTexto += ` · -${imcFaltaProximo}kg para volver a EQUILIBRADO`;
       } else {
         imcFaltaProximo = Math.abs((29.9 * altura * altura - ultimo).toFixed(1));
-        estadoTexto += ` · -${imcFaltaProximo}kg → salir de OBESIDAD`;
+        estadoTexto += ` · -${imcFaltaProximo}kg para salir de MUY ALTO`;
       }
 
       document.getElementById("imc-display").innerHTML = `
-        <div class="imc-label">ÍNDICE DE MASA CORPORAL</div>
+        <div class="imc-label">Índice de masa corporal</div>
         <div class="imc-value">${imc.val}</div>
         <div class="imc-class">${estadoTexto}</div>
-        <div class="imc-range">Rango orientativo normal: 18.5 - 24.9</div>
+        <div class="imc-range">Rango orientativo equilibrado: 18.5 - 24.9</div>
       `;
 
       const clasificacion = clasificarGrasa(parseFloat(grasa), genero);
       document.getElementById("grasa-display").innerHTML = `
-        <div class="grasa-label">% GRASA CORPORAL ESTIMADO (${genero.toUpperCase()})</div>
+        <div class="grasa-label">% grasa corporal estimado (${genero.toUpperCase()})</div>
         <div class="grasa-value">${grasa}%</div>
         <div class="grasa-state">${clasificacion}</div>
       `;
@@ -1476,7 +1569,7 @@
               <div class="entry-weight">${datos[i].peso} kg</div>
               <div class="entry-meta">Altura: ${datos[i].altura} m · ${datos[i].genero}</div>
             </div>
-            <div style="text-align:right;display:flex;align-items:center;gap:10px;">
+            <div style="text-align:right;display:flex;align-items:center;gap:10px;min-width:0;">
               ${i > 0 ? `<span class="entry-change ${cambioClass}">${emoji} ${cambio > 0 ? "+" : ""}${cambio.toFixed(1)}</span>` : ""}
               <button class="sec small" onclick="borrar('${datos[i].id || datos[i].fecha}')">x</button>
             </div>
