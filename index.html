@@ -2,8 +2,8 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PicaFit · Tracker travieso</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Desgrasa y Arrasa</title>
   <meta name="theme-color" content="#120b2b" />
 
   <link
@@ -14,7 +14,7 @@
       <defs>
         <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
           <stop offset="0%" stop-color="%2300F5FF"/>
-          <stop offset="50%" stop-color="%237B61FF"/>
+          <stop offset="55%" stop-color="%237B61FF"/>
           <stop offset="100%" stop-color="%23FF2E93"/>
         </linearGradient>
         <filter id="glow">
@@ -26,11 +26,11 @@
         </filter>
       </defs>
       <rect width="128" height="128" rx="30" fill="%23120B2B"/>
-      <path d="M49 27c-12 0-22 9-22 21 0 10 6 17 15 21-10 4-17 12-17 24 0 0 0 0 0 0h18c0-8 6-14 13-14s13 6 13 14h18c0-12-7-20-17-24 9-4 15-11 15-21 0-12-10-21-22-21H49zm1 14c6 0 11 4 11 10s-5 10-11 10-11-4-11-10 5-10 11-10zm13 32c7 0 13 5 13 12s-6 12-13 12-13-5-13-12 6-12 13-12z"
+      <path d="M40 36c0-10 8-18 18-18s18 8 18 18c0 8-5 14-12 17 9 3 16 11 16 21 0 13-10 23-24 23S32 87 32 74c0-10 7-18 16-21-5-2-8-5-10-9"
             fill="none" stroke="url(%23g)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" filter="url(%23glow)"/>
-      <circle cx="88" cy="38" r="5" fill="%23FFDE59"/>
-      <path d="M80 52c5 2 10 2 15 0" stroke="%23FFDE59" stroke-width="4" stroke-linecap="round"/>
-      <path d="M38 47h10" stroke="%23FFDE59" stroke-width="4" stroke-linecap="round"/>
+      <path d="M64 44c7 8 14 18 14 28 0 10-6 17-14 17s-14-7-14-17c0-10 7-20 14-28z"
+            fill="none" stroke="url(%23g)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M62 60l-7 13h7l-3 11 14-18h-8l4-6z" fill="%23CFFFFF"/>
     </svg>'
   />
 
@@ -45,14 +45,13 @@
       --cyan:#00f5ff;
       --cyan2:#3fd3ff;
       --pink:#ff2e93;
-      --pink2:#ff71ba;
       --violet:#7b61ff;
       --green:#00ff88;
       --red:#ff5a7a;
       --yellow:#ffd166;
       --text:#ffffff;
       --muted:#addfff;
-      --card:rgba(18, 23, 63, 0.88);
+      --card:rgba(18, 23, 63, 0.9);
       --line:rgba(0,245,255,.16);
       --field-bg:rgba(14, 43, 96, 0.68);
       --field-line:rgba(0, 212, 255, .48);
@@ -62,10 +61,12 @@
       margin:0;
       padding:0;
       box-sizing:border-box;
+      min-width:0;
     }
 
     html, body{
       width:100%;
+      max-width:100%;
       overflow-x:hidden;
     }
 
@@ -76,23 +77,21 @@
         radial-gradient(circle at top right, rgba(255,46,147,.14), transparent 24%),
         linear-gradient(135deg, var(--bg1) 0%, var(--bg2) 48%, var(--bg3) 100%);
       min-height:100vh;
-      padding:18px;
+      padding:14px;
       color:var(--text);
     }
 
     .container{
-      max-width:560px;
+      width:min(100%, 560px);
       margin:0 auto;
-      width:100%;
+      overflow:hidden;
     }
 
     .hero{
       display:flex;
       align-items:center;
       gap:14px;
-      margin-bottom:24px;
-      width:100%;
-      min-width:0;
+      margin-bottom:22px;
     }
 
     .app-icon{
@@ -114,8 +113,8 @@
     }
 
     .hero-copy{
-      min-width:0;
       flex:1;
+      overflow:hidden;
     }
 
     .hero-copy h1{
@@ -123,10 +122,10 @@
       -webkit-background-clip:text;
       -webkit-text-fill-color:transparent;
       background-clip:text;
-      font-size:2.35em;
+      font-size:2.05rem;
       font-weight:800;
       letter-spacing:-1px;
-      line-height:1;
+      line-height:1.02;
       word-break:break-word;
     }
 
@@ -134,41 +133,33 @@
       color:var(--muted);
       margin-top:6px;
       font-weight:500;
-      font-size:.96rem;
+      font-size:.93rem;
       line-height:1.3;
     }
 
     .card{
+      width:100%;
       background:var(--card);
       backdrop-filter:blur(20px);
       border-radius:24px;
-      padding:22px;
-      margin-bottom:18px;
+      padding:18px;
+      margin-bottom:16px;
       box-shadow:0 12px 48px rgba(0,255,255,.08);
       border:1.5px solid var(--line);
-      animation:fadeIn .45s ease-in;
-      width:100%;
       overflow:hidden;
-    }
-
-    @keyframes fadeIn{
-      from{opacity:0;transform:translateY(18px)}
-      to{opacity:1;transform:translateY(0)}
     }
 
     h3{
       color:var(--cyan);
       margin-bottom:16px;
-      font-size:1.02em;
+      font-size:1rem;
       font-weight:800;
       text-transform:uppercase;
       letter-spacing:1.4px;
-      word-break:break-word;
     }
 
     .field{
       margin-bottom:14px;
-      min-width:0;
     }
 
     .field:last-child{
@@ -190,30 +181,26 @@
       color:var(--muted);
       font-size:.82rem;
       line-height:1.35;
-      word-break:break-word;
     }
 
     .input-row{
       display:grid;
       grid-template-columns:1fr 1fr;
       gap:12px;
-      align-items:start;
       width:100%;
-    }
-
-    .input-row > *{
-      min-width:0;
     }
 
     .input-row.single{
       grid-template-columns:1fr;
     }
 
-    input,
-    select{
-      width:100%;
+    input, select, button, canvas{
       max-width:100%;
-      min-width:0;
+    }
+
+    input, select{
+      width:100%;
+      display:block;
       padding:15px 16px;
       border:1.5px solid var(--field-line);
       border-radius:14px;
@@ -223,7 +210,6 @@
       color:#fff;
       font-family:'Outfit',sans-serif;
       font-weight:600;
-      display:block;
       appearance:none;
       -webkit-appearance:none;
       -moz-appearance:none;
@@ -235,7 +221,6 @@
     }
 
     select{
-      color:#fff;
       background-image:
         linear-gradient(45deg, transparent 50%, #7fdcff 50%),
         linear-gradient(135deg, #7fdcff 50%, transparent 50%);
@@ -257,13 +242,7 @@
       text-align-last:center;
     }
 
-    input[type="date"]::-webkit-calendar-picker-indicator{
-      opacity:.9;
-      cursor:pointer;
-    }
-
-    input:focus,
-    select:focus{
+    input:focus, select:focus{
       border-color:var(--cyan);
       outline:none;
       box-shadow:0 0 0 4px rgba(0,255,255,.08), 0 0 25px rgba(0,255,255,.18);
@@ -279,7 +258,6 @@
 
     button{
       width:100%;
-      max-width:100%;
       padding:15px 16px;
       margin-top:10px;
       background:linear-gradient(135deg, #00ffff, #00d4ff);
@@ -300,17 +278,9 @@
       box-shadow:0 12px 30px rgba(0,255,255,.25);
     }
 
-    button:active{
-      transform:scale(.98);
-    }
-
     button.sec{
       background:linear-gradient(135deg, #ff0080, #ff1493);
       color:#fff;
-    }
-
-    button.sec:hover{
-      box-shadow:0 12px 30px rgba(255,0,128,.22);
     }
 
     button.danger{
@@ -327,59 +297,49 @@
     }
 
     #frase{
+      width:100%;
       text-align:center;
-      font-size:1.12em;
+      font-size:1.03rem;
       font-style:italic;
       font-weight:700;
       color:#fff;
-      animation:pulse 2.8s infinite;
-      padding:24px 18px;
+      padding:22px 16px;
       background:linear-gradient(135deg, #ff0080, #7b61ff);
       border-radius:18px;
       text-shadow:0 3px 6px rgba(0,0,0,.45);
-      letter-spacing:.2px;
       line-height:1.55;
-      min-height:124px;
+      min-height:122px;
       display:flex;
       align-items:center;
       justify-content:center;
-      word-break:break-word;
       overflow-wrap:anywhere;
     }
 
-    @keyframes pulse{
-      0%,100%{transform:scale(1)}
-      50%{transform:scale(1.02)}
+    .imc-box, .grasa-box{
+      width:100%;
+      padding:20px 16px;
+      border-radius:16px;
+      margin-bottom:14px;
+      text-align:center;
+      overflow:hidden;
     }
 
     .imc-box{
       background:linear-gradient(135deg, rgba(0,255,255,.12), rgba(0,212,255,.08));
-      padding:22px;
-      border-radius:16px;
       border:1.5px solid rgba(0,255,255,.25);
-      margin-bottom:14px;
-      text-align:center;
-      overflow:hidden;
     }
 
     .grasa-box{
       background:linear-gradient(135deg, rgba(255,0,128,.14), rgba(255,20,147,.08));
-      padding:22px;
-      border-radius:16px;
       border:1.5px solid rgba(255,0,128,.25);
-      margin-bottom:14px;
-      text-align:center;
-      overflow:hidden;
     }
 
-    .imc-label,
-    .grasa-label{
+    .imc-label, .grasa-label{
       font-weight:700;
       font-size:.9em;
       text-transform:uppercase;
       letter-spacing:1px;
       margin-bottom:8px;
-      word-break:break-word;
     }
 
     .imc-label{ color:#00ffff; }
@@ -387,29 +347,25 @@
 
     .imc-value{
       color:#00ffff;
-      font-size:2.7em;
+      font-size:2.4rem;
       font-weight:800;
       display:block;
       margin:10px 0;
-      word-break:break-word;
     }
 
     .grasa-value{
       color:#ff84ca;
-      font-size:2.5em;
+      font-size:2.25rem;
       font-weight:800;
       display:block;
       margin:10px 0;
-      word-break:break-word;
     }
 
-    .imc-class,
-    .grasa-state{
+    .imc-class, .grasa-state{
       color:#dffcff;
-      font-size:1.02em;
+      font-size:1rem;
       font-weight:700;
       line-height:1.35;
-      word-break:break-word;
     }
 
     .imc-range{
@@ -418,28 +374,25 @@
       font-weight:600;
       margin-top:8px;
       line-height:1.3;
-      word-break:break-word;
     }
 
     #stats{
       display:grid;
       grid-template-columns:repeat(2, 1fr);
       gap:12px;
-      text-align:center;
       width:100%;
     }
 
     .stat{
       background:rgba(255,255,255,.03);
-      padding:18px 10px;
+      padding:16px 10px;
       border-radius:16px;
       border:1px solid rgba(255,255,255,.06);
-      min-width:0;
       overflow:hidden;
     }
 
     .stat-val{
-      font-size:2em;
+      font-size:1.85rem;
       font-weight:800;
       background:linear-gradient(135deg, #00ffff, #7bdcff);
       -webkit-background-clip:text;
@@ -455,7 +408,6 @@
       text-transform:uppercase;
       letter-spacing:.8px;
       font-weight:700;
-      word-break:break-word;
     }
 
     #progress{
@@ -481,46 +433,43 @@
       color:#9fd9ff;
       font-size:.9em;
       font-weight:700;
-      letter-spacing:.4px;
       line-height:1.35;
-      word-break:break-word;
     }
 
     .chart-wrap{
+      width:100%;
       min-height:280px;
       position:relative;
-      width:100%;
       overflow:hidden;
     }
 
     canvas{
       border-radius:16px;
       box-shadow:0 8px 24px rgba(0,255,255,.10);
-      margin-bottom:0;
       background:rgba(255,255,255,.02);
       padding:8px;
       width:100% !important;
-      max-width:100%;
+      height:auto !important;
+      display:block;
     }
 
     .entry{
       display:flex;
       justify-content:space-between;
       align-items:center;
+      gap:10px;
+      width:100%;
       padding:14px;
       background:rgba(255,255,255,.03);
       margin:10px 0;
       border-radius:14px;
       border:1px solid rgba(255,255,255,.08);
-      gap:10px;
-      width:100%;
-      min-width:0;
       overflow:hidden;
     }
 
     .entry-text{
       flex:1;
-      min-width:0;
+      overflow:hidden;
     }
 
     .entry-date{
@@ -547,9 +496,10 @@
 
     .entry-change{
       font-size:.9em;
-      margin:0 8px;
+      margin:0 6px;
       font-weight:700;
       white-space:nowrap;
+      flex-shrink:0;
     }
 
     .up{ color:var(--red); }
@@ -565,31 +515,24 @@
     }
 
     @media (max-width:560px){
-      body{ padding:14px; }
-      .card{ padding:18px; }
-      .hero-copy h1{ font-size:2rem; }
-      .input-row,
-      .actions{
+      .input-row, .actions{
         grid-template-columns:1fr;
       }
       #stats{
         grid-template-columns:1fr 1fr;
       }
+      .hero-copy h1{
+        font-size:1.82rem;
+      }
     }
 
     @media (max-width:390px){
-      .hero{
-        align-items:flex-start;
-      }
-      .hero-copy h1{
-        font-size:1.8rem;
-      }
-      .hero-copy p{
-        font-size:.9rem;
-      }
-      #stats{
-        grid-template-columns:1fr;
-      }
+      body{ padding:10px; }
+      .card{ padding:16px; }
+      .hero{ align-items:flex-start; }
+      .hero-copy h1{ font-size:1.62rem; }
+      .hero-copy p{ font-size:.88rem; }
+      #stats{ grid-template-columns:1fr; }
     }
   </style>
 </head>
@@ -601,7 +544,7 @@
           <defs>
             <linearGradient id="logoG" x1="0" y1="0" x2="1" y2="1">
               <stop offset="0%" stop-color="#00F5FF"/>
-              <stop offset="50%" stop-color="#7B61FF"/>
+              <stop offset="55%" stop-color="#7B61FF"/>
               <stop offset="100%" stop-color="#FF2E93"/>
             </linearGradient>
             <filter id="logoGlow">
@@ -612,20 +555,15 @@
               </feMerge>
             </filter>
           </defs>
-          <path d="M49 27c-12 0-22 9-22 21 0 10 6 17 15 21-10 4-17 12-17 24h18c0-8 6-14 13-14s13 6 13 14h18c0-12-7-20-17-24 9-4 15-11 15-21 0-12-10-21-22-21H49zm1 14c6 0 11 4 11 10s-5 10-11 10-11-4-11-10 5-10 11-10zm13 32c7 0 13 5 13 12s-6 12-13 12-13-5-13-12 6-12 13-12z"
-                fill="none"
-                stroke="url(#logoG)"
-                stroke-width="8"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                filter="url(#logoGlow)"/>
-          <circle cx="88" cy="38" r="5" fill="#FFDE59"/>
-          <path d="M80 52c5 2 10 2 15 0" stroke="#FFDE59" stroke-width="4" stroke-linecap="round"/>
-          <path d="M38 47h10" stroke="#FFDE59" stroke-width="4" stroke-linecap="round"/>
+          <path d="M40 36c0-10 8-18 18-18s18 8 18 18c0 8-5 14-12 17 9 3 16 11 16 21 0 13-10 23-24 23S32 87 32 74c0-10 7-18 16-21-5-2-8-5-10-9"
+                fill="none" stroke="url(#logoG)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" filter="url(#logoGlow)"/>
+          <path d="M64 44c7 8 14 18 14 28 0 10-6 17-14 17s-14-7-14-17c0-10 7-20 14-28z"
+                fill="none" stroke="url(#logoG)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M62 60l-7 13h7l-3 11 14-18h-8l4-6z" fill="#CFFFFF"/>
         </svg>
       </div>
       <div class="hero-copy">
-        <h1>PicaFit</h1>
+        <h1>Desgrasa y Arrasa</h1>
         <p>Tu peso, tus métricas y tus citas con mala leche fina.</p>
       </div>
     </div>
@@ -714,237 +652,7 @@
   </div>
 
   <script>
-    const frasesSoez = [
-      "Tu grasa no desaparece sola. Tú tampoco deberías hacerlo. —Arnold Schwarzenegger",
-      "Si hoy no te duele un poco, mañana te dolerá mucho más. —David Goggins",
-      "El espejo no miente. Decide si te ofende o te motiva. —Mike Tyson",
-      "Tu cuerpo escucha todo lo que haces… y todo lo que evitas. —Bruce Lee",
-      "Cada kilo extra es una decisión repetida. —James Clear",
-      "No estás cansado. Estás desentrenado. —Jocko Willink",
-      "Si no sudas por voluntad, sudarás por consecuencia. —Tony Robbins",
-      "Disciplina es hacer lo necesario cuando nadie te aplaude. —Dwayne Johnson",
-      "El progreso no es cómodo. Por eso pocos lo tienen. —Jordan Peterson",
-      "El hambre se controla. La mediocridad no siempre. —David Goggins",
-
-      "Tu excusa favorita pesa más que tus mancuernas. —Arnold Schwarzenegger",
-      "El cuerpo que quieres exige hábitos que todavía no tienes. —James Clear",
-      "Si hoy fallas, mañana pesará el doble. —Mike Tyson",
-      "El músculo responde a la presión. Tú también deberías. —Bruce Lee",
-      "Comer por ansiedad no quema ansiedad. —Naval Ravikant",
-      "El esfuerzo diario es más sexy que cualquier resultado rápido. —Gary Vaynerchuk",
-      "No necesitas motivación. Necesitas respeto por tu palabra. —Jocko Willink",
-      "Cada entrenamiento es un voto por la persona que quieres ser. —James Clear",
-      "Si el objetivo te incomoda, vas por buen camino. —Tony Robbins",
-      "El sudor es grasa llorando. —Entrenador Anónimo",
-
-      "Tu futuro físico se está escribiendo en tu plato. —Michael Pollan",
-      "El que controla sus impulsos controla su destino. —Séneca",
-      "Si no puedes decir que no al postre, no digas que quieres cambiar. —David Goggins",
-      "El peso baja cuando el compromiso sube. —Dwayne Johnson",
-      "El dolor del esfuerzo es temporal. El de rendirse se instala. —Lance Armstrong",
-      "El progreso real no es visible… hasta que lo es. —Arnold Schwarzenegger",
-      "Si subes de peso, no es magia. Es matemática. —James Clear",
-      "La disciplina quema más calorías que la motivación. —Jocko Willink",
-      "El cuerpo fuerte construye una mente peligrosa. —Mike Tyson",
-      "No eres víctima de tu genética, eres rehén de tus hábitos. —Jordan Peterson",
-
-      "Cada repetición es una negociación contigo mismo. —Bruce Lee",
-      "Comer limpio no es castigo, es estrategia. —Chris Bumstead",
-      "Tu grasa no es el enemigo. Tu indulgencia constante sí. —David Goggins",
-      "El espejo refleja decisiones, no intenciones. —Arnold Schwarzenegger",
-      "El compromiso empieza cuando la emoción termina. —Tony Robbins",
-      "Si hoy te saltas el entrenamiento, mañana te saltará la conciencia. —Jocko Willink",
-      "Un cuerpo definido es disciplina visible. —Entrenador Anónimo",
-      "El cambio físico es paciencia acumulada. —James Clear",
-      "Si no soportas la incomodidad, soportarás el estancamiento. —Mike Tyson",
-      "La constancia convierte lo imposible en inevitable. —Dwayne Johnson",
-
-      "El hambre emocional no se resuelve en la nevera. —Naval Ravikant",
-      "Cada kilo menos es una excusa menos. —Arnold Schwarzenegger",
-      "Tu cuerpo actual es el resultado de tu estándar actual. —Jordan Peterson",
-      "Si el progreso es lento, al menos que sea constante. —Bruce Lee",
-      "Sudor hoy o arrepentimiento mañana. Elige. —David Goggins",
-      "La grasa corporal es honesta. Tú deberías serlo contigo. —Entrenador Anónimo",
-      "No te falta tiempo. Te sobra autoengaño. —Gary Vaynerchuk",
-      "Si entrenas fuerte, el espejo se calla. —Mike Tyson",
-      "Los resultados no negocian con excusas. —Jocko Willink",
-      "El objetivo no es pesar menos. Es valer más. —Dwayne Johnson",
-
-      "Tu báscula no tiene sentimientos. Solo datos. —James Clear",
-      "Si sube el número, revisa tus decisiones, no la balanza. —Jocko Willink",
-      "El cuerpo no entiende promesas, entiende repetición. —Arnold Schwarzenegger",
-      "Más disciplina, menos drama. —Mike Tyson",
-      "El six-pack no aparece por manifestación espiritual. —Entrenador Anónimo",
-      "Comer por impulso es entrenar la derrota. —Naval Ravikant",
-      "El cambio físico empieza cuando dejas de negociar contigo. —David Goggins",
-      "No necesitas suerte, necesitas estructura. —Jordan Peterson",
-      "Cada entrenamiento es una factura pagada a tu futuro. —Dwayne Johnson",
-      "Si el progreso fuera cómodo, todos estarían definidos. —Chris Bumstead",
-
-      "La grasa no se ofende si la ignoras. Se instala. —Arnold Schwarzenegger",
-      "El hambre dura minutos. El orgullo dura días. —Jocko Willink",
-      "Un mal día no arruina el progreso. Rendirse sí. —Tony Robbins",
-      "Tu cuerpo es un proyecto. Compórtate como arquitecto, no como turista. —James Clear",
-      "El cardio no compensa la falta de carácter. —Entrenador Anónimo",
-      "Si fallas el plan, el plan no falló. —David Goggins",
-      "Menos excusas, más repeticiones. —Mike Tyson",
-      "Cada kilo perdido es disciplina acumulada. —Dwayne Johnson",
-      "El músculo no crece en zona cómoda. Tú tampoco. —Arnold Schwarzenegger",
-      "Si el objetivo te asusta, probablemente te transforma. —Jordan Peterson",
-
-      "Tu grasa corporal responde a tus hábitos, no a tus deseos. —James Clear",
-      "Entrena como si nadie fuera a rescatarte. —David Goggins",
-      "La motivación es volátil. La disciplina es estable. —Jocko Willink",
-      "Si comes como siempre, pesarás como siempre. —Entrenador Anónimo",
-      "El progreso lento sigue siendo progreso. —Bruce Lee",
-      "El espejo no necesita filtros, necesita constancia. —Arnold Schwarzenegger",
-      "Cada comida es una oportunidad de respeto propio. —Naval Ravikant",
-      "No eres débil. Estás mal entrenado. —Mike Tyson",
-      "Tu cuerpo escucha tus hábitos en silencio. —James Clear",
-      "Si no controlas tus impulsos, ellos te controlan a ti. —Séneca",
-
-      "El entrenamiento no es castigo, es construcción. —Chris Bumstead",
-      "La grasa acumulada es comodidad acumulada. —David Goggins",
-      "Sin incomodidad no hay redefinición. —Jordan Peterson",
-      "El progreso exige paciencia y agresividad al mismo tiempo. —Mike Tyson",
-      "Disciplina es hacer lo correcto incluso aburrido. —Jocko Willink",
-      "No necesitas otro lunes. Necesitas empezar hoy. —Dwayne Johnson",
-      "Cada gota de sudor es una declaración de guerra. —Arnold Schwarzenegger",
-      "Si hoy comes con control, mañana entrenas con orgullo. —Entrenador Anónimo",
-      "El cuerpo fuerte es consecuencia, no casualidad. —Bruce Lee",
-      "Si subes de peso, ajusta el sistema, no la autoestima. —James Clear",
-
-      "El físico que admiras es paciencia visible. —Chris Bumstead",
-      "El dolor del entrenamiento es inversión. —David Goggins",
-      "No hay transformación sin repetición. —Jocko Willink",
-      "Tu estándar define tu silueta. —Jordan Peterson",
-      "Menos quejas, más sentadillas. —Mike Tyson",
-      "Cada día que cumples suma. Cada día que evitas resta. —James Clear",
-      "El compromiso se demuestra en la cocina y en el gimnasio. —Arnold Schwarzenegger",
-      "El progreso no grita. Se acumula. —Bruce Lee",
-      "Si el número baja, celebra con humildad. —Dwayne Johnson",
-      "Si el número sube, responde con disciplina. —Entrenador Anónimo",
-
-      "Tu barriga no apareció en un día. Tampoco se irá en uno. —Arnold Schwarzenegger",
-      "Cada vez que dices 'mañana', tu grasa escucha 'quédate'. —David Goggins",
-      "No estás luchando contra el peso. Estás luchando contra tu versión cómoda. —Jordan Peterson",
-      "Si no controlas tu boca, tu boca controla tu físico. —Mike Tyson",
-      "El cuerpo que tienes es el resultado de lo que toleras. —Jocko Willink",
-
-      "El progreso no necesita aplausos, necesita repetición. —James Clear",
-      "Cada comida es una votación silenciosa por tu futuro. —Naval Ravikant",
-      "Si el pantalón aprieta, el problema no es la tela. —Entrenador Anónimo",
-      "Disciplina es hacer lo correcto cuando nadie sabrá que lo hiciste. —Dwayne Johnson",
-      "El músculo no entiende excusas. Solo estímulo. —Chris Bumstead",
-
-      "Tu grasa no es genética mágica. Es consistencia mal dirigida. —James Clear",
-      "El espejo es brutalmente honesto. Aprende a serlo tú también. —Mike Tyson",
-      "Si el número sube, tu estándar bajó. —Jocko Willink",
-      "No necesitas más información. Necesitas más ejecución. —David Goggins",
-      "Cada repetición es un ladrillo. ¿Estás construyendo o demoliendo? —Arnold Schwarzenegger",
-
-      "El hambre pasa. La disciplina queda. —Séneca",
-      "El físico definido es paciencia agresiva. —Chris Bumstead",
-      "Si no soportas el hambre leve, soportarás la frustración constante. —David Goggins",
-      "El peso no sube solo. Sube acompañado de excusas. —Entrenador Anónimo",
-      "Tu cuerpo refleja tu nivel de autoexigencia. —Jordan Peterson",
-
-      "El progreso real es aburrido. Por eso funciona. —James Clear",
-      "Más control hoy, menos arrepentimiento mañana. —Jocko Willink",
-      "Si quieres definición, define primero tus límites. —Mike Tyson",
-      "La grasa corporal no negocia con promesas. —Arnold Schwarzenegger",
-      "Tu estándar diario pesa más que tu genética. —Dwayne Johnson",
-
-      "Cada entrenamiento cancelado fortalece tu versión débil. —David Goggins",
-      "El cambio empieza cuando te cansas de tus propias excusas. —Tony Robbins",
-      "No eres víctima del metabolismo. Eres rehén de hábitos suaves. —Jordan Peterson",
-      "Si el espejo incomoda, úsalo como combustible. —Mike Tyson",
-      "Comer sin pensar es sabotaje elegante. —Naval Ravikant",
-
-      "Tu cuerpo no necesita más ánimo. Necesita estructura. —Jocko Willink",
-      "El músculo crece bajo tensión. El carácter también. —Arnold Schwarzenegger",
-      "Si hoy aflojas, mañana empiezas desde más atrás. —Entrenador Anónimo",
-      "El progreso exige precisión, no entusiasmo. —James Clear",
-      "Cada kilo perdido es una victoria privada. —Dwayne Johnson",
-
-      "El físico fuerte no es suerte, es estándar alto sostenido. —Chris Bumstead",
-      "Si no planificas tu comida, planificas tu estancamiento. —David Goggins",
-      "La báscula no te juzga. Te informa. —Mike Tyson",
-      "El autocontrol es el verdadero superpoder. —Séneca",
-      "Si el número baja, tu disciplina ganó la batalla. —Jocko Willink",
-
-      "El cuerpo responde a lo que repites, no a lo que deseas. —Bruce Lee",
-      "No estás demasiado ocupado. Estás mal priorizado. —Gary Vaynerchuk",
-      "Cada gramo de grasa es energía que no administraste. —Entrenador Anónimo",
-      "Si quieres respeto externo, empieza por el interno. —Jordan Peterson",
-      "El sudor es el precio de la definición. —Arnold Schwarzenegger",
-
-      "El progreso físico es matemática aplicada con carácter. —James Clear",
-      "Tu versión fuerte se construye cuando nadie te ve. —Dwayne Johnson",
-      "Si hoy eliges comodidad, mañana eliges mediocridad. —David Goggins",
-      "El músculo se gana. La grasa se acumula. Elige tu esfuerzo. —Mike Tyson",
-      "Tu cuerpo actual es la auditoría de tus decisiones. —Jocko Willink",
-
-      "Si el número subió, no te castigues. Ajusta el sistema. —James Clear",
-      "Subir un kilo no es tragedia. Repetirlo sí. —Jocko Willink",
-      "Hoy la báscula te dio información. Mañana dale resultados. —Arnold Schwarzenegger",
-      "Si retrocedes, que sea para impulsarte más fuerte. —Mike Tyson",
-      "Un tropiezo no define tu físico. Tu respuesta sí. —Dwayne Johnson",
-
-      "Si bajaste peso, no celebres con sabotaje. Consolida. —David Goggins",
-      "Cada kilo menos es carácter visible. —Chris Bumstead",
-      "Progreso detectado. Ego bajo. Disciplina alta. —Entrenador Anónimo",
-      "Cuando el número baja, la constancia sonríe. —Bruce Lee",
-      "Estás demostrando que no eras excusa, eras proceso. —Jordan Peterson",
-
-      "Meta alcanzada. Ahora mantén el estándar. —Arnold Schwarzenegger",
-      "Lograrlo es difícil. Sostenerlo es élite. —Jocko Willink",
-      "Objetivo cumplido. Nueva versión desbloqueada. —Dwayne Johnson",
-      "El final de una meta es el inicio de otra. —David Goggins",
-      "Tu disciplina acaba de ganarte respeto interno. —James Clear",
-
-      "Si te estancaste, revisa detalles, no sueños. —Chris Bumstead",
-      "El estancamiento es señal de ajuste, no de derrota. —Tony Robbins",
-      "Cuando nada cambia, cambia el enfoque. —Mike Tyson",
-      "El progreso lento sigue siendo superior a cero. —Bruce Lee",
-      "No confundas pausa con rendición. —Jordan Peterson",
-
-      "Tu cuerpo no necesita drama, necesita consistencia. —Jocko Willink",
-      "Cada día cumplido fortalece tu identidad. —James Clear",
-      "Hoy hiciste lo necesario. Eso ya te separa de muchos. —Arnold Schwarzenegger",
-      "El estándar alto es incómodo. Por eso transforma. —David Goggins",
-      "Disciplina mantenida es poder acumulado. —Dwayne Johnson",
-
-      "Si subiste peso, responde con precisión, no con culpa. —Chris Bumstead",
-      "Un exceso no destruye el progreso. La repetición sí. —James Clear",
-      "El control no es restricción, es estrategia. —Naval Ravikant",
-      "Tu cuerpo refleja tus prioridades reales. —Jordan Peterson",
-      "Más estructura, menos emoción. —Jocko Willink",
-
-      "Si bajaste grasa, que no suba tu arrogancia. —Mike Tyson",
-      "El físico mejora cuando el ego se controla. —Bruce Lee",
-      "Cada mejora pequeña es una deuda pagada al pasado. —Entrenador Anónimo",
-      "Lo estás logrando porque dejaste de negociar contigo. —David Goggins",
-      "La disciplina silenciosa produce resultados ruidosos. —Arnold Schwarzenegger",
-
-      "Cuando falles, falla con análisis, no con abandono. —James Clear",
-      "El error corregido es progreso acelerado. —Chris Bumstead",
-      "Tu fuerza mental está creciendo al ritmo de tu constancia. —Dwayne Johnson",
-      "Si el espejo mejora, es porque tú mejoraste primero. —Jordan Peterson",
-      "El cuerpo fuerte nace de decisiones incómodas repetidas. —Mike Tyson",
-
-      "Hoy no fue perfecto. Fue suficiente. —Bruce Lee",
-      "Si cumpliste el plan, ya ganaste algo invisible. —Jocko Willink",
-      "El progreso se protege con humildad. —Arnold Schwarzenegger",
-      "No necesitas extremos. Necesitas constancia brutal. —David Goggins",
-      "Cada día disciplinado es una victoria privada. —James Clear",
-
-      "Si el peso bajó, felicidades. Si no, trabaja. —Entrenador Anónimo",
-      "El proceso no siempre emociona, pero siempre recompensa. —Chris Bumstead",
-      "Tu versión fuerte ya no es teoría. Es práctica. —Dwayne Johnson",
-      "Cuando eliges disciplina, eliges poder. —Jordan Peterson",
-      "El respeto propio pesa más que cualquier número. —Mike Tyson"
-    ];
+    const frasesSoez = ["Tu grasa no desaparece sola. Tú tampoco deberías hacerlo. —Arnold Schwarzenegger","Si hoy no te duele un poco, mañana te dolerá mucho más. —David Goggins","El espejo no miente. Decide si te ofende o te motiva. —Mike Tyson","Tu cuerpo escucha todo lo que haces… y todo lo que evitas. —Bruce Lee","Cada kilo extra es una decisión repetida. —James Clear","No estás cansado. Estás desentrenado. —Jocko Willink","Si no sudas por voluntad, sudarás por consecuencia. —Tony Robbins","Disciplina es hacer lo necesario cuando nadie te aplaude. —Dwayne Johnson","El progreso no es cómodo. Por eso pocos lo tienen. —Jordan Peterson","El hambre se controla. La mediocridad no siempre. —David Goggins","Tu excusa favorita pesa más que tus mancuernas. —Arnold Schwarzenegger","El cuerpo que quieres exige hábitos que todavía no tienes. —James Clear","Si hoy fallas, mañana pesará el doble. —Mike Tyson","El músculo responde a la presión. Tú también deberías. —Bruce Lee","Comer por ansiedad no quema ansiedad. —Naval Ravikant","El esfuerzo diario es más sexy que cualquier resultado rápido. —Gary Vaynerchuk","No necesitas motivación. Necesitas respeto por tu palabra. —Jocko Willink","Cada entrenamiento es un voto por la persona que quieres ser. —James Clear","Si el objetivo te incomoda, vas por buen camino. —Tony Robbins","El sudor es grasa llorando. —Entrenador Anónimo","Tu futuro físico se está escribiendo en tu plato. —Michael Pollan","El que controla sus impulsos controla su destino. —Séneca","Si no puedes decir que no al postre, no digas que quieres cambiar. —David Goggins","El peso baja cuando el compromiso sube. —Dwayne Johnson","El dolor del esfuerzo es temporal. El de rendirse se instala. —Lance Armstrong","El progreso real no es visible… hasta que lo es. —Arnold Schwarzenegger","Si subes de peso, no es magia. Es matemática. —James Clear","La disciplina quema más calorías que la motivación. —Jocko Willink","El cuerpo fuerte construye una mente peligrosa. —Mike Tyson","No eres víctima de tu genética, eres rehén de tus hábitos. —Jordan Peterson","Cada repetición es una negociación contigo mismo. —Bruce Lee","Comer limpio no es castigo, es estrategia. —Chris Bumstead","Tu grasa no es el enemigo. Tu indulgencia constante sí. —David Goggins","El espejo refleja decisiones, no intenciones. —Arnold Schwarzenegger","El compromiso empieza cuando la emoción termina. —Tony Robbins","Si hoy te saltas el entrenamiento, mañana te saltará la conciencia. —Jocko Willink","Un cuerpo definido es disciplina visible. —Entrenador Anónimo","El cambio físico es paciencia acumulada. —James Clear","Si no soportas la incomodidad, soportarás el estancamiento. —Mike Tyson","La constancia convierte lo imposible en inevitable. —Dwayne Johnson","El hambre emocional no se resuelve en la nevera. —Naval Ravikant","Cada kilo menos es una excusa menos. —Arnold Schwarzenegger","Tu cuerpo actual es el resultado de tu estándar actual. —Jordan Peterson","Si el progreso es lento, al menos que sea constante. —Bruce Lee","Sudor hoy o arrepentimiento mañana. Elige. —David Goggins","La grasa corporal es honesta. Tú deberías serlo contigo. —Entrenador Anónimo","No te falta tiempo. Te sobra autoengaño. —Gary Vaynerchuk","Si entrenas fuerte, el espejo se calla. —Mike Tyson","Los resultados no negocian con excusas. —Jocko Willink","El objetivo no es pesar menos. Es valer más. —Dwayne Johnson","Tu báscula no tiene sentimientos. Solo datos. —James Clear","Si sube el número, revisa tus decisiones, no la balanza. —Jocko Willink","El cuerpo no entiende promesas, entiende repetición. —Arnold Schwarzenegger","Más disciplina, menos drama. —Mike Tyson","El six-pack no aparece por manifestación espiritual. —Entrenador Anónimo","Comer por impulso es entrenar la derrota. —Naval Ravikant","El cambio físico empieza cuando dejas de negociar contigo. —David Goggins","No necesitas suerte, necesitas estructura. —Jordan Peterson","Cada entrenamiento es una factura pagada a tu futuro. —Dwayne Johnson","Si el progreso fuera cómodo, todos estarían definidos. —Chris Bumstead","La grasa no se ofende si la ignoras. Se instala. —Arnold Schwarzenegger","El hambre dura minutos. El orgullo dura días. —Jocko Willink","Un mal día no arruina el progreso. Rendirse sí. —Tony Robbins","Tu cuerpo es un proyecto. Compórtate como arquitecto, no como turista. —James Clear","El cardio no compensa la falta de carácter. —Entrenador Anónimo","Si fallas el plan, el plan no falló. —David Goggins","Menos excusas, más repeticiones. —Mike Tyson","Cada kilo perdido es disciplina acumulada. —Dwayne Johnson","El músculo no crece en zona cómoda. Tú tampoco. —Arnold Schwarzenegger","Si el objetivo te asusta, probablemente te transforma. —Jordan Peterson","Tu grasa corporal responde a tus hábitos, no a tus deseos. —James Clear","Entrena como si nadie fuera a rescatarte. —David Goggins","La motivación es volátil. La disciplina es estable. —Jocko Willink","Si comes como siempre, pesarás como siempre. —Entrenador Anónimo","El progreso lento sigue siendo progreso. —Bruce Lee","El espejo no necesita filtros, necesita constancia. —Arnold Schwarzenegger","Cada comida es una oportunidad de respeto propio. —Naval Ravikant","No eres débil. Estás mal entrenado. —Mike Tyson","Tu cuerpo escucha tus hábitos en silencio. —James Clear","Si no controlas tus impulsos, ellos te controlan a ti. —Séneca","El entrenamiento no es castigo, es construcción. —Chris Bumstead","La grasa acumulada es comodidad acumulada. —David Goggins","Sin incomodidad no hay redefinición. —Jordan Peterson","El progreso exige paciencia y agresividad al mismo tiempo. —Mike Tyson","Disciplina es hacer lo correcto incluso aburrido. —Jocko Willink","No necesitas otro lunes. Necesitas empezar hoy. —Dwayne Johnson","Cada gota de sudor es una declaración de guerra. —Arnold Schwarzenegger","Si hoy comes con control, mañana entrenas con orgullo. —Entrenador Anónimo","El cuerpo fuerte es consecuencia, no casualidad. —Bruce Lee","Si subes de peso, ajusta el sistema, no la autoestima. —James Clear","El físico que admiras es paciencia visible. —Chris Bumstead","El dolor del entrenamiento es inversión. —David Goggins","No hay transformación sin repetición. —Jocko Willink","Tu estándar define tu silueta. —Jordan Peterson","Menos quejas, más sentadillas. —Mike Tyson","Cada día que cumples suma. Cada día que evitas resta. —James Clear","El compromiso se demuestra en la cocina y en el gimnasio. —Arnold Schwarzenegger","El progreso no grita. Se acumula. —Bruce Lee","Si el número baja, celebra con humildad. —Dwayne Johnson","Si el número sube, responde con disciplina. —Entrenador Anónimo","Tu barriga no apareció en un día. Tampoco se irá en uno. —Arnold Schwarzenegger","Cada vez que dices 'mañana', tu grasa escucha 'quédate'. —David Goggins","No estás luchando contra el peso. Estás luchando contra tu versión cómoda. —Jordan Peterson","Si no controlas tu boca, tu boca controla tu físico. —Mike Tyson","El cuerpo que tienes es el resultado de lo que toleras. —Jocko Willink","El progreso no necesita aplausos, necesita repetición. —James Clear","Cada comida es una votación silenciosa por tu futuro. —Naval Ravikant","Si el pantalón aprieta, el problema no es la tela. —Entrenador Anónimo","Disciplina es hacer lo correcto cuando nadie sabrá que lo hiciste. —Dwayne Johnson","El músculo no entiende excusas. Solo estímulo. —Chris Bumstead","Tu grasa no es genética mágica. Es consistencia mal dirigida. —James Clear","El espejo es brutalmente honesto. Aprende a serlo tú también. —Mike Tyson","Si el número sube, tu estándar bajó. —Jocko Willink","No necesitas más información. Necesitas más ejecución. —David Goggins","Cada repetición es un ladrillo. ¿Estás construyendo o demoliendo? —Arnold Schwarzenegger","El hambre pasa. La disciplina queda. —Séneca","El físico definido es paciencia agresiva. —Chris Bumstead","Si no soportas el hambre leve, soportarás la frustración constante. —David Goggins","El peso no sube solo. Sube acompañado de excusas. —Entrenador Anónimo","Tu cuerpo refleja tu nivel de autoexigencia. —Jordan Peterson","El progreso real es aburrido. Por eso funciona. —James Clear","Más control hoy, menos arrepentimiento mañana. —Jocko Willink","Si quieres definición, define primero tus límites. —Mike Tyson","La grasa corporal no negocia con promesas. —Arnold Schwarzenegger","Tu estándar diario pesa más que tu genética. —Dwayne Johnson","Cada entrenamiento cancelado fortalece tu versión débil. —David Goggins","El cambio empieza cuando te cansas de tus propias excusas. —Tony Robbins","No eres víctima del metabolismo. Eres rehén de hábitos suaves. —Jordan Peterson","Si el espejo incomoda, úsalo como combustible. —Mike Tyson","Comer sin pensar es sabotaje elegante. —Naval Ravikant","Tu cuerpo no necesita más ánimo. Necesita estructura. —Jocko Willink","El músculo crece bajo tensión. El carácter también. —Arnold Schwarzenegger","Si hoy aflojas, mañana empiezas desde más atrás. —Entrenador Anónimo","El progreso exige precisión, no entusiasmo. —James Clear","Cada kilo perdido es una victoria privada. —Dwayne Johnson","El físico fuerte no es suerte, es estándar alto sostenido. —Chris Bumstead","Si no planificas tu comida, planificas tu estancamiento. —David Goggins","La báscula no te juzga. Te informa. —Mike Tyson","El autocontrol es el verdadero superpoder. —Séneca","Si el número baja, tu disciplina ganó la batalla. —Jocko Willink","El cuerpo responde a lo que repites, no a lo que deseas. —Bruce Lee","No estás demasiado ocupado. Estás mal priorizado. —Gary Vaynerchuk","Cada gramo de grasa es energía que no administraste. —Entrenador Anónimo","Si quieres respeto externo, empieza por el interno. —Jordan Peterson","El sudor es el precio de la definición. —Arnold Schwarzenegger","El progreso físico es matemática aplicada con carácter. —James Clear","Tu versión fuerte se construye cuando nadie te ve. —Dwayne Johnson","Si hoy eliges comodidad, mañana eliges mediocridad. —David Goggins","El músculo se gana. La grasa se acumula. Elige tu esfuerzo. —Mike Tyson","Tu cuerpo actual es la auditoría de tus decisiones. —Jocko Willink","Si el número subió, no te castigues. Ajusta el sistema. —James Clear","Subir un kilo no es tragedia. Repetirlo sí. —Jocko Willink","Hoy la báscula te dio información. Mañana dale resultados. —Arnold Schwarzenegger","Si retrocedes, que sea para impulsarte más fuerte. —Mike Tyson","Un tropiezo no define tu físico. Tu respuesta sí. —Dwayne Johnson","Si bajaste peso, no celebres con sabotaje. Consolida. —David Goggins","Cada kilo menos es carácter visible. —Chris Bumstead","Progreso detectado. Ego bajo. Disciplina alta. —Entrenador Anónimo","Cuando el número baja, la constancia sonríe. —Bruce Lee","Estás demostrando que no eras excusa, eras proceso. —Jordan Peterson","Meta alcanzada. Ahora mantén el estándar. —Arnold Schwarzenegger","Lograrlo es difícil. Sostenerlo es élite. —Jocko Willink","Objetivo cumplido. Nueva versión desbloqueada. —Dwayne Johnson","El final de una meta es el inicio de otra. —David Goggins","Tu disciplina acaba de ganarte respeto interno. —James Clear","Si te estancaste, revisa detalles, no sueños. —Chris Bumstead","El estancamiento es señal de ajuste, no de derrota. —Tony Robbins","Cuando nada cambia, cambia el enfoque. —Mike Tyson","El progreso lento sigue siendo superior a cero. —Bruce Lee","No confundas pausa con rendición. —Jordan Peterson","Tu cuerpo no necesita drama, necesita consistencia. —Jocko Willink","Cada día cumplido fortalece tu identidad. —James Clear","Hoy hiciste lo necesario. Eso ya te separa de muchos. —Arnold Schwarzenegger","El estándar alto es incómodo. Por eso transforma. —David Goggins","Disciplina mantenida es poder acumulado. —Dwayne Johnson","Si subiste peso, responde con precisión, no con culpa. —Chris Bumstead","Un exceso no destruye el progreso. La repetición sí. —James Clear","El control no es restricción, es estrategia. —Naval Ravikant","Tu cuerpo refleja tus prioridades reales. —Jordan Peterson","Más estructura, menos emoción. —Jocko Willink","Si bajaste grasa, que no suba tu arrogancia. —Mike Tyson","El físico mejora cuando el ego se controla. —Bruce Lee","Cada mejora pequeña es una deuda pagada al pasado. —Entrenador Anónimo","Lo estás logrando porque dejaste de negociar contigo. —David Goggins","La disciplina silenciosa produce resultados ruidosos. —Arnold Schwarzenegger","Cuando falles, falla con análisis, no con abandono. —James Clear","El error corregido es progreso acelerado. —Chris Bumstead","Tu fuerza mental está creciendo al ritmo de tu constancia. —Dwayne Johnson","Si el espejo mejora, es porque tú mejoraste primero. —Jordan Peterson","El cuerpo fuerte nace de decisiones incómodas repetidas. —Mike Tyson","Hoy no fue perfecto. Fue suficiente. —Bruce Lee","Si cumpliste el plan, ya ganaste algo invisible. —Jocko Willink","El progreso se protege con humildad. —Arnold Schwarzenegger","No necesitas extremos. Necesitas constancia brutal. —David Goggins","Cada día disciplinado es una victoria privada. —James Clear","Si el peso bajó, felicidades. Si no, trabaja. —Entrenador Anónimo","El proceso no siempre emociona, pero siempre recompensa. —Chris Bumstead","Tu versión fuerte ya no es teoría. Es práctica. —Dwayne Johnson","Cuando eliges disciplina, eliges poder. —Jordan Peterson","El respeto propio pesa más que cualquier número. —Mike Tyson"];
 
     let chart = null;
     let generoGuardado = localStorage.getItem("genero") || "";
@@ -954,23 +662,21 @@
 
     function obtenerDatos() {
       const datos = JSON.parse(localStorage.getItem("pesos") || "[]");
-      return Array.isArray(datos)
-        ? datos.sort((a, b) => new Date(a.fecha) - new Date(b.fecha))
-        : [];
+      return Array.isArray(datos) ? datos.sort((a,b)=>new Date(a.fecha)-new Date(b.fecha)) : [];
     }
 
     function guardarDatos(datos) {
-      datos.sort((a, b) => new Date(a.fecha) - new Date(b.fecha));
+      datos.sort((a,b)=>new Date(a.fecha)-new Date(b.fecha));
       localStorage.setItem("pesos", JSON.stringify(datos));
     }
 
     function generarId() {
-      return `${Date.now()}-${Math.random().toString(16).slice(2, 10)}`;
+      return `${Date.now()}-${Math.random().toString(16).slice(2,10)}`;
     }
 
     function obtenerRotaciones() {
       try {
-        const guardado = JSON.parse(localStorage.getItem("rotacionesFrasesPicaFit") || "{}");
+        const guardado = JSON.parse(localStorage.getItem("rotacionesFrasesDesgrasaArrasa") || "{}");
         return {
           contexto: Array.isArray(guardado.contexto) ? guardado.contexto : [],
           general: Array.isArray(guardado.general) ? guardado.general : []
@@ -981,7 +687,7 @@
     }
 
     function guardarRotaciones(rotaciones) {
-      localStorage.setItem("rotacionesFrasesPicaFit", JSON.stringify(rotaciones));
+      localStorage.setItem("rotacionesFrasesDesgrasaArrasa", JSON.stringify(rotaciones));
     }
 
     function contieneAlguna(frase, terminos) {
@@ -991,107 +697,18 @@
 
     function filtrarCitasPorContexto(contexto, tieneObjetivoCumplido = false) {
       if (tieneObjetivoCumplido) {
-        const meta = frasesSoez.filter(frase =>
-          contieneAlguna(frase, [
-            "meta alcanzada",
-            "objetivo cumplido",
-            "mantén el estándar",
-            "nueva versión desbloqueada",
-            "inicio de otra",
-            "respeto interno",
-            "sostenerlo es élite"
-          ])
-        );
+        const meta = frasesSoez.filter(frase => contieneAlguna(frase, [
+          "meta alcanzada","objetivo cumplido","mantén el estándar","nueva versión desbloqueada","inicio de otra","respeto interno","sostenerlo es élite"
+        ]));
         if (meta.length) return meta;
       }
 
       let terminos = [];
-
-      if (contexto === "granBajada") {
-        terminos = [
-          "progreso",
-          "constancia",
-          "disciplina",
-          "compromiso",
-          "cambio",
-          "sudor",
-          "kilo menos",
-          "peso baja",
-          "disciplina ganó",
-          "carácter visible",
-          "proceso",
-          "mejora",
-          "victoria privada",
-          "disciplina alta",
-          "sonríe"
-        ];
-      } else if (contexto === "bajada") {
-        terminos = [
-          "hábito",
-          "repetición",
-          "disciplina",
-          "estrategia",
-          "compromiso",
-          "esfuerzo",
-          "constancia",
-          "resultados",
-          "cuerpo que quieres",
-          "humildad",
-          "consolida",
-          "respeto propio",
-          "ganaste algo invisible"
-        ];
-      } else if (contexto === "igual") {
-        terminos = [
-          "datos",
-          "constante",
-          "repetición",
-          "estructura",
-          "controla",
-          "cuerpo escucha",
-          "futuro físico",
-          "objetivo",
-          "estancamiento",
-          "pausa",
-          "consistencia",
-          "detalles",
-          "enfoque"
-        ];
-      } else if (contexto === "subida") {
-        terminos = [
-          "sube el número",
-          "subes de peso",
-          "excusa",
-          "autoengaño",
-          "hambre emocional",
-          "impulso",
-          "grasa no es el enemigo",
-          "estás desentrenado",
-          "resultado de tu estándar",
-          "espejo no miente",
-          "ajusta el sistema",
-          "precisión",
-          "culpa",
-          "más estructura"
-        ];
-      } else if (contexto === "granSubida") {
-        terminos = [
-          "entrenamiento cancelado",
-          "hoy fallas",
-          "dejas de negociar",
-          "metabolismo",
-          "no sudas",
-          "postre",
-          "sabotaje",
-          "grasa no desaparece",
-          "te duele un poco",
-          "espejo incomoda",
-          "repetirlo sí",
-          "tu estándar bajó",
-          "tragedia",
-          "empiezas desde más atrás"
-        ];
-      }
+      if (contexto === "granBajada") terminos = ["progreso","constancia","disciplina","compromiso","cambio","sudor","kilo menos","peso baja","disciplina ganó","carácter visible","proceso","mejora","victoria privada","disciplina alta","sonríe"];
+      else if (contexto === "bajada") terminos = ["hábito","repetición","disciplina","estrategia","compromiso","esfuerzo","constancia","resultados","cuerpo que quieres","humildad","consolida","respeto propio","ganaste algo invisible"];
+      else if (contexto === "igual") terminos = ["datos","constante","repetición","estructura","controla","cuerpo escucha","futuro físico","objetivo","estancamiento","pausa","consistencia","detalles","enfoque"];
+      else if (contexto === "subida") terminos = ["sube el número","subes de peso","excusa","autoengaño","hambre emocional","impulso","grasa no es el enemigo","estás desentrenado","resultado de tu estándar","espejo no miente","ajusta el sistema","precisión","culpa","más estructura"];
+      else if (contexto === "granSubida") terminos = ["entrenamiento cancelado","hoy fallas","dejas de negociar","metabolismo","no sudas","postre","sabotaje","grasa no desaparece","te duele un poco","espejo incomoda","repetirlo sí","tu estándar bajó","tragedia","empiezas desde más atrás"];
 
       const citas = frasesSoez.filter(frase => contieneAlguna(frase, terminos));
       return citas.length ? citas : frasesSoez;
@@ -1101,13 +718,9 @@
       if (!Array.isArray(lista) || !lista.length) return "¡Carga tu motivación!";
 
       const rotaciones = obtenerRotaciones();
-
-      if (!rotaciones[tipo] || rotaciones[tipo].length === 0) {
-        rotaciones[tipo] = [...lista];
-      }
+      if (!rotaciones[tipo] || rotaciones[tipo].length === 0) rotaciones[tipo] = [...lista];
 
       let disponibles = rotaciones[tipo].filter(frase => lista.includes(frase));
-
       if (!disponibles.length) {
         rotaciones[tipo] = [...lista];
         disponibles = [...lista];
@@ -1115,11 +728,8 @@
 
       const index = Math.floor(Math.random() * disponibles.length);
       const frase = disponibles[index] || lista[0];
-
       const idxEnRotacion = rotaciones[tipo].indexOf(frase);
-      if (idxEnRotacion >= 0) {
-        rotaciones[tipo].splice(idxEnRotacion, 1);
-      }
+      if (idxEnRotacion >= 0) rotaciones[tipo].splice(idxEnRotacion, 1);
 
       guardarRotaciones(rotaciones);
       return frase;
@@ -1143,8 +753,8 @@
       if (!el) return;
 
       const hoy = hoyClave();
-      const ultimaFechaFrase = localStorage.getItem("picafitUltimaFechaFrase") || "";
-      const fraseGuardada = localStorage.getItem("picafitFraseActual") || "";
+      const ultimaFechaFrase = localStorage.getItem("desgrasaArrasaUltimaFechaFrase") || "";
+      const fraseGuardada = localStorage.getItem("desgrasaArrasaFraseActual") || "";
 
       if (!forzarNueva && fraseGuardada && ultimaFechaFrase === hoy) {
         el.textContent = fraseGuardada;
@@ -1161,29 +771,23 @@
           (primero < pesoObjetivo && ultimo >= pesoObjetivo);
 
         if (objetivoCumplido) {
-          const candidatasMeta = filtrarCitasPorContexto("igual", true);
-          frase = sacarFraseSinRepetir("contexto", candidatasMeta);
+          frase = sacarFraseSinRepetir("contexto", filtrarCitasPorContexto("igual", true));
         }
       }
 
       if (!frase && datos.length > 1) {
         const actual = parseFloat(datos[datos.length - 1].peso);
         const anterior = parseFloat(datos[datos.length - 2].peso);
-
         if (!Number.isNaN(actual) && !Number.isNaN(anterior)) {
           const delta = parseFloat((actual - anterior).toFixed(1));
-          const contexto = clasificarCambio(delta);
-          const candidatas = filtrarCitasPorContexto(contexto);
-          frase = sacarFraseSinRepetir("contexto", candidatas);
+          frase = sacarFraseSinRepetir("contexto", filtrarCitasPorContexto(clasificarCambio(delta)));
         }
       }
 
-      if (!frase) {
-        frase = sacarFraseSinRepetir("general", frasesSoez);
-      }
+      if (!frase) frase = sacarFraseSinRepetir("general", frasesSoez);
 
-      localStorage.setItem("picafitFraseActual", frase);
-      localStorage.setItem("picafitUltimaFechaFrase", hoy);
+      localStorage.setItem("desgrasaArrasaFraseActual", frase);
+      localStorage.setItem("desgrasaArrasaUltimaFechaFrase", hoy);
       el.textContent = frase;
     }
 
@@ -1195,9 +799,7 @@
 
       let edad = hoy.getFullYear() - nac.getFullYear();
       const mes = hoy.getMonth() - nac.getMonth();
-      if (mes < 0 || (mes === 0 && hoy.getDate() < nac.getDate())) {
-        edad--;
-      }
+      if (mes < 0 || (mes === 0 && hoy.getDate() < nac.getDate())) edad--;
       return Math.max(0, edad);
     }
 
@@ -1215,11 +817,7 @@
       const fechaSeleccionada = new Date(valor);
       const hoy = new Date();
 
-      if (
-        Number.isNaN(fechaSeleccionada.getTime()) ||
-        fechaSeleccionada > hoy ||
-        fechaSeleccionada.getFullYear() < 1900
-      ) {
+      if (Number.isNaN(fechaSeleccionada.getTime()) || fechaSeleccionada > hoy || fechaSeleccionada.getFullYear() < 1900) {
         alert("Fecha de nacimiento no válida");
         input.value = fechaNacimiento || "";
         return;
@@ -1244,11 +842,8 @@
 
     function guardarGenero() {
       generoGuardado = document.getElementById("genero").value;
-      if (generoGuardado) {
-        localStorage.setItem("genero", generoGuardado);
-      } else {
-        localStorage.removeItem("genero");
-      }
+      if (generoGuardado) localStorage.setItem("genero", generoGuardado);
+      else localStorage.removeItem("genero");
       actualizarTodo();
     }
 
@@ -1267,25 +862,10 @@
       const altura = parseFloat(document.getElementById("altura").value);
       const genero = document.getElementById("genero").value;
 
-      if (!fecha) {
-        alert("Selecciona una fecha");
-        return;
-      }
-
-      if (isNaN(peso) || peso <= 0) {
-        alert("Introduce un peso válido");
-        return;
-      }
-
-      if (isNaN(altura) || altura <= 0) {
-        alert("Introduce una altura válida");
-        return;
-      }
-
-      if (!genero) {
-        alert("Selecciona sexo/género biológico");
-        return;
-      }
+      if (!fecha) return alert("Selecciona una fecha");
+      if (isNaN(peso) || peso <= 0) return alert("Introduce un peso válido");
+      if (isNaN(altura) || altura <= 0) return alert("Introduce una altura válida");
+      if (!genero) return alert("Selecciona sexo/género biológico");
 
       alturaGuardada = altura;
       localStorage.setItem("altura", altura.toFixed(2));
@@ -1298,13 +878,7 @@
         existente.altura = altura.toFixed(2);
         existente.genero = genero;
       } else {
-        datos.push({
-          id: generarId(),
-          fecha,
-          peso: peso.toFixed(1),
-          altura: altura.toFixed(2),
-          genero
-        });
+        datos.push({ id: generarId(), fecha, peso: peso.toFixed(1), altura: altura.toFixed(2), genero });
       }
 
       guardarDatos(datos);
@@ -1331,17 +905,20 @@
       let clas = "N/A";
 
       if (edad < 18 && edad > 0) {
-        if (imc < 16) clas = "BAJO";
+        if (imc < 16) clas = "ESENCIAL";
+        else if (imc < 21) clas = "FIT";
         else if (imc < 24) clas = "EQUILIBRADO";
         else if (imc < 28) clas = "ALTO";
         else clas = "MUY ALTO";
       } else if (edad >= 65) {
-        if (imc < 20) clas = "BAJO";
+        if (imc < 20) clas = "ESENCIAL";
+        else if (imc < 23) clas = "FIT";
         else if (imc < 27) clas = "EQUILIBRADO";
         else if (imc < 32) clas = "ALTO";
         else clas = "MUY ALTO";
       } else {
-        if (imc < 18.5) clas = "BAJO";
+        if (imc < 18.5) clas = "ESENCIAL";
+        else if (imc < 22) clas = "FIT";
         else if (imc < 25) clas = "EQUILIBRADO";
         else if (imc < 30) clas = "ALTO";
         else clas = "MUY ALTO";
@@ -1394,9 +971,8 @@
       const edad = calcularEdad(fechaNacimiento);
       const imc = calcularIMC(ultimo, altura, edad);
       const grasa = calcularGrasaCorporal(ultimo, altura, edad, parseFloat(imc.val), genero);
-
       const pesos = datos.map(d => parseFloat(d.peso));
-      const prom = (pesos.reduce((a, b) => a + b, 0) / pesos.length).toFixed(1);
+      const prom = (pesos.reduce((a,b)=>a+b,0) / pesos.length).toFixed(1);
 
       let progreso = 0;
       let textoProgreso = "Sin objetivo";
@@ -1405,12 +981,7 @@
         const avance = (primero - ultimo) / (primero - pesoObjetivo);
         progreso = Math.max(0, Math.min(100, avance * 100));
         const faltante = (ultimo - pesoObjetivo).toFixed(1);
-
-        if (progreso >= 100) {
-          textoProgreso = "¡META ALCANZADA!";
-        } else {
-          textoProgreso = `${progreso.toFixed(0)}% · faltan ${Math.abs(faltante)} kg`;
-        }
+        textoProgreso = progreso >= 100 ? "¡META ALCANZADA!" : `${progreso.toFixed(0)}% · faltan ${Math.abs(faltante)} kg`;
       }
 
       document.getElementById("barra").style.width = progreso + "%";
@@ -1421,9 +992,11 @@
 
       if (parseFloat(imc.val) < 18.5) {
         imcFaltaProximo = (18.5 * altura * altura - ultimo).toFixed(1);
-        estadoTexto += ` · +${imcFaltaProximo}kg para entrar en EQUILIBRADO`;
+        estadoTexto += ` · +${imcFaltaProximo}kg para entrar en FIT`;
+      } else if (parseFloat(imc.val) < 22) {
+        estadoTexto += " · fino y ligero";
       } else if (parseFloat(imc.val) < 25) {
-        estadoTexto += " · rango cómodo";
+        estadoTexto += " · rango equilibrado";
       } else if (parseFloat(imc.val) < 30) {
         imcFaltaProximo = Math.abs((24.9 * altura * altura - ultimo).toFixed(1));
         estadoTexto += ` · -${imcFaltaProximo}kg para volver a EQUILIBRADO`;
@@ -1436,7 +1009,7 @@
         <div class="imc-label">Índice de masa corporal</div>
         <div class="imc-value">${imc.val}</div>
         <div class="imc-class">${estadoTexto}</div>
-        <div class="imc-range">Rango orientativo equilibrado: 18.5 - 24.9</div>
+        <div class="imc-range">Escala amable: ESENCIAL · FIT · EQUILIBRADO · ALTO · MUY ALTO</div>
       `;
 
       const clasificacion = clasificarGrasa(parseFloat(grasa), genero);
@@ -1460,18 +1033,17 @@
 
       const x = datosPesos.map((_, i) => i);
       const y = datosPesos;
-      const sumX = x.reduce((a, b) => a + b, 0);
-      const sumY = y.reduce((a, b) => a + b, 0);
+      const sumX = x.reduce((a,b)=>a+b,0);
+      const sumY = y.reduce((a,b)=>a+b,0);
       const sumXY = x.reduce((sum, xi, i) => sum + xi * y[i], 0);
       const sumX2 = x.reduce((sum, xi) => sum + xi * xi, 0);
       const denominador = (n * sumX2 - sumX * sumX);
-
       if (denominador === 0) return [];
 
       const m = (n * sumXY - sumX * sumY) / denominador;
       const b = (sumY - m * sumX) / n;
 
-      return Array.from({ length: 30 }, (_, i) => {
+      return Array.from({length:30}, (_, i) => {
         const pred = m * (n + i) + b;
         return Math.max(30, Math.min(250, pred));
       });
@@ -1483,17 +1055,14 @@
       const datos = obtenerDatos();
 
       if (!datos.length) {
-        if (chart) {
-          chart.destroy();
-          chart = null;
-        }
+        if (chart) { chart.destroy(); chart = null; }
         return;
       }
 
-      const labels = datos.map(d => d.fecha.slice(5, 10));
+      const labels = datos.map(d => d.fecha.slice(5,10));
       const pesos = datos.map(d => parseFloat(d.peso));
       const pred = regresionLineal(pesos);
-      const predLabels = Array.from({ length: pred.length }, (_, i) => `+${i + 1}d`);
+      const predLabels = Array.from({length: pred.length}, (_, i) => `+${i + 1}d`);
 
       if (chart) chart.destroy();
 
@@ -1506,7 +1075,7 @@
               label: "Real",
               data: pesos,
               borderColor: "#00ffff",
-              backgroundColor: "rgba(0, 255, 255, 0.12)",
+              backgroundColor: "rgba(0,255,255,0.12)",
               tension: 0.4,
               fill: true,
               borderWidth: 3
@@ -1515,7 +1084,7 @@
               label: "Predicción (30d)",
               data: [...Array(pesos.length).fill(null), ...pred],
               borderColor: "#ff0080",
-              borderDash: [6, 4],
+              borderDash: [6,4],
               tension: 0.4,
               fill: false,
               borderWidth: 2
@@ -1529,11 +1098,11 @@
             y: {
               beginAtZero: false,
               ticks: { color: "#9fd9ff" },
-              grid: { color: "rgba(0, 212, 255, 0.08)" }
+              grid: { color: "rgba(0,212,255,0.08)" }
             },
             x: {
               ticks: { color: "#9fd9ff" },
-              grid: { color: "rgba(0, 212, 255, 0.08)" }
+              grid: { color: "rgba(0,212,255,0.08)" }
             }
           },
           plugins: {
@@ -1556,7 +1125,6 @@
       }
 
       let html = "";
-
       for (let i = datos.length - 1; i >= 0; i--) {
         const cambio = i > 0 ? parseFloat(datos[i].peso) - parseFloat(datos[i - 1].peso) : 0;
         const emoji = cambio > 0 ? "▲" : cambio < 0 ? "▼" : "→";
