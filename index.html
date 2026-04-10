@@ -549,10 +549,7 @@
             </linearGradient>
             <filter id="logoGlow">
               <feGaussianBlur stdDeviation="4" result="b"/>
-              <feMerge>
-                <feMergeNode in="b"/>
-                <feMergeNode in="SourceGraphic"/>
-              </feMerge>
+              <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
             </filter>
           </defs>
           <path d="M40 36c0-10 8-18 18-18s18 8 18 18c0 8-5 14-12 17 9 3 16 11 16 21 0 13-10 23-24 23S32 87 32 74c0-10 7-18 16-21-5-2-8-5-10-9"
@@ -652,7 +649,208 @@
   </div>
 
   <script>
-    const frasesSoez = ["Tu grasa no desaparece sola. Tú tampoco deberías hacerlo. —Arnold Schwarzenegger","Si hoy no te duele un poco, mañana te dolerá mucho más. —David Goggins","El espejo no miente. Decide si te ofende o te motiva. —Mike Tyson","Tu cuerpo escucha todo lo que haces… y todo lo que evitas. —Bruce Lee","Cada kilo extra es una decisión repetida. —James Clear","No estás cansado. Estás desentrenado. —Jocko Willink","Si no sudas por voluntad, sudarás por consecuencia. —Tony Robbins","Disciplina es hacer lo necesario cuando nadie te aplaude. —Dwayne Johnson","El progreso no es cómodo. Por eso pocos lo tienen. —Jordan Peterson","El hambre se controla. La mediocridad no siempre. —David Goggins","Tu excusa favorita pesa más que tus mancuernas. —Arnold Schwarzenegger","El cuerpo que quieres exige hábitos que todavía no tienes. —James Clear","Si hoy fallas, mañana pesará el doble. —Mike Tyson","El músculo responde a la presión. Tú también deberías. —Bruce Lee","Comer por ansiedad no quema ansiedad. —Naval Ravikant","El esfuerzo diario es más sexy que cualquier resultado rápido. —Gary Vaynerchuk","No necesitas motivación. Necesitas respeto por tu palabra. —Jocko Willink","Cada entrenamiento es un voto por la persona que quieres ser. —James Clear","Si el objetivo te incomoda, vas por buen camino. —Tony Robbins","El sudor es grasa llorando. —Entrenador Anónimo","Tu futuro físico se está escribiendo en tu plato. —Michael Pollan","El que controla sus impulsos controla su destino. —Séneca","Si no puedes decir que no al postre, no digas que quieres cambiar. —David Goggins","El peso baja cuando el compromiso sube. —Dwayne Johnson","El dolor del esfuerzo es temporal. El de rendirse se instala. —Lance Armstrong","El progreso real no es visible… hasta que lo es. —Arnold Schwarzenegger","Si subes de peso, no es magia. Es matemática. —James Clear","La disciplina quema más calorías que la motivación. —Jocko Willink","El cuerpo fuerte construye una mente peligrosa. —Mike Tyson","No eres víctima de tu genética, eres rehén de tus hábitos. —Jordan Peterson","Cada repetición es una negociación contigo mismo. —Bruce Lee","Comer limpio no es castigo, es estrategia. —Chris Bumstead","Tu grasa no es el enemigo. Tu indulgencia constante sí. —David Goggins","El espejo refleja decisiones, no intenciones. —Arnold Schwarzenegger","El compromiso empieza cuando la emoción termina. —Tony Robbins","Si hoy te saltas el entrenamiento, mañana te saltará la conciencia. —Jocko Willink","Un cuerpo definido es disciplina visible. —Entrenador Anónimo","El cambio físico es paciencia acumulada. —James Clear","Si no soportas la incomodidad, soportarás el estancamiento. —Mike Tyson","La constancia convierte lo imposible en inevitable. —Dwayne Johnson","El hambre emocional no se resuelve en la nevera. —Naval Ravikant","Cada kilo menos es una excusa menos. —Arnold Schwarzenegger","Tu cuerpo actual es el resultado de tu estándar actual. —Jordan Peterson","Si el progreso es lento, al menos que sea constante. —Bruce Lee","Sudor hoy o arrepentimiento mañana. Elige. —David Goggins","La grasa corporal es honesta. Tú deberías serlo contigo. —Entrenador Anónimo","No te falta tiempo. Te sobra autoengaño. —Gary Vaynerchuk","Si entrenas fuerte, el espejo se calla. —Mike Tyson","Los resultados no negocian con excusas. —Jocko Willink","El objetivo no es pesar menos. Es valer más. —Dwayne Johnson","Tu báscula no tiene sentimientos. Solo datos. —James Clear","Si sube el número, revisa tus decisiones, no la balanza. —Jocko Willink","El cuerpo no entiende promesas, entiende repetición. —Arnold Schwarzenegger","Más disciplina, menos drama. —Mike Tyson","El six-pack no aparece por manifestación espiritual. —Entrenador Anónimo","Comer por impulso es entrenar la derrota. —Naval Ravikant","El cambio físico empieza cuando dejas de negociar contigo. —David Goggins","No necesitas suerte, necesitas estructura. —Jordan Peterson","Cada entrenamiento es una factura pagada a tu futuro. —Dwayne Johnson","Si el progreso fuera cómodo, todos estarían definidos. —Chris Bumstead","La grasa no se ofende si la ignoras. Se instala. —Arnold Schwarzenegger","El hambre dura minutos. El orgullo dura días. —Jocko Willink","Un mal día no arruina el progreso. Rendirse sí. —Tony Robbins","Tu cuerpo es un proyecto. Compórtate como arquitecto, no como turista. —James Clear","El cardio no compensa la falta de carácter. —Entrenador Anónimo","Si fallas el plan, el plan no falló. —David Goggins","Menos excusas, más repeticiones. —Mike Tyson","Cada kilo perdido es disciplina acumulada. —Dwayne Johnson","El músculo no crece en zona cómoda. Tú tampoco. —Arnold Schwarzenegger","Si el objetivo te asusta, probablemente te transforma. —Jordan Peterson","Tu grasa corporal responde a tus hábitos, no a tus deseos. —James Clear","Entrena como si nadie fuera a rescatarte. —David Goggins","La motivación es volátil. La disciplina es estable. —Jocko Willink","Si comes como siempre, pesarás como siempre. —Entrenador Anónimo","El progreso lento sigue siendo progreso. —Bruce Lee","El espejo no necesita filtros, necesita constancia. —Arnold Schwarzenegger","Cada comida es una oportunidad de respeto propio. —Naval Ravikant","No eres débil. Estás mal entrenado. —Mike Tyson","Tu cuerpo escucha tus hábitos en silencio. —James Clear","Si no controlas tus impulsos, ellos te controlan a ti. —Séneca","El entrenamiento no es castigo, es construcción. —Chris Bumstead","La grasa acumulada es comodidad acumulada. —David Goggins","Sin incomodidad no hay redefinición. —Jordan Peterson","El progreso exige paciencia y agresividad al mismo tiempo. —Mike Tyson","Disciplina es hacer lo correcto incluso aburrido. —Jocko Willink","No necesitas otro lunes. Necesitas empezar hoy. —Dwayne Johnson","Cada gota de sudor es una declaración de guerra. —Arnold Schwarzenegger","Si hoy comes con control, mañana entrenas con orgullo. —Entrenador Anónimo","El cuerpo fuerte es consecuencia, no casualidad. —Bruce Lee","Si subes de peso, ajusta el sistema, no la autoestima. —James Clear","El físico que admiras es paciencia visible. —Chris Bumstead","El dolor del entrenamiento es inversión. —David Goggins","No hay transformación sin repetición. —Jocko Willink","Tu estándar define tu silueta. —Jordan Peterson","Menos quejas, más sentadillas. —Mike Tyson","Cada día que cumples suma. Cada día que evitas resta. —James Clear","El compromiso se demuestra en la cocina y en el gimnasio. —Arnold Schwarzenegger","El progreso no grita. Se acumula. —Bruce Lee","Si el número baja, celebra con humildad. —Dwayne Johnson","Si el número sube, responde con disciplina. —Entrenador Anónimo","Tu barriga no apareció en un día. Tampoco se irá en uno. —Arnold Schwarzenegger","Cada vez que dices 'mañana', tu grasa escucha 'quédate'. —David Goggins","No estás luchando contra el peso. Estás luchando contra tu versión cómoda. —Jordan Peterson","Si no controlas tu boca, tu boca controla tu físico. —Mike Tyson","El cuerpo que tienes es el resultado de lo que toleras. —Jocko Willink","El progreso no necesita aplausos, necesita repetición. —James Clear","Cada comida es una votación silenciosa por tu futuro. —Naval Ravikant","Si el pantalón aprieta, el problema no es la tela. —Entrenador Anónimo","Disciplina es hacer lo correcto cuando nadie sabrá que lo hiciste. —Dwayne Johnson","El músculo no entiende excusas. Solo estímulo. —Chris Bumstead","Tu grasa no es genética mágica. Es consistencia mal dirigida. —James Clear","El espejo es brutalmente honesto. Aprende a serlo tú también. —Mike Tyson","Si el número sube, tu estándar bajó. —Jocko Willink","No necesitas más información. Necesitas más ejecución. —David Goggins","Cada repetición es un ladrillo. ¿Estás construyendo o demoliendo? —Arnold Schwarzenegger","El hambre pasa. La disciplina queda. —Séneca","El físico definido es paciencia agresiva. —Chris Bumstead","Si no soportas el hambre leve, soportarás la frustración constante. —David Goggins","El peso no sube solo. Sube acompañado de excusas. —Entrenador Anónimo","Tu cuerpo refleja tu nivel de autoexigencia. —Jordan Peterson","El progreso real es aburrido. Por eso funciona. —James Clear","Más control hoy, menos arrepentimiento mañana. —Jocko Willink","Si quieres definición, define primero tus límites. —Mike Tyson","La grasa corporal no negocia con promesas. —Arnold Schwarzenegger","Tu estándar diario pesa más que tu genética. —Dwayne Johnson","Cada entrenamiento cancelado fortalece tu versión débil. —David Goggins","El cambio empieza cuando te cansas de tus propias excusas. —Tony Robbins","No eres víctima del metabolismo. Eres rehén de hábitos suaves. —Jordan Peterson","Si el espejo incomoda, úsalo como combustible. —Mike Tyson","Comer sin pensar es sabotaje elegante. —Naval Ravikant","Tu cuerpo no necesita más ánimo. Necesita estructura. —Jocko Willink","El músculo crece bajo tensión. El carácter también. —Arnold Schwarzenegger","Si hoy aflojas, mañana empiezas desde más atrás. —Entrenador Anónimo","El progreso exige precisión, no entusiasmo. —James Clear","Cada kilo perdido es una victoria privada. —Dwayne Johnson","El físico fuerte no es suerte, es estándar alto sostenido. —Chris Bumstead","Si no planificas tu comida, planificas tu estancamiento. —David Goggins","La báscula no te juzga. Te informa. —Mike Tyson","El autocontrol es el verdadero superpoder. —Séneca","Si el número baja, tu disciplina ganó la batalla. —Jocko Willink","El cuerpo responde a lo que repites, no a lo que deseas. —Bruce Lee","No estás demasiado ocupado. Estás mal priorizado. —Gary Vaynerchuk","Cada gramo de grasa es energía que no administraste. —Entrenador Anónimo","Si quieres respeto externo, empieza por el interno. —Jordan Peterson","El sudor es el precio de la definición. —Arnold Schwarzenegger","El progreso físico es matemática aplicada con carácter. —James Clear","Tu versión fuerte se construye cuando nadie te ve. —Dwayne Johnson","Si hoy eliges comodidad, mañana eliges mediocridad. —David Goggins","El músculo se gana. La grasa se acumula. Elige tu esfuerzo. —Mike Tyson","Tu cuerpo actual es la auditoría de tus decisiones. —Jocko Willink","Si el número subió, no te castigues. Ajusta el sistema. —James Clear","Subir un kilo no es tragedia. Repetirlo sí. —Jocko Willink","Hoy la báscula te dio información. Mañana dale resultados. —Arnold Schwarzenegger","Si retrocedes, que sea para impulsarte más fuerte. —Mike Tyson","Un tropiezo no define tu físico. Tu respuesta sí. —Dwayne Johnson","Si bajaste peso, no celebres con sabotaje. Consolida. —David Goggins","Cada kilo menos es carácter visible. —Chris Bumstead","Progreso detectado. Ego bajo. Disciplina alta. —Entrenador Anónimo","Cuando el número baja, la constancia sonríe. —Bruce Lee","Estás demostrando que no eras excusa, eras proceso. —Jordan Peterson","Meta alcanzada. Ahora mantén el estándar. —Arnold Schwarzenegger","Lograrlo es difícil. Sostenerlo es élite. —Jocko Willink","Objetivo cumplido. Nueva versión desbloqueada. —Dwayne Johnson","El final de una meta es el inicio de otra. —David Goggins","Tu disciplina acaba de ganarte respeto interno. —James Clear","Si te estancaste, revisa detalles, no sueños. —Chris Bumstead","El estancamiento es señal de ajuste, no de derrota. —Tony Robbins","Cuando nada cambia, cambia el enfoque. —Mike Tyson","El progreso lento sigue siendo superior a cero. —Bruce Lee","No confundas pausa con rendición. —Jordan Peterson","Tu cuerpo no necesita drama, necesita consistencia. —Jocko Willink","Cada día cumplido fortalece tu identidad. —James Clear","Hoy hiciste lo necesario. Eso ya te separa de muchos. —Arnold Schwarzenegger","El estándar alto es incómodo. Por eso transforma. —David Goggins","Disciplina mantenida es poder acumulado. —Dwayne Johnson","Si subiste peso, responde con precisión, no con culpa. —Chris Bumstead","Un exceso no destruye el progreso. La repetición sí. —James Clear","El control no es restricción, es estrategia. —Naval Ravikant","Tu cuerpo refleja tus prioridades reales. —Jordan Peterson","Más estructura, menos emoción. —Jocko Willink","Si bajaste grasa, que no suba tu arrogancia. —Mike Tyson","El físico mejora cuando el ego se controla. —Bruce Lee","Cada mejora pequeña es una deuda pagada al pasado. —Entrenador Anónimo","Lo estás logrando porque dejaste de negociar contigo. —David Goggins","La disciplina silenciosa produce resultados ruidosos. —Arnold Schwarzenegger","Cuando falles, falla con análisis, no con abandono. —James Clear","El error corregido es progreso acelerado. —Chris Bumstead","Tu fuerza mental está creciendo al ritmo de tu constancia. —Dwayne Johnson","Si el espejo mejora, es porque tú mejoraste primero. —Jordan Peterson","El cuerpo fuerte nace de decisiones incómodas repetidas. —Mike Tyson","Hoy no fue perfecto. Fue suficiente. —Bruce Lee","Si cumpliste el plan, ya ganaste algo invisible. —Jocko Willink","El progreso se protege con humildad. —Arnold Schwarzenegger","No necesitas extremos. Necesitas constancia brutal. —David Goggins","Cada día disciplinado es una victoria privada. —James Clear","Si el peso bajó, felicidades. Si no, trabaja. —Entrenador Anónimo","El proceso no siempre emociona, pero siempre recompensa. —Chris Bumstead","Tu versión fuerte ya no es teoría. Es práctica. —Dwayne Johnson","Cuando eliges disciplina, eliges poder. —Jordan Peterson","El respeto propio pesa más que cualquier número. —Mike Tyson"];
+    const frasesSoez = [
+      "Tu grasa no desaparece sola. Tú tampoco deberías hacerlo. —Arnold Schwarzenegger",
+      "Si hoy no te duele un poco, mañana te dolerá mucho más. —David Goggins",
+      "El espejo no miente. Decide si te ofende o te motiva. —Mike Tyson",
+      "Tu cuerpo escucha todo lo que haces… y todo lo que evitas. —Bruce Lee",
+      "Cada kilo extra es una decisión repetida. —James Clear",
+      "No estás cansado. Estás desentrenado. —Jocko Willink",
+      "Si no sudas por voluntad, sudarás por consecuencia. —Tony Robbins",
+      "Disciplina es hacer lo necesario cuando nadie te aplaude. —Dwayne Johnson",
+      "El progreso no es cómodo. Por eso pocos lo tienen. —Jordan Peterson",
+      "El hambre se controla. La mediocridad no siempre. —David Goggins",
+      "Tu excusa favorita pesa más que tus mancuernas. —Arnold Schwarzenegger",
+      "El cuerpo que quieres exige hábitos que todavía no tienes. —James Clear",
+      "Si hoy fallas, mañana pesará el doble. —Mike Tyson",
+      "El músculo responde a la presión. Tú también deberías. —Bruce Lee",
+      "Comer por ansiedad no quema ansiedad. —Naval Ravikant",
+      "El esfuerzo diario es más sexy que cualquier resultado rápido. —Gary Vaynerchuk",
+      "No necesitas motivación. Necesitas respeto por tu palabra. —Jocko Willink",
+      "Cada entrenamiento es un voto por la persona que quieres ser. —James Clear",
+      "Si el objetivo te incomoda, vas por buen camino. —Tony Robbins",
+      "El sudor es grasa llorando. —Entrenador Anónimo",
+      "Tu futuro físico se está escribiendo en tu plato. —Michael Pollan",
+      "El que controla sus impulsos controla su destino. —Séneca",
+      "Si no puedes decir que no al postre, no digas que quieres cambiar. —David Goggins",
+      "El peso baja cuando el compromiso sube. —Dwayne Johnson",
+      "El dolor del esfuerzo es temporal. El de rendirse se instala. —Lance Armstrong",
+      "El progreso real no es visible… hasta que lo es. —Arnold Schwarzenegger",
+      "Si subes de peso, no es magia. Es matemática. —James Clear",
+      "La disciplina quema más calorías que la motivación. —Jocko Willink",
+      "El cuerpo fuerte construye una mente peligrosa. —Mike Tyson",
+      "No eres víctima de tu genética, eres rehén de tus hábitos. —Jordan Peterson",
+      "Cada repetición es una negociación contigo mismo. —Bruce Lee",
+      "Comer limpio no es castigo, es estrategia. —Chris Bumstead",
+      "Tu grasa no es el enemigo. Tu indulgencia constante sí. —David Goggins",
+      "El espejo refleja decisiones, no intenciones. —Arnold Schwarzenegger",
+      "El compromiso empieza cuando la emoción termina. —Tony Robbins",
+      "Si hoy te saltas el entrenamiento, mañana te saltará la conciencia. —Jocko Willink",
+      "Un cuerpo definido es disciplina visible. —Entrenador Anónimo",
+      "El cambio físico es paciencia acumulada. —James Clear",
+      "Si no soportas la incomodidad, soportarás el estancamiento. —Mike Tyson",
+      "La constancia convierte lo imposible en inevitable. —Dwayne Johnson",
+      "El hambre emocional no se resuelve en la nevera. —Naval Ravikant",
+      "Cada kilo menos es una excusa menos. —Arnold Schwarzenegger",
+      "Tu cuerpo actual es el resultado de tu estándar actual. —Jordan Peterson",
+      "Si el progreso es lento, al menos que sea constante. —Bruce Lee",
+      "Sudor hoy o arrepentimiento mañana. Elige. —David Goggins",
+      "La grasa corporal es honesta. Tú deberías serlo contigo. —Entrenador Anónimo",
+      "No te falta tiempo. Te sobra autoengaño. —Gary Vaynerchuk",
+      "Si entrenas fuerte, el espejo se calla. —Mike Tyson",
+      "Los resultados no negocian con excusas. —Jocko Willink",
+      "El objetivo no es pesar menos. Es valer más. —Dwayne Johnson",
+      "Tu báscula no tiene sentimientos. Solo datos. —James Clear",
+      "Si sube el número, revisa tus decisiones, no la balanza. —Jocko Willink",
+      "El cuerpo no entiende promesas, entiende repetición. —Arnold Schwarzenegger",
+      "Más disciplina, menos drama. —Mike Tyson",
+      "El six-pack no aparece por manifestación espiritual. —Entrenador Anónimo",
+      "Comer por impulso es entrenar la derrota. —Naval Ravikant",
+      "El cambio físico empieza cuando dejas de negociar contigo. —David Goggins",
+      "No necesitas suerte, necesitas estructura. —Jordan Peterson",
+      "Cada entrenamiento es una factura pagada a tu futuro. —Dwayne Johnson",
+      "Si el progreso fuera cómodo, todos estarían definidos. —Chris Bumstead",
+      "La grasa no se ofende si la ignoras. Se instala. —Arnold Schwarzenegger",
+      "El hambre dura minutos. El orgullo dura días. —Jocko Willink",
+      "Un mal día no arruina el progreso. Rendirse sí. —Tony Robbins",
+      "Tu cuerpo es un proyecto. Compórtate como arquitecto, no como turista. —James Clear",
+      "El cardio no compensa la falta de carácter. —Entrenador Anónimo",
+      "Si fallas el plan, el plan no falló. —David Goggins",
+      "Menos excusas, más repeticiones. —Mike Tyson",
+      "Cada kilo perdido es disciplina acumulada. —Dwayne Johnson",
+      "El músculo no crece en zona cómoda. Tú tampoco. —Arnold Schwarzenegger",
+      "Si el objetivo te asusta, probablemente te transforma. —Jordan Peterson",
+      "Tu grasa corporal responde a tus hábitos, no a tus deseos. —James Clear",
+      "Entrena como si nadie fuera a rescatarte. —David Goggins",
+      "La motivación es volátil. La disciplina es estable. —Jocko Willink",
+      "Si comes como siempre, pesarás como siempre. —Entrenador Anónimo",
+      "El progreso lento sigue siendo progreso. —Bruce Lee",
+      "El espejo no necesita filtros, necesita constancia. —Arnold Schwarzenegger",
+      "Cada comida es una oportunidad de respeto propio. —Naval Ravikant",
+      "No eres débil. Estás mal entrenado. —Mike Tyson",
+      "Tu cuerpo escucha tus hábitos en silencio. —James Clear",
+      "Si no controlas tus impulsos, ellos te controlan a ti. —Séneca",
+      "El entrenamiento no es castigo, es construcción. —Chris Bumstead",
+      "La grasa acumulada es comodidad acumulada. —David Goggins",
+      "Sin incomodidad no hay redefinición. —Jordan Peterson",
+      "El progreso exige paciencia y agresividad al mismo tiempo. —Mike Tyson",
+      "Disciplina es hacer lo correcto incluso aburrido. —Jocko Willink",
+      "No necesitas otro lunes. Necesitas empezar hoy. —Dwayne Johnson",
+      "Cada gota de sudor es una declaración de guerra. —Arnold Schwarzenegger",
+      "Si hoy comes con control, mañana entrenas con orgullo. —Entrenador Anónimo",
+      "El cuerpo fuerte es consecuencia, no casualidad. —Bruce Lee",
+      "Si subes de peso, ajusta el sistema, no la autoestima. —James Clear",
+      "El físico que admiras es paciencia visible. —Chris Bumstead",
+      "El dolor del entrenamiento es inversión. —David Goggins",
+      "No hay transformación sin repetición. —Jocko Willink",
+      "Tu estándar define tu silueta. —Jordan Peterson",
+      "Menos quejas, más sentadillas. —Mike Tyson",
+      "Cada día que cumples suma. Cada día que evitas resta. —James Clear",
+      "El compromiso se demuestra en la cocina y en el gimnasio. —Arnold Schwarzenegger",
+      "El progreso no grita. Se acumula. —Bruce Lee",
+      "Si el número baja, celebra con humildad. —Dwayne Johnson",
+      "Si el número sube, responde con disciplina. —Entrenador Anónimo",
+      "Tu barriga no apareció en un día. Tampoco se irá en uno. —Arnold Schwarzenegger",
+      "Cada vez que dices 'mañana', tu grasa escucha 'quédate'. —David Goggins",
+      "No estás luchando contra el peso. Estás luchando contra tu versión cómoda. —Jordan Peterson",
+      "Si no controlas tu boca, tu boca controla tu físico. —Mike Tyson",
+      "El cuerpo que tienes es el resultado de lo que toleras. —Jocko Willink",
+      "El progreso no necesita aplausos, necesita repetición. —James Clear",
+      "Cada comida es una votación silenciosa por tu futuro. —Naval Ravikant",
+      "Si el pantalón aprieta, el problema no es la tela. —Entrenador Anónimo",
+      "Disciplina es hacer lo correcto cuando nadie sabrá que lo hiciste. —Dwayne Johnson",
+      "El músculo no entiende excusas. Solo estímulo. —Chris Bumstead",
+      "Tu grasa no es genética mágica. Es consistencia mal dirigida. —James Clear",
+      "El espejo es brutalmente honesto. Aprende a serlo tú también. —Mike Tyson",
+      "Si el número sube, tu estándar bajó. —Jocko Willink",
+      "No necesitas más información. Necesitas más ejecución. —David Goggins",
+      "Cada repetición es un ladrillo. ¿Estás construyendo o demoliendo? —Arnold Schwarzenegger",
+      "El hambre pasa. La disciplina queda. —Séneca",
+      "El físico definido es paciencia agresiva. —Chris Bumstead",
+      "Si no soportas el hambre leve, soportarás la frustración constante. —David Goggins",
+      "El peso no sube solo. Sube acompañado de excusas. —Entrenador Anónimo",
+      "Tu cuerpo refleja tu nivel de autoexigencia. —Jordan Peterson",
+      "El progreso real es aburrido. Por eso funciona. —James Clear",
+      "Más control hoy, menos arrepentimiento mañana. —Jocko Willink",
+      "Si quieres definición, define primero tus límites. —Mike Tyson",
+      "La grasa corporal no negocia con promesas. —Arnold Schwarzenegger",
+      "Tu estándar diario pesa más que tu genética. —Dwayne Johnson",
+      "Cada entrenamiento cancelado fortalece tu versión débil. —David Goggins",
+      "El cambio empieza cuando te cansas de tus propias excusas. —Tony Robbins",
+      "No eres víctima del metabolismo. Eres rehén de hábitos suaves. —Jordan Peterson",
+      "Si el espejo incomoda, úsalo como combustible. —Mike Tyson",
+      "Comer sin pensar es sabotaje elegante. —Naval Ravikant",
+      "Tu cuerpo no necesita más ánimo. Necesita estructura. —Jocko Willink",
+      "El músculo crece bajo tensión. El carácter también. —Arnold Schwarzenegger",
+      "Si hoy aflojas, mañana empiezas desde más atrás. —Entrenador Anónimo",
+      "El progreso exige precisión, no entusiasmo. —James Clear",
+      "Cada kilo perdido es una victoria privada. —Dwayne Johnson",
+      "El físico fuerte no es suerte, es estándar alto sostenido. —Chris Bumstead",
+      "Si no planificas tu comida, planificas tu estancamiento. —David Goggins",
+      "La báscula no te juzga. Te informa. —Mike Tyson",
+      "El autocontrol es el verdadero superpoder. —Séneca",
+      "Si el número baja, tu disciplina ganó la batalla. —Jocko Willink",
+      "El cuerpo responde a lo que repites, no a lo que deseas. —Bruce Lee",
+      "No estás demasiado ocupado. Estás mal priorizado. —Gary Vaynerchuk",
+      "Cada gramo de grasa es energía que no administraste. —Entrenador Anónimo",
+      "Si quieres respeto externo, empieza por el interno. —Jordan Peterson",
+      "El sudor es el precio de la definición. —Arnold Schwarzenegger",
+      "El progreso físico es matemática aplicada con carácter. —James Clear",
+      "Tu versión fuerte se construye cuando nadie te ve. —Dwayne Johnson",
+      "Si hoy eliges comodidad, mañana eliges mediocridad. —David Goggins",
+      "El músculo se gana. La grasa se acumula. Elige tu esfuerzo. —Mike Tyson",
+      "Tu cuerpo actual es la auditoría de tus decisiones. —Jocko Willink",
+      "Si el número subió, no te castigues. Ajusta el sistema. —James Clear",
+      "Subir un kilo no es tragedia. Repetirlo sí. —Jocko Willink",
+      "Hoy la báscula te dio información. Mañana dale resultados. —Arnold Schwarzenegger",
+      "Si retrocedes, que sea para impulsarte más fuerte. —Mike Tyson",
+      "Un tropiezo no define tu físico. Tu respuesta sí. —Dwayne Johnson",
+      "Si bajaste peso, no celebres con sabotaje. Consolida. —David Goggins",
+      "Cada kilo menos es carácter visible. —Chris Bumstead",
+      "Progreso detectado. Ego bajo. Disciplina alta. —Entrenador Anónimo",
+      "Cuando el número baja, la constancia sonríe. —Bruce Lee",
+      "Estás demostrando que no eras excusa, eras proceso. —Jordan Peterson",
+      "Meta alcanzada. Ahora mantén el estándar. —Arnold Schwarzenegger",
+      "Lograrlo es difícil. Sostenerlo es élite. —Jocko Willink",
+      "Objetivo cumplido. Nueva versión desbloqueada. —Dwayne Johnson",
+      "El final de una meta es el inicio de otra. —David Goggins",
+      "Tu disciplina acaba de ganarte respeto interno. —James Clear",
+      "Si te estancaste, revisa detalles, no sueños. —Chris Bumstead",
+      "El estancamiento es señal de ajuste, no de derrota. —Tony Robbins",
+      "Cuando nada cambia, cambia el enfoque. —Mike Tyson",
+      "El progreso lento sigue siendo superior a cero. —Bruce Lee",
+      "No confundas pausa con rendición. —Jordan Peterson",
+      "Tu cuerpo no necesita drama, necesita consistencia. —Jocko Willink",
+      "Cada día cumplido fortalece tu identidad. —James Clear",
+      "Hoy hiciste lo necesario. Eso ya te separa de muchos. —Arnold Schwarzenegger",
+      "El estándar alto es incómodo. Por eso transforma. —David Goggins",
+      "Disciplina mantenida es poder acumulado. —Dwayne Johnson",
+      "Si subiste peso, responde con precisión, no con culpa. —Chris Bumstead",
+      "Un exceso no destruye el progreso. La repetición sí. —James Clear",
+      "El control no es restricción, es estrategia. —Naval Ravikant",
+      "Tu cuerpo refleja tus prioridades reales. —Jordan Peterson",
+      "Más estructura, menos emoción. —Jocko Willink",
+      "Si bajaste grasa, que no suba tu arrogancia. —Mike Tyson",
+      "El físico mejora cuando el ego se controla. —Bruce Lee",
+      "Cada mejora pequeña es una deuda pagada al pasado. —Entrenador Anónimo",
+      "Lo estás logrando porque dejaste de negociar contigo. —David Goggins",
+      "La disciplina silenciosa produce resultados ruidosos. —Arnold Schwarzenegger",
+      "Cuando falles, falla con análisis, no con abandono. —James Clear",
+      "El error corregido es progreso acelerado. —Chris Bumstead",
+      "Tu fuerza mental está creciendo al ritmo de tu constancia. —Dwayne Johnson",
+      "Si el espejo mejora, es porque tú mejoraste primero. —Jordan Peterson",
+      "El cuerpo fuerte nace de decisiones incómodas repetidas. —Mike Tyson",
+      "Hoy no fue perfecto. Fue suficiente. —Bruce Lee",
+      "Si cumpliste el plan, ya ganaste algo invisible. —Jocko Willink",
+      "El progreso se protege con humildad. —Arnold Schwarzenegger",
+      "No necesitas extremos. Necesitas constancia brutal. —David Goggins",
+      "Cada día disciplinado es una victoria privada. —James Clear",
+      "Si el peso bajó, felicidades. Si no, trabaja. —Entrenador Anónimo",
+      "El proceso no siempre emociona, pero siempre recompensa. —Chris Bumstead",
+      "Tu versión fuerte ya no es teoría. Es práctica. —Dwayne Johnson",
+      "Cuando eliges disciplina, eliges poder. —Jordan Peterson",
+      "El respeto propio pesa más que cualquier número. —Mike Tyson"
+    ];
 
     let chart = null;
     let generoGuardado = localStorage.getItem("genero") || "";
@@ -936,18 +1134,23 @@
 
     function clasificarGrasa(grasa, genero) {
       if (genero === "hombre") {
-        if (grasa < 6) return "ESENCIAL";
-        if (grasa < 13) return "ATLÉTICO";
-        if (grasa < 17) return "FITNESS";
-        if (grasa < 24) return "PROMEDIO";
-        return "ALTO";
-      } else if (genero === "mujer") {
-        if (grasa < 10) return "ESENCIAL";
-        if (grasa < 20) return "ATLÉTICO";
-        if (grasa < 24) return "FITNESS";
-        if (grasa < 31) return "PROMEDIO";
-        return "ALTO";
+        if (grasa >= 2 && grasa <= 5) return "GRASA ESENCIAL";
+        if (grasa >= 6 && grasa <= 13) return "ATLETAS";
+        if (grasa >= 14 && grasa <= 17) return "FITNESS";
+        if (grasa >= 18 && grasa <= 24) return "ACEPTABLE / SALUDABLE";
+        if (grasa > 24) return "SOBREPESO / OBESIDAD";
+        return "MUY BAJO";
       }
+
+      if (genero === "mujer") {
+        if (grasa >= 10 && grasa <= 13) return "GRASA ESENCIAL";
+        if (grasa >= 14 && grasa <= 20) return "ATLETAS";
+        if (grasa >= 21 && grasa <= 24) return "FITNESS";
+        if (grasa >= 25 && grasa <= 31) return "ACEPTABLE / SALUDABLE";
+        if (grasa > 31) return "SOBREPESO / OBESIDAD";
+        return "MUY BAJO";
+      }
+
       return "N/A";
     }
 
@@ -1014,7 +1217,7 @@
 
       const clasificacion = clasificarGrasa(parseFloat(grasa), genero);
       document.getElementById("grasa-display").innerHTML = `
-        <div class="grasa-label">% grasa corporal estimado (${genero.toUpperCase()})</div>
+        <div class="grasa-label">% GRASA CORPORAL ESTIMADO · ${genero.toUpperCase()}</div>
         <div class="grasa-value">${grasa}%</div>
         <div class="grasa-state">${clasificacion}</div>
       `;
