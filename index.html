@@ -4,87 +4,50 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>Desgrasa y Arrasa</title>
-  <meta name="theme-color" content="#120b2b" />
+  <meta name="theme-color" content="#0e1328" />
+  <meta name="description" content="Registro de peso, métricas corporales e historial de evolución." />
 
-  <link
-    rel="icon"
-    type="image/svg+xml"
-    href='data:image/svg+xml;utf8,
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-      <defs>
-        <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stop-color="%2300F5FF"/>
-          <stop offset="55%" stop-color="%237B61FF"/>
-          <stop offset="100%" stop-color="%23FF2E93"/>
-        </linearGradient>
-        <filter id="glow">
-          <feGaussianBlur stdDeviation="4" result="b"/>
-          <feMerge>
-            <feMergeNode in="b"/>
-            <feMergeNode in="SourceGraphic"/>
-          </feMerge>
-        </filter>
-      </defs>
-      <rect width="128" height="128" rx="30" fill="%23120B2B"/>
-      <path d="M40 36c0-10 8-18 18-18s18 8 18 18c0 8-5 14-12 17 9 3 16 11 16 21 0 13-10 23-24 23S32 87 32 74c0-10 7-18 16-21-5-2-8-5-10-9"
-            fill="none" stroke="url(%23g)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" filter="url(%23glow)"/>
-      <path d="M64 44c7 8 14 18 14 28 0 10-6 17-14 17s-14-7-14-17c0-10 7-20 14-28z"
-            fill="none" stroke="url(%23g)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M62 60l-7 13h7l-3 11 14-18h-8l4-6z" fill="%23CFFFFF"/>
-    </svg>'
-  />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%2300e7ff'/%3E%3Cstop offset='50%25' stop-color='%23745cff'/%3E%3Cstop offset='100%25' stop-color='%23ff4ea3'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='128' height='128' rx='28' fill='%230e1328'/%3E%3Cpath d='M30 72c0-22 14-38 34-38s34 16 34 38' fill='none' stroke='url(%23g)' stroke-width='10' stroke-linecap='round'/%3E%3Cpath d='M42 74c0 13 10 24 22 24s22-11 22-24' fill='none' stroke='url(%23g)' stroke-width='10' stroke-linecap='round'/%3E%3Ccircle cx='64' cy='72' r='9' fill='%23eaffff'/%3E%3Cpath d='M64 72L84 58' stroke='%23eaffff' stroke-width='6' stroke-linecap='round'/%3E%3C/svg%3E" />
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      --bg1:#120b2b;
-      --bg2:#1a1643;
-      --bg3:#101d43;
-      --cyan:#00f5ff;
-      --cyan2:#3fd3ff;
-      --pink:#ff2e93;
-      --violet:#7b61ff;
-      --green:#00ff88;
-      --red:#ff5a7a;
+      --bg1:#0b1022;
+      --bg2:#151c3c;
+      --bg3:#0e2244;
+      --cyan:#00e7ff;
+      --pink:#ff4ea3;
+      --violet:#745cff;
+      --green:#22e08a;
+      --red:#ff647f;
       --yellow:#ffd166;
       --text:#ffffff;
-      --muted:#addfff;
-      --card:rgba(18, 23, 63, 0.9);
-      --line:rgba(0,245,255,.16);
-      --field-bg:rgba(14, 43, 96, 0.68);
-      --field-line:rgba(0, 212, 255, .48);
+      --muted:#b9d8ff;
+      --card:rgba(15,21,49,.88);
+      --line:rgba(0,231,255,.16);
+      --field-bg:rgba(10,32,79,.72);
+      --field-line:rgba(0,212,255,.34);
+      --shadow:0 16px 50px rgba(0,0,0,.24);
     }
 
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      min-width:0;
-    }
-
-    html, body{
-      width:100%;
-      max-width:100%;
-      overflow-x:hidden;
-    }
-
+    *{box-sizing:border-box;min-width:0}
+    html,body{margin:0;padding:0;width:100%;max-width:100%;overflow-x:hidden}
     body{
       font-family:'Outfit',sans-serif;
-      background:
-        radial-gradient(circle at top left, rgba(123,97,255,.18), transparent 30%),
-        radial-gradient(circle at top right, rgba(255,46,147,.14), transparent 24%),
-        linear-gradient(135deg, var(--bg1) 0%, var(--bg2) 48%, var(--bg3) 100%);
+      color:var(--text);
       min-height:100vh;
       padding:14px;
-      color:var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(116,92,255,.18), transparent 28%),
+        radial-gradient(circle at top right, rgba(255,78,163,.12), transparent 24%),
+        linear-gradient(135deg, var(--bg1) 0%, var(--bg2) 48%, var(--bg3) 100%);
     }
 
     .container{
-      width:min(100%, 560px);
+      width:min(100%, 620px);
       margin:0 auto;
-      overflow:hidden;
     }
 
     .hero{
@@ -95,34 +58,31 @@
     }
 
     .app-icon{
-      width:64px;
-      height:64px;
-      border-radius:20px;
+      width:70px;
+      height:70px;
+      border-radius:22px;
       display:grid;
       place-items:center;
-      background:linear-gradient(145deg, rgba(0,255,255,.10), rgba(255,0,128,.14));
-      border:1px solid rgba(255,255,255,.08);
-      box-shadow:0 14px 32px rgba(0,0,0,.24);
       flex-shrink:0;
+      background:
+        linear-gradient(145deg, rgba(0,231,255,.10), rgba(255,78,163,.12));
+      border:1px solid rgba(255,255,255,.08);
+      box-shadow:var(--shadow);
     }
 
     .app-icon svg{
-      width:46px;
-      height:46px;
+      width:50px;
+      height:50px;
       display:block;
     }
 
-    .hero-copy{
-      flex:1;
-      overflow:hidden;
-    }
-
     .hero-copy h1{
-      background:linear-gradient(135deg, #00ffff 0%, #7b61ff 50%, #ff5db2 100%);
+      margin:0;
+      background:linear-gradient(135deg, #00f0ff 0%, #8a72ff 50%, #ff67b3 100%);
       -webkit-background-clip:text;
       -webkit-text-fill-color:transparent;
       background-clip:text;
-      font-size:2.05rem;
+      font-size:2.1rem;
       font-weight:800;
       letter-spacing:-1px;
       line-height:1.02;
@@ -130,48 +90,41 @@
     }
 
     .hero-copy p{
+      margin:6px 0 0 0;
       color:var(--muted);
-      margin-top:6px;
       font-weight:500;
-      font-size:.93rem;
-      line-height:1.3;
+      font-size:.96rem;
+      line-height:1.35;
     }
 
     .card{
-      width:100%;
       background:var(--card);
-      backdrop-filter:blur(20px);
+      backdrop-filter:blur(18px);
       border-radius:24px;
       padding:18px;
       margin-bottom:16px;
-      box-shadow:0 12px 48px rgba(0,255,255,.08);
       border:1.5px solid var(--line);
-      overflow:hidden;
+      box-shadow:0 10px 42px rgba(0,231,255,.06);
     }
 
-    h3{
+    h2, h3{
+      margin:0 0 16px 0;
       color:var(--cyan);
-      margin-bottom:16px;
       font-size:1rem;
       font-weight:800;
       text-transform:uppercase;
       letter-spacing:1.4px;
     }
 
-    .field{
-      margin-bottom:14px;
-    }
-
-    .field:last-child{
-      margin-bottom:0;
-    }
+    .field{margin-bottom:14px}
+    .field:last-child{margin-bottom:0}
 
     .field label{
       display:block;
       margin-bottom:8px;
       font-size:.92rem;
       font-weight:700;
-      color:#e8fbff;
+      color:#ecfbff;
       line-height:1.25;
     }
 
@@ -187,7 +140,6 @@
       display:grid;
       grid-template-columns:1fr 1fr;
       gap:12px;
-      width:100%;
     }
 
     .input-row.single{
@@ -196,6 +148,7 @@
 
     input, select, button, canvas{
       max-width:100%;
+      font-family:'Outfit',sans-serif;
     }
 
     input, select{
@@ -205,10 +158,9 @@
       border:1.5px solid var(--field-line);
       border-radius:14px;
       font-size:15px;
-      transition:all .25s ease;
+      transition:all .22s ease;
       background:var(--field-bg);
       color:#fff;
-      font-family:'Outfit',sans-serif;
       font-weight:600;
       appearance:none;
       -webkit-appearance:none;
@@ -216,14 +168,14 @@
     }
 
     input::placeholder{
-      color:#79d8ff;
-      opacity:.78;
+      color:#89dbff;
+      opacity:.8;
     }
 
     select{
       background-image:
-        linear-gradient(45deg, transparent 50%, #7fdcff 50%),
-        linear-gradient(135deg, #7fdcff 50%, transparent 50%);
+        linear-gradient(45deg, transparent 50%, #8fdfff 50%),
+        linear-gradient(135deg, #8fdfff 50%, transparent 50%);
       background-position:
         calc(100% - 24px) calc(50% - 3px),
         calc(100% - 17px) calc(50% - 3px);
@@ -233,7 +185,7 @@
     }
 
     select option{
-      background:#1a1f3a;
+      background:#1b2144;
       color:#fff;
     }
 
@@ -243,79 +195,88 @@
     }
 
     input:focus, select:focus{
-      border-color:var(--cyan);
       outline:none;
-      box-shadow:0 0 0 4px rgba(0,255,255,.08), 0 0 25px rgba(0,255,255,.18);
-      background:rgba(14, 43, 96, 0.9);
+      border-color:var(--cyan);
+      box-shadow:0 0 0 4px rgba(0,231,255,.08), 0 0 24px rgba(0,231,255,.16);
+      background:rgba(11,36,88,.9);
     }
 
     .actions{
       display:grid;
       grid-template-columns:1fr 1fr;
       gap:10px;
-      width:100%;
+      margin-top:8px;
     }
 
     button{
       width:100%;
       padding:15px 16px;
-      margin-top:10px;
-      background:linear-gradient(135deg, #00ffff, #00d4ff);
-      color:#0a0e27;
       border:none;
       border-radius:14px;
       font-size:15px;
       font-weight:800;
       cursor:pointer;
-      transition:all .25s ease;
+      transition:all .22s ease;
       text-transform:uppercase;
       letter-spacing:1px;
-      font-family:'Outfit',sans-serif;
     }
 
     button:hover{
-      transform:translateY(-1px) scale(1.01);
-      box-shadow:0 12px 30px rgba(0,255,255,.25);
+      transform:translateY(-1px);
     }
 
-    button.sec{
-      background:linear-gradient(135deg, #ff0080, #ff1493);
+    button:focus{
+      outline:none;
+      box-shadow:0 0 0 4px rgba(255,255,255,.08);
+    }
+
+    .btn-primary{
+      background:linear-gradient(135deg,#00f0ff,#00cfff);
+      color:#091124;
+      box-shadow:0 10px 26px rgba(0,231,255,.22);
+    }
+
+    .btn-secondary{
+      background:linear-gradient(135deg,#ff4ea3,#ff2d86);
       color:#fff;
+      box-shadow:0 10px 26px rgba(255,78,163,.18);
     }
 
-    button.danger{
-      background:linear-gradient(135deg, #ff1744, #d32f2f);
+    .btn-danger{
+      background:linear-gradient(135deg,#ff365f,#d72f49);
       color:#fff;
+      box-shadow:0 10px 26px rgba(255,70,95,.18);
     }
 
-    button.small{
+    .btn-small{
       width:auto;
-      padding:8px 14px;
+      min-width:44px;
+      padding:9px 12px;
       font-size:12px;
-      margin:0;
+      border-radius:12px;
       flex-shrink:0;
     }
 
     #frase{
       width:100%;
       text-align:center;
-      font-size:1.03rem;
+      font-size:1.02rem;
       font-style:italic;
       font-weight:700;
       color:#fff;
       padding:22px 16px;
-      background:linear-gradient(135deg, #ff0080, #7b61ff);
+      background:linear-gradient(135deg,#ff2f92,#7a63ff);
       border-radius:18px;
-      text-shadow:0 3px 6px rgba(0,0,0,.45);
+      text-shadow:0 3px 6px rgba(0,0,0,.35);
       line-height:1.55;
-      min-height:122px;
+      min-height:118px;
       display:flex;
       align-items:center;
       justify-content:center;
       overflow-wrap:anywhere;
     }
 
-    .imc-box, .grasa-box{
+    .metric-box{
       width:100%;
       padding:20px 16px;
       border-radius:16px;
@@ -324,17 +285,17 @@
       overflow:hidden;
     }
 
-    .imc-box{
-      background:linear-gradient(135deg, rgba(0,255,255,.12), rgba(0,212,255,.08));
-      border:1.5px solid rgba(0,255,255,.25);
+    .metric-box.imc{
+      background:linear-gradient(135deg,rgba(0,231,255,.12),rgba(0,212,255,.08));
+      border:1.5px solid rgba(0,231,255,.22);
     }
 
-    .grasa-box{
-      background:linear-gradient(135deg, rgba(255,0,128,.14), rgba(255,20,147,.08));
-      border:1.5px solid rgba(255,0,128,.25);
+    .metric-box.grasa{
+      background:linear-gradient(135deg,rgba(255,78,163,.15),rgba(255,45,134,.08));
+      border:1.5px solid rgba(255,78,163,.22);
     }
 
-    .imc-label, .grasa-label{
+    .metric-label{
       font-weight:700;
       font-size:.9em;
       text-transform:uppercase;
@@ -342,59 +303,52 @@
       margin-bottom:8px;
     }
 
-    .imc-label{ color:#00ffff; }
-    .grasa-label{ color:#ff5cb8; }
+    .metric-box.imc .metric-label{color:#00f0ff}
+    .metric-box.grasa .metric-label{color:#ff8fc7}
 
-    .imc-value{
-      color:#00ffff;
-      font-size:2.4rem;
-      font-weight:800;
-      display:block;
-      margin:10px 0;
-    }
-
-    .grasa-value{
-      color:#ff84ca;
+    .metric-value{
       font-size:2.25rem;
       font-weight:800;
       display:block;
       margin:10px 0;
+      line-height:1;
     }
 
-    .imc-class, .grasa-state{
-      color:#dffcff;
+    .metric-box.imc .metric-value{color:#00f0ff}
+    .metric-box.grasa .metric-value{color:#ff93cb}
+
+    .metric-main{
+      color:#e6fbff;
       font-size:1rem;
       font-weight:700;
       line-height:1.35;
     }
 
-    .imc-range{
-      color:#8ee9ff;
-      font-size:.88em;
-      font-weight:600;
+    .metric-sub{
+      color:#a5dfff;
+      font-size:.86rem;
+      line-height:1.35;
       margin-top:8px;
-      line-height:1.3;
     }
 
     #stats{
       display:grid;
-      grid-template-columns:repeat(2, 1fr);
+      grid-template-columns:repeat(2,1fr);
       gap:12px;
-      width:100%;
+      margin-top:2px;
     }
 
     .stat{
       background:rgba(255,255,255,.03);
-      padding:16px 10px;
+      padding:16px 12px;
       border-radius:16px;
       border:1px solid rgba(255,255,255,.06);
-      overflow:hidden;
     }
 
     .stat-val{
-      font-size:1.85rem;
+      font-size:1.8rem;
       font-weight:800;
-      background:linear-gradient(135deg, #00ffff, #7bdcff);
+      background:linear-gradient(135deg,#00f0ff,#7dd8ff);
       -webkit-background-clip:text;
       -webkit-text-fill-color:transparent;
       background-clip:text;
@@ -402,8 +356,8 @@
     }
 
     .stat-lab{
-      font-size:.8em;
-      color:#9fd9ff;
+      font-size:.8rem;
+      color:#a9dbff;
       margin-top:8px;
       text-transform:uppercase;
       letter-spacing:.8px;
@@ -422,30 +376,30 @@
 
     #barra{
       height:100%;
-      background:linear-gradient(90deg, #00ffff, #7b61ff, #ff1493);
-      transition:width .6s ease;
-      box-shadow:0 0 15px rgba(0,255,255,.35);
       width:0%;
+      background:linear-gradient(90deg,#00f0ff,#745cff,#ff4ea3);
+      transition:width .5s ease;
+      box-shadow:0 0 14px rgba(0,231,255,.32);
     }
 
     .progress-label{
       text-align:center;
-      color:#9fd9ff;
-      font-size:.9em;
+      color:#a9dbff;
+      font-size:.92rem;
       font-weight:700;
       line-height:1.35;
     }
 
     .chart-wrap{
       width:100%;
-      min-height:280px;
+      min-height:285px;
       position:relative;
       overflow:hidden;
     }
 
     canvas{
       border-radius:16px;
-      box-shadow:0 8px 24px rgba(0,255,255,.10);
+      box-shadow:0 8px 24px rgba(0,231,255,.08);
       background:rgba(255,255,255,.02);
       padding:8px;
       width:100% !important;
@@ -464,459 +418,364 @@
       margin:10px 0;
       border-radius:14px;
       border:1px solid rgba(255,255,255,.08);
-      overflow:hidden;
     }
 
     .entry-text{
       flex:1;
-      overflow:hidden;
     }
 
     .entry-date{
-      font-size:.88em;
-      color:#9fd9ff;
+      font-size:.88rem;
+      color:#a9dbff;
       font-weight:600;
-      word-break:break-word;
     }
 
     .entry-weight{
-      font-size:1.2em;
+      font-size:1.16rem;
       font-weight:800;
-      color:#00ffff;
+      color:#00f0ff;
       margin-top:4px;
-      word-break:break-word;
     }
 
     .entry-meta{
-      font-size:.8em;
-      color:#9fb9cf;
+      font-size:.82rem;
+      color:#9ab6d0;
       margin-top:4px;
-      word-break:break-word;
+      line-height:1.35;
     }
 
-    .entry-change{
-      font-size:.9em;
-      margin:0 6px;
-      font-weight:700;
-      white-space:nowrap;
+    .entry-right{
+      display:flex;
+      align-items:center;
+      gap:10px;
       flex-shrink:0;
     }
 
-    .up{ color:var(--red); }
-    .down{ color:var(--green); }
-    .same{ color:var(--yellow); }
+    .entry-change{
+      font-size:.9rem;
+      font-weight:700;
+      white-space:nowrap;
+    }
+
+    .up{color:var(--red)}
+    .down{color:var(--green)}
+    .same{color:var(--yellow)}
 
     .empty{
       text-align:center;
-      color:#9fd9ff;
-      font-size:.95em;
+      color:#a9dbff;
+      font-size:.95rem;
       padding:18px;
-      word-break:break-word;
+      line-height:1.45;
+    }
+
+    .microcopy{
+      color:#9ecfff;
+      font-size:.82rem;
+      line-height:1.45;
+      margin-top:10px;
+    }
+
+    .sr-only{
+      position:absolute;
+      width:1px;
+      height:1px;
+      padding:0;
+      margin:-1px;
+      overflow:hidden;
+      clip:rect(0,0,0,0);
+      white-space:nowrap;
+      border:0;
     }
 
     @media (max-width:560px){
-      .input-row, .actions{
-        grid-template-columns:1fr;
-      }
-      #stats{
-        grid-template-columns:1fr 1fr;
-      }
-      .hero-copy h1{
-        font-size:1.82rem;
-      }
+      .input-row,.actions{grid-template-columns:1fr}
+      #stats{grid-template-columns:1fr 1fr}
+      .hero-copy h1{font-size:1.82rem}
     }
 
     @media (max-width:390px){
-      body{ padding:10px; }
-      .card{ padding:16px; }
-      .hero{ align-items:flex-start; }
-      .hero-copy h1{ font-size:1.62rem; }
-      .hero-copy p{ font-size:.88rem; }
-      #stats{ grid-template-columns:1fr; }
+      body{padding:10px}
+      .card{padding:16px}
+      .hero{align-items:flex-start}
+      .hero-copy h1{font-size:1.62rem}
+      .hero-copy p{font-size:.88rem}
+      #stats{grid-template-columns:1fr}
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="hero">
+  <main class="container">
+    <section class="hero" aria-label="Cabecera de la aplicación">
       <div class="app-icon" aria-hidden="true">
         <svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
           <defs>
-            <linearGradient id="logoG" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stop-color="#00F5FF"/>
-              <stop offset="55%" stop-color="#7B61FF"/>
-              <stop offset="100%" stop-color="#FF2E93"/>
+            <linearGradient id="logoGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#00E7FF"/>
+              <stop offset="50%" stop-color="#745CFF"/>
+              <stop offset="100%" stop-color="#FF4EA3"/>
             </linearGradient>
-            <filter id="logoGlow">
-              <feGaussianBlur stdDeviation="4" result="b"/>
-              <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-            </filter>
           </defs>
-          <path d="M40 36c0-10 8-18 18-18s18 8 18 18c0 8-5 14-12 17 9 3 16 11 16 21 0 13-10 23-24 23S32 87 32 74c0-10 7-18 16-21-5-2-8-5-10-9"
-                fill="none" stroke="url(#logoG)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" filter="url(#logoGlow)"/>
-          <path d="M64 44c7 8 14 18 14 28 0 10-6 17-14 17s-14-7-14-17c0-10 7-20 14-28z"
-                fill="none" stroke="url(#logoG)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M62 60l-7 13h7l-3 11 14-18h-8l4-6z" fill="#CFFFFF"/>
+          <path d="M30 72c0-22 14-38 34-38s34 16 34 38" fill="none" stroke="url(#logoGrad)" stroke-width="10" stroke-linecap="round"/>
+          <path d="M42 74c0 13 10 24 22 24s22-11 22-24" fill="none" stroke="url(#logoGrad)" stroke-width="10" stroke-linecap="round"/>
+          <circle cx="64" cy="72" r="9" fill="#ECFFFF"/>
+          <path d="M64 72L84 58" stroke="#ECFFFF" stroke-width="6" stroke-linecap="round"/>
         </svg>
       </div>
       <div class="hero-copy">
         <h1>Desgrasa y Arrasa</h1>
-        <p>Tu peso, tus métricas y tus citas con mala leche fina.</p>
+        <p>Registra tu peso, vigila tu tendencia y deja de negociar con la báscula.</p>
       </div>
-    </div>
+    </section>
 
-    <div class="card">
-      <h3>Perfil</h3>
+    <section class="card" aria-labelledby="perfilTitle">
+      <h3 id="perfilTitle">Perfil</h3>
 
       <div class="field">
-        <label for="genero">Sexo / género biológico</label>
-        <select id="genero" onchange="guardarGenero()">
+        <label for="genero">Sexo biológico</label>
+        <select id="genero">
           <option value="">Selecciona una opción</option>
           <option value="hombre">Hombre</option>
           <option value="mujer">Mujer</option>
         </select>
-        <span class="hint">Se usa para estimar el porcentaje de grasa corporal.</span>
+        <span class="hint">Se usa solo para la estimación orientativa del porcentaje de grasa corporal.</span>
       </div>
 
       <div class="field">
         <label for="fechaNacimiento">Fecha de nacimiento</label>
-        <input type="date" id="fechaNacimiento" onchange="guardarFechaNacimiento()">
-        <span class="hint">Sirve para calcular tu edad y ajustar algunas métricas.</span>
+        <input type="date" id="fechaNacimiento" />
+        <span class="hint">Sirve para calcular la edad actual y ajustar algunas métricas.</span>
       </div>
 
       <div class="field">
         <label for="pesoObjetivo">Peso objetivo (kg)</label>
-        <input type="number" id="pesoObjetivo" placeholder="Ejemplo: 74.5" step="0.1" min="0" onchange="guardarPesoObjetivo()">
-        <span class="hint">Marca tu meta para calcular el progreso real.</span>
+        <input type="number" id="pesoObjetivo" placeholder="Ejemplo: 74.5" step="0.1" min="20" max="400" />
+        <span class="hint">Tu objetivo se usa para calcular el progreso acumulado.</span>
       </div>
-    </div>
+    </section>
 
-    <div class="card">
-      <h3>Registrar peso</h3>
+    <section class="card" aria-labelledby="registroTitle">
+      <h3 id="registroTitle">Registrar peso</h3>
 
       <div class="input-row">
         <div class="field">
           <label for="fecha">Fecha del registro</label>
-          <input type="date" id="fecha">
+          <input type="date" id="fecha" />
           <span class="hint">Si ya existe un registro ese día, se actualizará.</span>
         </div>
 
         <div class="field">
           <label for="peso">Peso actual (kg)</label>
-          <input type="number" id="peso" placeholder="Ejemplo: 81.3" step="0.1" min="0">
-          <span class="hint">Usa un decimal si quieres más precisión.</span>
+          <input type="number" id="peso" placeholder="Ejemplo: 81.3" step="0.1" min="20" max="400" />
+          <span class="hint">Admite un decimal para más precisión.</span>
         </div>
       </div>
 
       <div class="input-row single">
         <div class="field">
           <label for="altura">Altura (m)</label>
-          <input type="number" id="altura" placeholder="Ejemplo: 1.78" step="0.01" min="0">
-          <span class="hint">Se guarda para futuros cálculos de IMC y grasa corporal.</span>
+          <input type="number" id="altura" placeholder="Ejemplo: 1.78" step="0.01" min="1" max="2.5" />
+          <span class="hint">Se guarda para cálculos de IMC y grasa corporal estimada.</span>
         </div>
       </div>
 
       <div class="actions">
-        <button onclick="guardar()">Guardar registro</button>
-        <button class="danger" onclick="limpiarTodo()">Borrar todo</button>
+        <button id="guardarBtn" class="btn-primary" type="button">Guardar registro</button>
+        <button id="borrarTodoBtn" class="btn-danger" type="button">Borrar todo</button>
       </div>
-    </div>
+    </section>
 
-    <div class="card">
-      <div id="frase">¡Carga tu motivación!</div>
-    </div>
+    <section class="card" aria-labelledby="fraseTitle">
+      <h2 id="fraseTitle" class="sr-only">Frase motivacional</h2>
+      <div id="frase">Carga datos y deja de escaquearte.</div>
+    </section>
 
-    <div class="card">
-      <h3>Métricas corporales</h3>
-      <div class="imc-box" id="imc-display"></div>
-      <div class="grasa-box" id="grasa-display"></div>
+    <section class="card" aria-labelledby="metricasTitle">
+      <h3 id="metricasTitle">Métricas corporales</h3>
+
+      <div class="metric-box imc" id="imc-display"></div>
+      <div class="metric-box grasa" id="grasa-display"></div>
+
       <div id="stats"></div>
-      <div id="progress"><div id="barra"></div></div>
-      <div class="progress-label">Progreso: 0%</div>
-    </div>
 
-    <div class="card">
-      <h3>Evolución</h3>
-      <div class="chart-wrap">
-        <canvas id="chart" height="250"></canvas>
+      <div id="progress" aria-hidden="true">
+        <div id="barra"></div>
       </div>
-    </div>
+      <div class="progress-label">Progreso: sin objetivo</div>
 
-    <div class="card">
-      <h3>Historial</h3>
+      <div class="microcopy">
+        El IMC y el porcentaje de grasa corporal son orientativos. No sustituyen una medición clínica ni una valoración profesional.
+      </div>
+    </section>
+
+    <section class="card" aria-labelledby="graficoTitle">
+      <h3 id="graficoTitle">Evolución</h3>
+      <div class="chart-wrap">
+        <canvas id="chart" height="250" aria-label="Gráfico de evolución del peso"></canvas>
+      </div>
+      <div class="microcopy">
+        La línea futura muestra una tendencia estimada a 30 días basada en tus últimos registros. No es una predicción médica.
+      </div>
+    </section>
+
+    <section class="card" aria-labelledby="historialTitle">
+      <h3 id="historialTitle">Historial</h3>
       <div id="historial"></div>
-    </div>
-  </div>
+    </section>
+  </main>
 
   <script>
-    const frasesSoez = [
-      "Tu grasa no desaparece sola. Tú tampoco deberías hacerlo. —Arnold Schwarzenegger",
-      "Si hoy no te duele un poco, mañana te dolerá mucho más. —David Goggins",
-      "El espejo no miente. Decide si te ofende o te motiva. —Mike Tyson",
-      "Tu cuerpo escucha todo lo que haces… y todo lo que evitas. —Bruce Lee",
-      "Cada kilo extra es una decisión repetida. —James Clear",
-      "No estás cansado. Estás desentrenado. —Jocko Willink",
-      "Si no sudas por voluntad, sudarás por consecuencia. —Tony Robbins",
-      "Disciplina es hacer lo necesario cuando nadie te aplaude. —Dwayne Johnson",
-      "El progreso no es cómodo. Por eso pocos lo tienen. —Jordan Peterson",
-      "El hambre se controla. La mediocridad no siempre. —David Goggins",
-      "Tu excusa favorita pesa más que tus mancuernas. —Arnold Schwarzenegger",
-      "El cuerpo que quieres exige hábitos que todavía no tienes. —James Clear",
-      "Si hoy fallas, mañana pesará el doble. —Mike Tyson",
-      "El músculo responde a la presión. Tú también deberías. —Bruce Lee",
-      "Comer por ansiedad no quema ansiedad. —Naval Ravikant",
-      "El esfuerzo diario es más sexy que cualquier resultado rápido. —Gary Vaynerchuk",
-      "No necesitas motivación. Necesitas respeto por tu palabra. —Jocko Willink",
-      "Cada entrenamiento es un voto por la persona que quieres ser. —James Clear",
-      "Si el objetivo te incomoda, vas por buen camino. —Tony Robbins",
-      "El sudor es grasa llorando. —Entrenador Anónimo",
-      "Tu futuro físico se está escribiendo en tu plato. —Michael Pollan",
-      "El que controla sus impulsos controla su destino. —Séneca",
-      "Si no puedes decir que no al postre, no digas que quieres cambiar. —David Goggins",
-      "El peso baja cuando el compromiso sube. —Dwayne Johnson",
-      "El dolor del esfuerzo es temporal. El de rendirse se instala. —Lance Armstrong",
-      "El progreso real no es visible… hasta que lo es. —Arnold Schwarzenegger",
-      "Si subes de peso, no es magia. Es matemática. —James Clear",
-      "La disciplina quema más calorías que la motivación. —Jocko Willink",
-      "El cuerpo fuerte construye una mente peligrosa. —Mike Tyson",
-      "No eres víctima de tu genética, eres rehén de tus hábitos. —Jordan Peterson",
-      "Cada repetición es una negociación contigo mismo. —Bruce Lee",
-      "Comer limpio no es castigo, es estrategia. —Chris Bumstead",
-      "Tu grasa no es el enemigo. Tu indulgencia constante sí. —David Goggins",
-      "El espejo refleja decisiones, no intenciones. —Arnold Schwarzenegger",
-      "El compromiso empieza cuando la emoción termina. —Tony Robbins",
-      "Si hoy te saltas el entrenamiento, mañana te saltará la conciencia. —Jocko Willink",
-      "Un cuerpo definido es disciplina visible. —Entrenador Anónimo",
-      "El cambio físico es paciencia acumulada. —James Clear",
-      "Si no soportas la incomodidad, soportarás el estancamiento. —Mike Tyson",
-      "La constancia convierte lo imposible en inevitable. —Dwayne Johnson",
-      "El hambre emocional no se resuelve en la nevera. —Naval Ravikant",
-      "Cada kilo menos es una excusa menos. —Arnold Schwarzenegger",
-      "Tu cuerpo actual es el resultado de tu estándar actual. —Jordan Peterson",
-      "Si el progreso es lento, al menos que sea constante. —Bruce Lee",
-      "Sudor hoy o arrepentimiento mañana. Elige. —David Goggins",
-      "La grasa corporal es honesta. Tú deberías serlo contigo. —Entrenador Anónimo",
-      "No te falta tiempo. Te sobra autoengaño. —Gary Vaynerchuk",
-      "Si entrenas fuerte, el espejo se calla. —Mike Tyson",
-      "Los resultados no negocian con excusas. —Jocko Willink",
-      "El objetivo no es pesar menos. Es valer más. —Dwayne Johnson",
-      "Tu báscula no tiene sentimientos. Solo datos. —James Clear",
-      "Si sube el número, revisa tus decisiones, no la balanza. —Jocko Willink",
-      "El cuerpo no entiende promesas, entiende repetición. —Arnold Schwarzenegger",
-      "Más disciplina, menos drama. —Mike Tyson",
-      "El six-pack no aparece por manifestación espiritual. —Entrenador Anónimo",
-      "Comer por impulso es entrenar la derrota. —Naval Ravikant",
-      "El cambio físico empieza cuando dejas de negociar contigo. —David Goggins",
-      "No necesitas suerte, necesitas estructura. —Jordan Peterson",
-      "Cada entrenamiento es una factura pagada a tu futuro. —Dwayne Johnson",
-      "Si el progreso fuera cómodo, todos estarían definidos. —Chris Bumstead",
-      "La grasa no se ofende si la ignoras. Se instala. —Arnold Schwarzenegger",
-      "El hambre dura minutos. El orgullo dura días. —Jocko Willink",
-      "Un mal día no arruina el progreso. Rendirse sí. —Tony Robbins",
-      "Tu cuerpo es un proyecto. Compórtate como arquitecto, no como turista. —James Clear",
-      "El cardio no compensa la falta de carácter. —Entrenador Anónimo",
-      "Si fallas el plan, el plan no falló. —David Goggins",
-      "Menos excusas, más repeticiones. —Mike Tyson",
-      "Cada kilo perdido es disciplina acumulada. —Dwayne Johnson",
-      "El músculo no crece en zona cómoda. Tú tampoco. —Arnold Schwarzenegger",
-      "Si el objetivo te asusta, probablemente te transforma. —Jordan Peterson",
-      "Tu grasa corporal responde a tus hábitos, no a tus deseos. —James Clear",
-      "Entrena como si nadie fuera a rescatarte. —David Goggins",
-      "La motivación es volátil. La disciplina es estable. —Jocko Willink",
-      "Si comes como siempre, pesarás como siempre. —Entrenador Anónimo",
-      "El progreso lento sigue siendo progreso. —Bruce Lee",
-      "El espejo no necesita filtros, necesita constancia. —Arnold Schwarzenegger",
-      "Cada comida es una oportunidad de respeto propio. —Naval Ravikant",
-      "No eres débil. Estás mal entrenado. —Mike Tyson",
-      "Tu cuerpo escucha tus hábitos en silencio. —James Clear",
-      "Si no controlas tus impulsos, ellos te controlan a ti. —Séneca",
-      "El entrenamiento no es castigo, es construcción. —Chris Bumstead",
-      "La grasa acumulada es comodidad acumulada. —David Goggins",
-      "Sin incomodidad no hay redefinición. —Jordan Peterson",
-      "El progreso exige paciencia y agresividad al mismo tiempo. —Mike Tyson",
-      "Disciplina es hacer lo correcto incluso aburrido. —Jocko Willink",
-      "No necesitas otro lunes. Necesitas empezar hoy. —Dwayne Johnson",
-      "Cada gota de sudor es una declaración de guerra. —Arnold Schwarzenegger",
-      "Si hoy comes con control, mañana entrenas con orgullo. —Entrenador Anónimo",
-      "El cuerpo fuerte es consecuencia, no casualidad. —Bruce Lee",
-      "Si subes de peso, ajusta el sistema, no la autoestima. —James Clear",
-      "El físico que admiras es paciencia visible. —Chris Bumstead",
-      "El dolor del entrenamiento es inversión. —David Goggins",
-      "No hay transformación sin repetición. —Jocko Willink",
-      "Tu estándar define tu silueta. —Jordan Peterson",
-      "Menos quejas, más sentadillas. —Mike Tyson",
-      "Cada día que cumples suma. Cada día que evitas resta. —James Clear",
-      "El compromiso se demuestra en la cocina y en el gimnasio. —Arnold Schwarzenegger",
-      "El progreso no grita. Se acumula. —Bruce Lee",
-      "Si el número baja, celebra con humildad. —Dwayne Johnson",
-      "Si el número sube, responde con disciplina. —Entrenador Anónimo",
-      "Tu barriga no apareció en un día. Tampoco se irá en uno. —Arnold Schwarzenegger",
-      "Cada vez que dices 'mañana', tu grasa escucha 'quédate'. —David Goggins",
-      "No estás luchando contra el peso. Estás luchando contra tu versión cómoda. —Jordan Peterson",
-      "Si no controlas tu boca, tu boca controla tu físico. —Mike Tyson",
-      "El cuerpo que tienes es el resultado de lo que toleras. —Jocko Willink",
-      "El progreso no necesita aplausos, necesita repetición. —James Clear",
-      "Cada comida es una votación silenciosa por tu futuro. —Naval Ravikant",
-      "Si el pantalón aprieta, el problema no es la tela. —Entrenador Anónimo",
-      "Disciplina es hacer lo correcto cuando nadie sabrá que lo hiciste. —Dwayne Johnson",
-      "El músculo no entiende excusas. Solo estímulo. —Chris Bumstead",
-      "Tu grasa no es genética mágica. Es consistencia mal dirigida. —James Clear",
-      "El espejo es brutalmente honesto. Aprende a serlo tú también. —Mike Tyson",
-      "Si el número sube, tu estándar bajó. —Jocko Willink",
-      "No necesitas más información. Necesitas más ejecución. —David Goggins",
-      "Cada repetición es un ladrillo. ¿Estás construyendo o demoliendo? —Arnold Schwarzenegger",
-      "El hambre pasa. La disciplina queda. —Séneca",
-      "El físico definido es paciencia agresiva. —Chris Bumstead",
-      "Si no soportas el hambre leve, soportarás la frustración constante. —David Goggins",
-      "El peso no sube solo. Sube acompañado de excusas. —Entrenador Anónimo",
-      "Tu cuerpo refleja tu nivel de autoexigencia. —Jordan Peterson",
-      "El progreso real es aburrido. Por eso funciona. —James Clear",
-      "Más control hoy, menos arrepentimiento mañana. —Jocko Willink",
-      "Si quieres definición, define primero tus límites. —Mike Tyson",
-      "La grasa corporal no negocia con promesas. —Arnold Schwarzenegger",
-      "Tu estándar diario pesa más que tu genética. —Dwayne Johnson",
-      "Cada entrenamiento cancelado fortalece tu versión débil. —David Goggins",
-      "El cambio empieza cuando te cansas de tus propias excusas. —Tony Robbins",
-      "No eres víctima del metabolismo. Eres rehén de hábitos suaves. —Jordan Peterson",
-      "Si el espejo incomoda, úsalo como combustible. —Mike Tyson",
-      "Comer sin pensar es sabotaje elegante. —Naval Ravikant",
-      "Tu cuerpo no necesita más ánimo. Necesita estructura. —Jocko Willink",
-      "El músculo crece bajo tensión. El carácter también. —Arnold Schwarzenegger",
-      "Si hoy aflojas, mañana empiezas desde más atrás. —Entrenador Anónimo",
-      "El progreso exige precisión, no entusiasmo. —James Clear",
-      "Cada kilo perdido es una victoria privada. —Dwayne Johnson",
-      "El físico fuerte no es suerte, es estándar alto sostenido. —Chris Bumstead",
-      "Si no planificas tu comida, planificas tu estancamiento. —David Goggins",
-      "La báscula no te juzga. Te informa. —Mike Tyson",
-      "El autocontrol es el verdadero superpoder. —Séneca",
-      "Si el número baja, tu disciplina ganó la batalla. —Jocko Willink",
-      "El cuerpo responde a lo que repites, no a lo que deseas. —Bruce Lee",
-      "No estás demasiado ocupado. Estás mal priorizado. —Gary Vaynerchuk",
-      "Cada gramo de grasa es energía que no administraste. —Entrenador Anónimo",
-      "Si quieres respeto externo, empieza por el interno. —Jordan Peterson",
-      "El sudor es el precio de la definición. —Arnold Schwarzenegger",
-      "El progreso físico es matemática aplicada con carácter. —James Clear",
-      "Tu versión fuerte se construye cuando nadie te ve. —Dwayne Johnson",
-      "Si hoy eliges comodidad, mañana eliges mediocridad. —David Goggins",
-      "El músculo se gana. La grasa se acumula. Elige tu esfuerzo. —Mike Tyson",
-      "Tu cuerpo actual es la auditoría de tus decisiones. —Jocko Willink",
-      "Si el número subió, no te castigues. Ajusta el sistema. —James Clear",
-      "Subir un kilo no es tragedia. Repetirlo sí. —Jocko Willink",
-      "Hoy la báscula te dio información. Mañana dale resultados. —Arnold Schwarzenegger",
-      "Si retrocedes, que sea para impulsarte más fuerte. —Mike Tyson",
-      "Un tropiezo no define tu físico. Tu respuesta sí. —Dwayne Johnson",
-      "Si bajaste peso, no celebres con sabotaje. Consolida. —David Goggins",
-      "Cada kilo menos es carácter visible. —Chris Bumstead",
-      "Progreso detectado. Ego bajo. Disciplina alta. —Entrenador Anónimo",
-      "Cuando el número baja, la constancia sonríe. —Bruce Lee",
-      "Estás demostrando que no eras excusa, eras proceso. —Jordan Peterson",
-      "Meta alcanzada. Ahora mantén el estándar. —Arnold Schwarzenegger",
-      "Lograrlo es difícil. Sostenerlo es élite. —Jocko Willink",
-      "Objetivo cumplido. Nueva versión desbloqueada. —Dwayne Johnson",
-      "El final de una meta es el inicio de otra. —David Goggins",
-      "Tu disciplina acaba de ganarte respeto interno. —James Clear",
-      "Si te estancaste, revisa detalles, no sueños. —Chris Bumstead",
-      "El estancamiento es señal de ajuste, no de derrota. —Tony Robbins",
-      "Cuando nada cambia, cambia el enfoque. —Mike Tyson",
-      "El progreso lento sigue siendo superior a cero. —Bruce Lee",
-      "No confundas pausa con rendición. —Jordan Peterson",
-      "Tu cuerpo no necesita drama, necesita consistencia. —Jocko Willink",
-      "Cada día cumplido fortalece tu identidad. —James Clear",
-      "Hoy hiciste lo necesario. Eso ya te separa de muchos. —Arnold Schwarzenegger",
-      "El estándar alto es incómodo. Por eso transforma. —David Goggins",
-      "Disciplina mantenida es poder acumulado. —Dwayne Johnson",
-      "Si subiste peso, responde con precisión, no con culpa. —Chris Bumstead",
-      "Un exceso no destruye el progreso. La repetición sí. —James Clear",
-      "El control no es restricción, es estrategia. —Naval Ravikant",
-      "Tu cuerpo refleja tus prioridades reales. —Jordan Peterson",
-      "Más estructura, menos emoción. —Jocko Willink",
-      "Si bajaste grasa, que no suba tu arrogancia. —Mike Tyson",
-      "El físico mejora cuando el ego se controla. —Bruce Lee",
-      "Cada mejora pequeña es una deuda pagada al pasado. —Entrenador Anónimo",
-      "Lo estás logrando porque dejaste de negociar contigo. —David Goggins",
-      "La disciplina silenciosa produce resultados ruidosos. —Arnold Schwarzenegger",
-      "Cuando falles, falla con análisis, no con abandono. —James Clear",
-      "El error corregido es progreso acelerado. —Chris Bumstead",
-      "Tu fuerza mental está creciendo al ritmo de tu constancia. —Dwayne Johnson",
-      "Si el espejo mejora, es porque tú mejoraste primero. —Jordan Peterson",
-      "El cuerpo fuerte nace de decisiones incómodas repetidas. —Mike Tyson",
-      "Hoy no fue perfecto. Fue suficiente. —Bruce Lee",
-      "Si cumpliste el plan, ya ganaste algo invisible. —Jocko Willink",
-      "El progreso se protege con humildad. —Arnold Schwarzenegger",
-      "No necesitas extremos. Necesitas constancia brutal. —David Goggins",
-      "Cada día disciplinado es una victoria privada. —James Clear",
-      "Si el peso bajó, felicidades. Si no, trabaja. —Entrenador Anónimo",
-      "El proceso no siempre emociona, pero siempre recompensa. —Chris Bumstead",
-      "Tu versión fuerte ya no es teoría. Es práctica. —Dwayne Johnson",
-      "Cuando eliges disciplina, eliges poder. —Jordan Peterson",
-      "El respeto propio pesa más que cualquier número. —Mike Tyson"
+    const APP_PREFIX = "desgrasa_arrasa_v2";
+    const STORAGE_KEYS = {
+      registros: `${APP_PREFIX}_registros`,
+      genero: `${APP_PREFIX}_genero`,
+      altura: `${APP_PREFIX}_altura`,
+      fechaNacimiento: `${APP_PREFIX}_fecha_nacimiento`,
+      pesoObjetivo: `${APP_PREFIX}_peso_objetivo`,
+      rotaciones: `${APP_PREFIX}_rotaciones_frases`,
+      fraseActual: `${APP_PREFIX}_frase_actual`,
+      fraseFecha: `${APP_PREFIX}_frase_fecha`
+    };
+
+    const frasesBajada = [
+      "Bien. Menos teatro y más consistencia.",
+      "Eso ya parece intención convertida en números.",
+      "Un poco menos de peso, un poco menos de cuento.",
+      "Vas bajando. Sigue sin hacer el idiota.",
+      "La báscula hoy no te ha vacilado.",
+      "Esto no es magia. Es repetir lo correcto.",
+      "Buena señal: tu disciplina empieza a dejar huella.",
+      "Menos lastre. Más control.",
+      "Hoy toca disfrutarlo cinco segundos y seguir.",
+      "No cantes victoria. Repite lo que funciona."
+    ];
+
+    const frasesSubida = [
+      "La báscula ha hablado. Ahora te toca responder.",
+      "Un mal día no arruina nada. Una racha de excusas sí.",
+      "Hoy toca apretar, no dramatizar.",
+      "No pasa nada por subir. Pasa por hacerte el sordo.",
+      "Revísalo todo: sueño, hambre, picoteo y autoengaño.",
+      "La tendencia se corrige con hábitos, no con lamentos.",
+      "Esto no es fracaso. Es aviso.",
+      "Un rebote no manda. Mandan las decisiones de esta semana.",
+      "No negocies con la nevera porque siempre gana.",
+      "Menos castigo mental y más orden."
+    ];
+
+    const frasesGenerales = [
+      "Registra. Mira. Corrige. Repite.",
+      "Tu cuerpo no necesita discursos, necesita constancia.",
+      "Lo que no se mide se convierte en fantasía.",
+      "La báscula no juzga. Solo cuenta.",
+      "No busques perfección. Busca continuidad.",
+      "Entrenar ayuda. Dormir ayuda. Comer con cabeza ayuda más de lo que crees.",
+      "No hace falta ir a cero errores. Hace falta dejar de repetir siempre los mismos.",
+      "Tu progreso no necesita épica. Necesita rutina.",
+      "Un buen plan aburrido gana a una motivación brillante que dura dos días.",
+      "Menos improvisación, más sistema."
     ];
 
     let chart = null;
-    let generoGuardado = localStorage.getItem("genero") || "";
-    let alturaGuardada = parseFloat(localStorage.getItem("altura")) || null;
-    let fechaNacimiento = localStorage.getItem("fechaNacimiento") || "";
-    let pesoObjetivo = parseFloat(localStorage.getItem("pesoObjetivo")) || null;
 
-    function obtenerDatos() {
-      const datos = JSON.parse(localStorage.getItem("pesos") || "[]");
-      return Array.isArray(datos) ? datos.sort((a,b)=>new Date(a.fecha)-new Date(b.fecha)) : [];
+    const $ = (id) => document.getElementById(id);
+
+    function storageGet(key, fallback = null) {
+      try {
+        const raw = localStorage.getItem(key);
+        return raw === null ? fallback : JSON.parse(raw);
+      } catch {
+        return fallback;
+      }
     }
 
-    function guardarDatos(datos) {
-      datos.sort((a,b)=>new Date(a.fecha)-new Date(b.fecha));
-      localStorage.setItem("pesos", JSON.stringify(datos));
+    function storageSet(key, value) {
+      try {
+        localStorage.setItem(key, JSON.stringify(value));
+      } catch (error) {
+        console.error("No se pudo guardar en localStorage:", error);
+      }
+    }
+
+    function storageRemove(key) {
+      try {
+        localStorage.removeItem(key);
+      } catch (error) {
+        console.error("No se pudo borrar de localStorage:", error);
+      }
+    }
+
+    function fechaLocalISO(date = new Date()) {
+      const year = date.getFullYear();
+      const month = String(date.getMonth() + 1).padStart(2, "0");
+      const day = String(date.getDate()).padStart(2, "0");
+      return `${year}-${month}-${day}`;
+    }
+
+    function hoyClave() {
+      return fechaLocalISO();
     }
 
     function generarId() {
-      return `${Date.now()}-${Math.random().toString(16).slice(2,10)}`;
+      return `${Date.now()}-${Math.random().toString(16).slice(2, 10)}`;
+    }
+
+    function formatearNumero(value, decimals = 1) {
+      return Number(value).toFixed(decimals);
+    }
+
+    function normalizarRegistro(item) {
+      return {
+        id: item.id || generarId(),
+        fecha: item.fecha,
+        peso: Number(item.peso),
+        altura: Number(item.altura),
+        genero: item.genero
+      };
+    }
+
+    function obtenerRegistros() {
+      const data = storageGet(STORAGE_KEYS.registros, []);
+      if (!Array.isArray(data)) return [];
+      return data
+        .map(normalizarRegistro)
+        .filter(r =>
+          typeof r.fecha === "string" &&
+          !Number.isNaN(new Date(r.fecha).getTime()) &&
+          Number.isFinite(r.peso) &&
+          Number.isFinite(r.altura) &&
+          (r.genero === "hombre" || r.genero === "mujer")
+        )
+        .sort((a, b) => new Date(a.fecha) - new Date(b.fecha));
+    }
+
+    function guardarRegistros(registros) {
+      const limpios = registros
+        .map(normalizarRegistro)
+        .sort((a, b) => new Date(a.fecha) - new Date(b.fecha));
+      storageSet(STORAGE_KEYS.registros, limpios);
     }
 
     function obtenerRotaciones() {
-      try {
-        const guardado = JSON.parse(localStorage.getItem("rotacionesFrasesDesgrasaArrasa") || "{}");
-        return {
-          contexto: Array.isArray(guardado.contexto) ? guardado.contexto : [],
-          general: Array.isArray(guardado.general) ? guardado.general : []
-        };
-      } catch {
-        return { contexto: [], general: [] };
-      }
+      const data = storageGet(STORAGE_KEYS.rotaciones, {});
+      return {
+        bajada: Array.isArray(data.bajada) ? data.bajada : [],
+        subida: Array.isArray(data.subida) ? data.subida : [],
+        general: Array.isArray(data.general) ? data.general : []
+      };
     }
 
     function guardarRotaciones(rotaciones) {
-      localStorage.setItem("rotacionesFrasesDesgrasaArrasa", JSON.stringify(rotaciones));
-    }
-
-    function contieneAlguna(frase, terminos) {
-      const f = frase.toLowerCase();
-      return terminos.some(t => f.includes(t));
-    }
-
-    function filtrarCitasPorContexto(contexto, tieneObjetivoCumplido = false) {
-      if (tieneObjetivoCumplido) {
-        const meta = frasesSoez.filter(frase => contieneAlguna(frase, [
-          "meta alcanzada","objetivo cumplido","mantén el estándar","nueva versión desbloqueada","inicio de otra","respeto interno","sostenerlo es élite"
-        ]));
-        if (meta.length) return meta;
-      }
-
-      let terminos = [];
-      if (contexto === "granBajada") terminos = ["progreso","constancia","disciplina","compromiso","cambio","sudor","kilo menos","peso baja","disciplina ganó","carácter visible","proceso","mejora","victoria privada","disciplina alta","sonríe"];
-      else if (contexto === "bajada") terminos = ["hábito","repetición","disciplina","estrategia","compromiso","esfuerzo","constancia","resultados","cuerpo que quieres","humildad","consolida","respeto propio","ganaste algo invisible"];
-      else if (contexto === "igual") terminos = ["datos","constante","repetición","estructura","controla","cuerpo escucha","futuro físico","objetivo","estancamiento","pausa","consistencia","detalles","enfoque"];
-      else if (contexto === "subida") terminos = ["sube el número","subes de peso","excusa","autoengaño","hambre emocional","impulso","grasa no es el enemigo","estás desentrenado","resultado de tu estándar","espejo no miente","ajusta el sistema","precisión","culpa","más estructura"];
-      else if (contexto === "granSubida") terminos = ["entrenamiento cancelado","hoy fallas","dejas de negociar","metabolismo","no sudas","postre","sabotaje","grasa no desaparece","te duele un poco","espejo incomoda","repetirlo sí","tu estándar bajó","tragedia","empiezas desde más atrás"];
-
-      const citas = frasesSoez.filter(frase => contieneAlguna(frase, terminos));
-      return citas.length ? citas : frasesSoez;
+      storageSet(STORAGE_KEYS.rotaciones, rotaciones);
     }
 
     function sacarFraseSinRepetir(tipo, lista) {
-      if (!Array.isArray(lista) || !lista.length) return "¡Carga tu motivación!";
+      if (!lista.length) return "Sigue. Sin drama. Sin pausa.";
 
       const rotaciones = obtenerRotaciones();
-      if (!rotaciones[tipo] || rotaciones[tipo].length === 0) rotaciones[tipo] = [...lista];
+      if (!rotaciones[tipo] || !rotaciones[tipo].length) {
+        rotaciones[tipo] = [...lista];
+      }
 
       let disponibles = rotaciones[tipo].filter(frase => lista.includes(frase));
       if (!disponibles.length) {
@@ -924,396 +783,423 @@
         disponibles = [...lista];
       }
 
-      const index = Math.floor(Math.random() * disponibles.length);
-      const frase = disponibles[index] || lista[0];
-      const idxEnRotacion = rotaciones[tipo].indexOf(frase);
-      if (idxEnRotacion >= 0) rotaciones[tipo].splice(idxEnRotacion, 1);
-
+      const indice = Math.floor(Math.random() * disponibles.length);
+      const frase = disponibles[indice];
+      rotaciones[tipo] = rotaciones[tipo].filter(f => f !== frase);
       guardarRotaciones(rotaciones);
       return frase;
     }
 
-    function clasificarCambio(delta) {
-      if (delta <= -1) return "granBajada";
-      if (delta < 0) return "bajada";
-      if (delta === 0) return "igual";
-      if (delta >= 1) return "granSubida";
-      return "subida";
-    }
-
-    function hoyClave() {
-      return new Date().toISOString().split("T")[0];
-    }
-
     function mostrarFrase(forzarNueva = false) {
-      const datos = obtenerDatos();
-      const el = document.getElementById("frase");
-      if (!el) return;
-
+      const registros = obtenerRegistros();
+      const el = $("frase");
       const hoy = hoyClave();
-      const ultimaFechaFrase = localStorage.getItem("desgrasaArrasaUltimaFechaFrase") || "";
-      const fraseGuardada = localStorage.getItem("desgrasaArrasaFraseActual") || "";
 
-      if (!forzarNueva && fraseGuardada && ultimaFechaFrase === hoy) {
+      const fraseGuardada = storageGet(STORAGE_KEYS.fraseActual, "");
+      const fechaFrase = storageGet(STORAGE_KEYS.fraseFecha, "");
+
+      if (!forzarNueva && fraseGuardada && fechaFrase === hoy) {
         el.textContent = fraseGuardada;
         return;
       }
 
       let frase = "";
 
-      if (datos.length > 0 && pesoObjetivo) {
-        const ultimo = parseFloat(datos[datos.length - 1].peso);
-        const primero = parseFloat(datos[0].peso);
-        const objetivoCumplido =
-          (primero > pesoObjetivo && ultimo <= pesoObjetivo) ||
-          (primero < pesoObjetivo && ultimo >= pesoObjetivo);
+      if (registros.length > 1) {
+        const ultimo = registros.at(-1).peso;
+        const anterior = registros.at(-2).peso;
+        const delta = Number((ultimo - anterior).toFixed(1));
 
-        if (objetivoCumplido) {
-          frase = sacarFraseSinRepetir("contexto", filtrarCitasPorContexto("igual", true));
+        if (delta < 0) {
+          frase = sacarFraseSinRepetir("bajada", frasesBajada);
+        } else if (delta > 0) {
+          frase = sacarFraseSinRepetir("subida", frasesSubida);
         }
       }
 
-      if (!frase && datos.length > 1) {
-        const actual = parseFloat(datos[datos.length - 1].peso);
-        const anterior = parseFloat(datos[datos.length - 2].peso);
-        if (!Number.isNaN(actual) && !Number.isNaN(anterior)) {
-          const delta = parseFloat((actual - anterior).toFixed(1));
-          frase = sacarFraseSinRepetir("contexto", filtrarCitasPorContexto(clasificarCambio(delta)));
-        }
+      if (!frase) {
+        frase = sacarFraseSinRepetir("general", frasesGenerales);
       }
 
-      if (!frase) frase = sacarFraseSinRepetir("general", frasesSoez);
-
-      localStorage.setItem("desgrasaArrasaFraseActual", frase);
-      localStorage.setItem("desgrasaArrasaUltimaFechaFrase", hoy);
+      storageSet(STORAGE_KEYS.fraseActual, frase);
+      storageSet(STORAGE_KEYS.fraseFecha, hoy);
       el.textContent = frase;
     }
 
-    function calcularEdad(fecha) {
-      if (!fecha) return 0;
+    function calcularEdad(fechaNacimiento) {
+      if (!fechaNacimiento) return 0;
       const hoy = new Date();
-      const nac = new Date(fecha);
+      const nac = new Date(fechaNacimiento);
+
       if (Number.isNaN(nac.getTime()) || nac > hoy || nac.getFullYear() < 1900) return 0;
 
       let edad = hoy.getFullYear() - nac.getFullYear();
       const mes = hoy.getMonth() - nac.getMonth();
-      if (mes < 0 || (mes === 0 && hoy.getDate() < nac.getDate())) edad--;
+
+      if (mes < 0 || (mes === 0 && hoy.getDate() < nac.getDate())) {
+        edad--;
+      }
+
       return Math.max(0, edad);
     }
 
+    function pesoValido(peso) {
+      return Number.isFinite(peso) && peso >= 20 && peso <= 400;
+    }
+
+    function alturaValida(altura) {
+      return Number.isFinite(altura) && altura >= 1 && altura <= 2.5;
+    }
+
+    function fechaNacimientoValida(fecha) {
+      if (!fecha) return true;
+      const f = new Date(fecha);
+      const hoy = new Date();
+      return !Number.isNaN(f.getTime()) && f <= hoy && f.getFullYear() >= 1900;
+    }
+
+    function guardarGenero() {
+      const genero = $("genero").value;
+      if (genero) {
+        storageSet(STORAGE_KEYS.genero, genero);
+      } else {
+        storageRemove(STORAGE_KEYS.genero);
+      }
+      actualizarTodo();
+    }
+
     function guardarFechaNacimiento() {
-      const input = document.getElementById("fechaNacimiento");
-      const valor = input.value;
+      const valor = $("fechaNacimiento").value;
 
       if (!valor) {
-        fechaNacimiento = "";
-        localStorage.removeItem("fechaNacimiento");
+        storageRemove(STORAGE_KEYS.fechaNacimiento);
         actualizarTodo();
         return;
       }
 
-      const fechaSeleccionada = new Date(valor);
-      const hoy = new Date();
-
-      if (Number.isNaN(fechaSeleccionada.getTime()) || fechaSeleccionada > hoy || fechaSeleccionada.getFullYear() < 1900) {
-        alert("Fecha de nacimiento no válida");
-        input.value = fechaNacimiento || "";
+      if (!fechaNacimientoValida(valor)) {
+        alert("Fecha de nacimiento no válida.");
+        $("fechaNacimiento").value = storageGet(STORAGE_KEYS.fechaNacimiento, "") || "";
         return;
       }
 
-      fechaNacimiento = valor;
-      localStorage.setItem("fechaNacimiento", fechaNacimiento);
+      storageSet(STORAGE_KEYS.fechaNacimiento, valor);
       actualizarTodo();
     }
 
     function guardarPesoObjetivo() {
-      const valor = document.getElementById("pesoObjetivo").value;
-      if (valor && !isNaN(parseFloat(valor)) && parseFloat(valor) > 0) {
-        pesoObjetivo = parseFloat(valor);
-        localStorage.setItem("pesoObjetivo", pesoObjetivo);
-      } else {
-        pesoObjetivo = null;
-        localStorage.removeItem("pesoObjetivo");
+      const raw = $("pesoObjetivo").value.trim();
+
+      if (!raw) {
+        storageRemove(STORAGE_KEYS.pesoObjetivo);
+        actualizarTodo();
+        return;
       }
+
+      const peso = Number(raw);
+      if (!pesoValido(peso)) {
+        alert("Introduce un peso objetivo razonable.");
+        $("pesoObjetivo").value = storageGet(STORAGE_KEYS.pesoObjetivo, "") || "";
+        return;
+      }
+
+      storageSet(STORAGE_KEYS.pesoObjetivo, peso);
       actualizarTodo();
     }
 
-    function guardarGenero() {
-      generoGuardado = document.getElementById("genero").value;
-      if (generoGuardado) localStorage.setItem("genero", generoGuardado);
-      else localStorage.removeItem("genero");
-      actualizarTodo();
-    }
-
-    function init() {
-      document.getElementById("fecha").value = new Date().toISOString().split("T")[0];
-      document.getElementById("genero").value = generoGuardado;
-      if (alturaGuardada) document.getElementById("altura").value = alturaGuardada;
-      if (fechaNacimiento) document.getElementById("fechaNacimiento").value = fechaNacimiento;
-      if (pesoObjetivo) document.getElementById("pesoObjetivo").value = pesoObjetivo;
-      actualizarTodo(false);
-    }
-
-    function guardar() {
-      const fecha = document.getElementById("fecha").value;
-      const peso = parseFloat(document.getElementById("peso").value);
-      const altura = parseFloat(document.getElementById("altura").value);
-      const genero = document.getElementById("genero").value;
-
-      if (!fecha) return alert("Selecciona una fecha");
-      if (isNaN(peso) || peso <= 0) return alert("Introduce un peso válido");
-      if (isNaN(altura) || altura <= 0) return alert("Introduce una altura válida");
-      if (!genero) return alert("Selecciona sexo/género biológico");
-
-      alturaGuardada = altura;
-      localStorage.setItem("altura", altura.toFixed(2));
-
-      let datos = obtenerDatos();
-      const existente = datos.find(d => d.fecha === fecha);
-
-      if (existente) {
-        existente.peso = peso.toFixed(1);
-        existente.altura = altura.toFixed(2);
-        existente.genero = genero;
-      } else {
-        datos.push({ id: generarId(), fecha, peso: peso.toFixed(1), altura: altura.toFixed(2), genero });
+    function calcularIMC(peso, altura) {
+      if (!alturaValida(altura) || !pesoValido(peso)) {
+        return {
+          valor: 0,
+          visual: "N/A",
+          estandar: "N/A"
+        };
       }
-
-      guardarDatos(datos);
-
-      document.getElementById("peso").value = "";
-      mostrarFrase(true);
-      mostrarStats();
-      dibujarGrafico();
-      mostrarHistorial();
-      alert(existente ? "Registro actualizado" : "¡Registrado!");
-    }
-
-    function limpiarTodo() {
-      if (confirm("¿Borrar TODO?")) {
-        localStorage.clear();
-        location.reload();
-      }
-    }
-
-    function calcularIMC(peso, altura, edad) {
-      if (!altura || altura <= 0) return { val: 0, clas: "N/A" };
 
       const imc = peso / (altura * altura);
-      let clas = "N/A";
 
-      if (edad < 18 && edad > 0) {
-        if (imc < 16) clas = "ESENCIAL";
-        else if (imc < 21) clas = "FIT";
-        else if (imc < 24) clas = "EQUILIBRADO";
-        else if (imc < 28) clas = "ALTO";
-        else clas = "MUY ALTO";
-      } else if (edad >= 65) {
-        if (imc < 20) clas = "ESENCIAL";
-        else if (imc < 23) clas = "FIT";
-        else if (imc < 27) clas = "EQUILIBRADO";
-        else if (imc < 32) clas = "ALTO";
-        else clas = "MUY ALTO";
+      let visual = "";
+      let estandar = "";
+
+      if (imc < 18.5) {
+        visual = "ESENCIAL";
+        estandar = "Bajo peso";
+      } else if (imc < 22) {
+        visual = "FIT";
+        estandar = "Normopeso";
+      } else if (imc < 25) {
+        visual = "EQUILIBRADO";
+        estandar = "Normopeso";
+      } else if (imc < 30) {
+        visual = "ALTO";
+        estandar = "Sobrepeso";
       } else {
-        if (imc < 18.5) clas = "ESENCIAL";
-        else if (imc < 22) clas = "FIT";
-        else if (imc < 25) clas = "EQUILIBRADO";
-        else if (imc < 30) clas = "ALTO";
-        else clas = "MUY ALTO";
+        visual = "MUY ALTO";
+        estandar = "Obesidad";
       }
 
-      return { val: imc.toFixed(1), clas };
+      return {
+        valor: Number(imc.toFixed(1)),
+        visual,
+        estandar
+      };
     }
 
-    function calcularGrasaCorporal(peso, altura, edad, imc, genero) {
+    function calcularGrasaCorporalEstimada(imc, edad, genero) {
+      if (!imc || !edad || !genero) return null;
       const sexo = genero === "hombre" ? 1 : 0;
       let grasa = (1.20 * imc) + (0.23 * edad) - (10.8 * sexo) - 5.4;
       grasa = Math.max(2, Math.min(60, grasa));
-      return grasa.toFixed(1);
+      return Number(grasa.toFixed(1));
     }
 
     function clasificarGrasa(grasa, genero) {
+      if (!Number.isFinite(grasa) || !genero) return "N/A";
+
       if (genero === "hombre") {
-        if (grasa >= 2 && grasa <= 5) return "GRASA ESENCIAL";
-        if (grasa >= 6 && grasa <= 13) return "ATLETAS";
-        if (grasa >= 14 && grasa <= 17) return "FITNESS";
-        if (grasa >= 18 && grasa <= 24) return "ACEPTABLE / SALUDABLE";
-        if (grasa > 24) return "SOBREPESO / OBESIDAD";
-        return "MUY BAJO";
+        if (grasa >= 2 && grasa <= 5) return "Grasa esencial";
+        if (grasa >= 6 && grasa <= 13) return "Atletas";
+        if (grasa >= 14 && grasa <= 17) return "Fitness";
+        if (grasa >= 18 && grasa <= 24) return "Aceptable / saludable";
+        if (grasa > 24) return "Sobrepeso / obesidad";
+        return "Muy bajo";
       }
 
       if (genero === "mujer") {
-        if (grasa >= 10 && grasa <= 13) return "GRASA ESENCIAL";
-        if (grasa >= 14 && grasa <= 20) return "ATLETAS";
-        if (grasa >= 21 && grasa <= 24) return "FITNESS";
-        if (grasa >= 25 && grasa <= 31) return "ACEPTABLE / SALUDABLE";
-        if (grasa > 31) return "SOBREPESO / OBESIDAD";
-        return "MUY BAJO";
+        if (grasa >= 10 && grasa <= 13) return "Grasa esencial";
+        if (grasa >= 14 && grasa <= 20) return "Atletas";
+        if (grasa >= 21 && grasa <= 24) return "Fitness";
+        if (grasa >= 25 && grasa <= 31) return "Aceptable / saludable";
+        if (grasa > 31) return "Sobrepeso / obesidad";
+        return "Muy bajo";
       }
 
       return "N/A";
     }
 
+    function textoAyudaIMC(imc, peso, altura) {
+      if (!Number.isFinite(imc) || !pesoValido(peso) || !alturaValida(altura)) return "";
+
+      if (imc < 18.5) {
+        const paraNormo = (18.5 * altura * altura - peso);
+        return `Te faltarían ${formatearNumero(Math.max(0, paraNormo))} kg para entrar en normopeso.`;
+      }
+
+      if (imc < 22) {
+        return "Estás en un rango ligero.";
+      }
+
+      if (imc < 25) {
+        return "Estás en un rango equilibrado.";
+      }
+
+      if (imc < 30) {
+        const paraEquilibrado = (peso - (24.9 * altura * altura));
+        return `Te sobran ${formatearNumero(Math.max(0, paraEquilibrado))} kg para volver a normopeso.`;
+      }
+
+      const paraSalir = (peso - (29.9 * altura * altura));
+      return `Te sobran ${formatearNumero(Math.max(0, paraSalir))} kg para salir del rango de obesidad.`;
+    }
+
+    function calcularProgreso(primerPeso, pesoActual, pesoObjetivo) {
+      if (!pesoValido(primerPeso) || !pesoValido(pesoActual) || !pesoValido(pesoObjetivo)) {
+        return { porcentaje: 0, texto: "sin objetivo" };
+      }
+
+      if (primerPeso === pesoObjetivo) {
+        return { porcentaje: 100, texto: "objetivo ya fijado en el peso inicial" };
+      }
+
+      const avance = (primerPeso - pesoActual) / (primerPeso - pesoObjetivo);
+      const porcentaje = Math.max(0, Math.min(100, avance * 100));
+      const faltan = Number((pesoActual - pesoObjetivo).toFixed(1));
+
+      if (porcentaje >= 100) {
+        return { porcentaje: 100, texto: "¡meta alcanzada!" };
+      }
+
+      return {
+        porcentaje,
+        texto: `${Math.round(porcentaje)}% · faltan ${Math.abs(faltan).toFixed(1)} kg`
+      };
+    }
+
     function mostrarStats() {
-      const datos = obtenerDatos();
-      if (!datos.length) {
-        document.getElementById("stats").innerHTML = '<div class="empty">Sin datos todavía</div>';
-        document.getElementById("imc-display").innerHTML = '<div class="empty">Guarda tu primer registro para ver el IMC.</div>';
-        document.getElementById("grasa-display").innerHTML = '<div class="empty">Guarda tu primer registro para ver la grasa corporal estimada.</div>';
-        document.getElementById("barra").style.width = "0%";
-        document.querySelector(".progress-label").textContent = "Progreso: 0%";
+      const registros = obtenerRegistros();
+      const statsEl = $("stats");
+      const imcEl = $("imc-display");
+      const grasaEl = $("grasa-display");
+      const barraEl = $("barra");
+      const progressTextEl = document.querySelector(".progress-label");
+
+      if (!registros.length) {
+        statsEl.innerHTML = '<div class="empty">Sin datos todavía.</div>';
+        imcEl.innerHTML = '<div class="empty">Guarda tu primer registro para ver el IMC.</div>';
+        grasaEl.innerHTML = '<div class="empty">Guarda tu primer registro para ver la grasa corporal estimada.</div>';
+        barraEl.style.width = "0%";
+        progressTextEl.textContent = "Progreso: sin objetivo";
         return;
       }
 
-      const ultimoRegistro = datos[datos.length - 1];
-      const primerRegistro = datos[0];
-      const ultimo = parseFloat(ultimoRegistro.peso);
-      const primero = parseFloat(primerRegistro.peso);
-      const altura = alturaGuardada || parseFloat(ultimoRegistro.altura);
-      const genero = generoGuardado || ultimoRegistro.genero;
+      const ultimo = registros.at(-1);
+      const primero = registros[0];
+
+      const generoGuardado = storageGet(STORAGE_KEYS.genero, "") || ultimo.genero;
+      const fechaNacimiento = storageGet(STORAGE_KEYS.fechaNacimiento, "");
+      const pesoObjetivo = Number(storageGet(STORAGE_KEYS.pesoObjetivo, null));
+
       const edad = calcularEdad(fechaNacimiento);
-      const imc = calcularIMC(ultimo, altura, edad);
-      const grasa = calcularGrasaCorporal(ultimo, altura, edad, parseFloat(imc.val), genero);
-      const pesos = datos.map(d => parseFloat(d.peso));
-      const prom = (pesos.reduce((a,b)=>a+b,0) / pesos.length).toFixed(1);
+      const alturaActual = Number.isFinite(ultimo.altura) ? ultimo.altura : Number(storageGet(STORAGE_KEYS.altura, null));
 
-      let progreso = 0;
-      let textoProgreso = "Sin objetivo";
+      const imc = calcularIMC(ultimo.peso, alturaActual);
+      const grasa = calcularGrasaCorporalEstimada(imc.valor, edad, generoGuardado);
+      const clasGrasa = clasificarGrasa(grasa, generoGuardado);
 
-      if (pesoObjetivo && primero !== pesoObjetivo) {
-        const avance = (primero - ultimo) / (primero - pesoObjetivo);
-        progreso = Math.max(0, Math.min(100, avance * 100));
-        const faltante = (ultimo - pesoObjetivo).toFixed(1);
-        textoProgreso = progreso >= 100 ? "¡META ALCANZADA!" : `${progreso.toFixed(0)}% · faltan ${Math.abs(faltante)} kg`;
-      }
+      const pesos = registros.map(r => r.peso);
+      const promedio = pesos.reduce((a, b) => a + b, 0) / pesos.length;
+      const progreso = calcularProgreso(primero.peso, ultimo.peso, pesoObjetivo);
 
-      document.getElementById("barra").style.width = progreso + "%";
-      document.querySelector(".progress-label").textContent = "Progreso: " + textoProgreso;
+      barraEl.style.width = `${progreso.porcentaje}%`;
+      progressTextEl.textContent = `Progreso: ${progreso.texto}`;
 
-      let imcFaltaProximo;
-      let estadoTexto = imc.clas;
+      const ayudaIMC = textoAyudaIMC(imc.valor, ultimo.peso, alturaActual);
 
-      if (parseFloat(imc.val) < 18.5) {
-        imcFaltaProximo = (18.5 * altura * altura - ultimo).toFixed(1);
-        estadoTexto += ` · +${imcFaltaProximo}kg para entrar en FIT`;
-      } else if (parseFloat(imc.val) < 22) {
-        estadoTexto += " · fino y ligero";
-      } else if (parseFloat(imc.val) < 25) {
-        estadoTexto += " · rango equilibrado";
-      } else if (parseFloat(imc.val) < 30) {
-        imcFaltaProximo = Math.abs((24.9 * altura * altura - ultimo).toFixed(1));
-        estadoTexto += ` · -${imcFaltaProximo}kg para volver a EQUILIBRADO`;
-      } else {
-        imcFaltaProximo = Math.abs((29.9 * altura * altura - ultimo).toFixed(1));
-        estadoTexto += ` · -${imcFaltaProximo}kg para salir de MUY ALTO`;
-      }
-
-      document.getElementById("imc-display").innerHTML = `
-        <div class="imc-label">Índice de masa corporal</div>
-        <div class="imc-value">${imc.val}</div>
-        <div class="imc-class">${estadoTexto}</div>
-        <div class="imc-range">Escala amable: ESENCIAL · FIT · EQUILIBRADO · ALTO · MUY ALTO</div>
+      imcEl.innerHTML = `
+        <div class="metric-label">Índice de masa corporal</div>
+        <div class="metric-value">${formatearNumero(imc.valor)}</div>
+        <div class="metric-main">${imc.visual} · clasificación estándar: ${imc.estandar}</div>
+        <div class="metric-sub">${ayudaIMC}</div>
       `;
 
-      const clasificacion = clasificarGrasa(parseFloat(grasa), genero);
-      document.getElementById("grasa-display").innerHTML = `
-        <div class="grasa-label">% GRASA CORPORAL ESTIMADO · ${genero.toUpperCase()}</div>
-        <div class="grasa-value">${grasa}%</div>
-        <div class="grasa-state">${clasificacion}</div>
+      grasaEl.innerHTML = grasa === null ? `
+        <div class="empty">Faltan datos para estimar la grasa corporal.</div>
+      ` : `
+        <div class="metric-label">% grasa corporal estimada · ${generoGuardado ? generoGuardado.toUpperCase() : "N/A"}</div>
+        <div class="metric-value">${formatearNumero(grasa)}%</div>
+        <div class="metric-main">${clasGrasa}</div>
+        <div class="metric-sub">Estimación orientativa basada en IMC, edad y sexo biológico.</div>
       `;
 
-      document.getElementById("stats").innerHTML = `
-        <div class="stat"><div class="stat-val">${ultimo}</div><div class="stat-lab">Actual</div></div>
-        <div class="stat"><div class="stat-val">${pesoObjetivo || "-"}</div><div class="stat-lab">Objetivo</div></div>
-        <div class="stat"><div class="stat-val">${edad || "-"}</div><div class="stat-lab">Edad</div></div>
-        <div class="stat"><div class="stat-val">${prom}</div><div class="stat-lab">Promedio</div></div>
+      statsEl.innerHTML = `
+        <div class="stat">
+          <div class="stat-val">${formatearNumero(ultimo.peso)}</div>
+          <div class="stat-lab">Peso actual</div>
+        </div>
+        <div class="stat">
+          <div class="stat-val">${pesoValido(pesoObjetivo) ? formatearNumero(pesoObjetivo) : "-"}</div>
+          <div class="stat-lab">Objetivo</div>
+        </div>
+        <div class="stat">
+          <div class="stat-val">${edad || "-"}</div>
+          <div class="stat-lab">Edad</div>
+        </div>
+        <div class="stat">
+          <div class="stat-val">${formatearNumero(promedio)}</div>
+          <div class="stat-lab">Promedio</div>
+        </div>
       `;
     }
 
-    function regresionLineal(datosPesos) {
-      const n = datosPesos.length;
+    function regresionLineal(values) {
+      const n = values.length;
       if (n < 2) return [];
 
-      const x = datosPesos.map((_, i) => i);
-      const y = datosPesos;
-      const sumX = x.reduce((a,b)=>a+b,0);
-      const sumY = y.reduce((a,b)=>a+b,0);
-      const sumXY = x.reduce((sum, xi, i) => sum + xi * y[i], 0);
-      const sumX2 = x.reduce((sum, xi) => sum + xi * xi, 0);
-      const denominador = (n * sumX2 - sumX * sumX);
-      if (denominador === 0) return [];
+      const x = values.map((_, i) => i);
+      const y = values;
 
-      const m = (n * sumXY - sumX * sumY) / denominador;
+      const sumX = x.reduce((a, b) => a + b, 0);
+      const sumY = y.reduce((a, b) => a + b, 0);
+      const sumXY = x.reduce((sum, xi, i) => sum + (xi * y[i]), 0);
+      const sumX2 = x.reduce((sum, xi) => sum + (xi * xi), 0);
+
+      const den = (n * sumX2 - sumX * sumX);
+      if (den === 0) return [];
+
+      const m = (n * sumXY - sumX * sumY) / den;
       const b = (sumY - m * sumX) / n;
 
-      return Array.from({length:30}, (_, i) => {
+      return Array.from({ length: 30 }, (_, i) => {
         const pred = m * (n + i) + b;
-        return Math.max(30, Math.min(250, pred));
+        return Number(Math.max(30, Math.min(250, pred)).toFixed(1));
       });
     }
 
     function dibujarGrafico() {
-      const canvas = document.getElementById("chart");
+      const canvas = $("chart");
       const ctx = canvas.getContext("2d");
-      const datos = obtenerDatos();
+      const registros = obtenerRegistros();
 
-      if (!datos.length) {
-        if (chart) { chart.destroy(); chart = null; }
+      if (!registros.length) {
+        if (chart) {
+          chart.destroy();
+          chart = null;
+        }
         return;
       }
 
-      const labels = datos.map(d => d.fecha.slice(5,10));
-      const pesos = datos.map(d => parseFloat(d.peso));
-      const pred = regresionLineal(pesos);
-      const predLabels = Array.from({length: pred.length}, (_, i) => `+${i + 1}d`);
+      const labels = registros.map(r => r.fecha.slice(5));
+      const pesos = registros.map(r => r.peso);
+      const tendencia = regresionLineal(pesos);
+      const tendenciaLabels = Array.from({ length: tendencia.length }, (_, i) => `+${i + 1}d`);
 
       if (chart) chart.destroy();
 
       chart = new Chart(ctx, {
         type: "line",
         data: {
-          labels: [...labels, ...predLabels],
+          labels: [...labels, ...tendenciaLabels],
           datasets: [
             {
-              label: "Real",
+              label: "Peso real",
               data: pesos,
-              borderColor: "#00ffff",
-              backgroundColor: "rgba(0,255,255,0.12)",
-              tension: 0.4,
+              borderColor: "#00f0ff",
+              backgroundColor: "rgba(0,240,255,0.10)",
+              tension: 0.35,
               fill: true,
-              borderWidth: 3
+              borderWidth: 3,
+              pointRadius: 3,
+              pointHoverRadius: 4
             },
             {
-              label: "Predicción (30d)",
-              data: [...Array(pesos.length).fill(null), ...pred],
-              borderColor: "#ff0080",
-              borderDash: [6,4],
-              tension: 0.4,
+              label: "Tendencia estimada (30d)",
+              data: [...Array(pesos.length).fill(null), ...tendencia],
+              borderColor: "#ff4ea3",
+              borderDash: [6, 5],
+              tension: 0.35,
               fill: false,
-              borderWidth: 2
+              borderWidth: 2,
+              pointRadius: 0
             }
           ]
         },
         options: {
           responsive: true,
           maintainAspectRatio: false,
+          interaction: {
+            mode: "nearest",
+            intersect: false
+          },
           scales: {
             y: {
               beginAtZero: false,
-              ticks: { color: "#9fd9ff" },
+              ticks: { color: "#a9dbff" },
               grid: { color: "rgba(0,212,255,0.08)" }
             },
             x: {
-              ticks: { color: "#9fd9ff" },
+              ticks: { color: "#a9dbff" },
               grid: { color: "rgba(0,212,255,0.08)" }
             }
           },
           plugins: {
             legend: {
               labels: {
-                color: "#dffcff",
+                color: "#e8fbff",
                 font: { size: 13, weight: "bold" }
               }
+            },
+            tooltip: {
+              displayColors: false
             }
           }
         }
@@ -1321,41 +1207,130 @@
     }
 
     function mostrarHistorial() {
-      const datos = obtenerDatos();
-      if (!datos.length) {
-        document.getElementById("historial").innerHTML = '<div class="empty">Empieza a registrar</div>';
+      const registros = obtenerRegistros();
+      const historialEl = $("historial");
+
+      if (!registros.length) {
+        historialEl.innerHTML = '<div class="empty">Empieza a registrar y aquí saldrá tu historial.</div>';
         return;
       }
 
       let html = "";
-      for (let i = datos.length - 1; i >= 0; i--) {
-        const cambio = i > 0 ? parseFloat(datos[i].peso) - parseFloat(datos[i - 1].peso) : 0;
-        const emoji = cambio > 0 ? "▲" : cambio < 0 ? "▼" : "→";
-        const cambioClass = cambio > 0 ? "up" : cambio < 0 ? "down" : "same";
+
+      for (let i = registros.length - 1; i >= 0; i--) {
+        const actual = registros[i];
+        const previo = i > 0 ? registros[i - 1] : null;
+
+        let cambioHTML = "";
+        if (previo) {
+          const cambio = Number((actual.peso - previo.peso).toFixed(1));
+          const emoji = cambio > 0 ? "▲" : cambio < 0 ? "▼" : "→";
+          const clase = cambio > 0 ? "up" : cambio < 0 ? "down" : "same";
+          const signo = cambio > 0 ? "+" : "";
+          cambioHTML = `<span class="entry-change ${clase}">${emoji} ${signo}${cambio.toFixed(1)} kg</span>`;
+        }
 
         html += `
           <div class="entry">
             <div class="entry-text">
-              <div class="entry-date">${datos[i].fecha}</div>
-              <div class="entry-weight">${datos[i].peso} kg</div>
-              <div class="entry-meta">Altura: ${datos[i].altura} m · ${datos[i].genero}</div>
+              <div class="entry-date">${actual.fecha}</div>
+              <div class="entry-weight">${formatearNumero(actual.peso)} kg</div>
+              <div class="entry-meta">Altura: ${formatearNumero(actual.altura, 2)} m · ${actual.genero}</div>
             </div>
-            <div style="text-align:right;display:flex;align-items:center;gap:10px;min-width:0;">
-              ${i > 0 ? `<span class="entry-change ${cambioClass}">${emoji} ${cambio > 0 ? "+" : ""}${cambio.toFixed(1)}</span>` : ""}
-              <button class="sec small" onclick="borrar('${datos[i].id || datos[i].fecha}')">x</button>
+            <div class="entry-right">
+              ${cambioHTML}
+              <button class="btn-secondary btn-small delete-entry-btn" type="button" data-id="${actual.id}" aria-label="Borrar registro del ${actual.fecha}">
+                X
+              </button>
             </div>
           </div>
         `;
       }
 
-      document.getElementById("historial").innerHTML = html;
+      historialEl.innerHTML = html;
+
+      document.querySelectorAll(".delete-entry-btn").forEach(btn => {
+        btn.addEventListener("click", () => borrarRegistro(btn.dataset.id));
+      });
     }
 
-    function borrar(id) {
-      let datos = obtenerDatos();
-      datos = datos.filter(d => (d.id || d.fecha) !== id);
-      guardarDatos(datos);
+    function validarRegistro({ fecha, peso, altura, genero }) {
+      if (!fecha) {
+        alert("Selecciona una fecha.");
+        return false;
+      }
+
+      if (!pesoValido(peso)) {
+        alert("Introduce un peso razonable entre 20 y 400 kg.");
+        return false;
+      }
+
+      if (!alturaValida(altura)) {
+        alert("Introduce una altura razonable entre 1.00 y 2.50 metros.");
+        return false;
+      }
+
+      if (!genero) {
+        alert("Selecciona el sexo biológico.");
+        return false;
+      }
+
+      return true;
+    }
+
+    function guardarRegistro() {
+      const fecha = $("fecha").value;
+      const peso = Number($("peso").value);
+      const altura = Number($("altura").value);
+      const genero = $("genero").value;
+
+      const payload = { fecha, peso, altura, genero };
+      if (!validarRegistro(payload)) return;
+
+      storageSet(STORAGE_KEYS.altura, altura);
+
+      let registros = obtenerRegistros();
+      const existente = registros.find(r => r.fecha === fecha);
+
+      if (existente) {
+        existente.peso = Number(formatearNumero(peso));
+        existente.altura = Number(formatearNumero(altura, 2));
+        existente.genero = genero;
+      } else {
+        registros.push({
+          id: generarId(),
+          fecha,
+          peso: Number(formatearNumero(peso)),
+          altura: Number(formatearNumero(altura, 2)),
+          genero
+        });
+      }
+
+      guardarRegistros(registros);
+
+      $("peso").value = "";
+      $("peso").focus();
+
+      mostrarFrase(true);
+      mostrarStats();
+      dibujarGrafico();
+      mostrarHistorial();
+
+      alert(existente ? "Registro actualizado." : "Registro guardado.");
+    }
+
+    function borrarRegistro(id) {
+      let registros = obtenerRegistros();
+      registros = registros.filter(r => r.id !== id);
+      guardarRegistros(registros);
       actualizarTodo();
+    }
+
+    function limpiarTodo() {
+      if (!confirm("¿Borrar todos los datos de esta app?")) return;
+
+      Object.values(STORAGE_KEYS).forEach(storageRemove);
+      location.reload();
     }
 
     function actualizarTodo(forzarNuevaFrase = false) {
@@ -1363,6 +1338,36 @@
       dibujarGrafico();
       mostrarHistorial();
       mostrarFrase(forzarNuevaFrase);
+    }
+
+    function init() {
+      const generoGuardado = storageGet(STORAGE_KEYS.genero, "");
+      const alturaGuardada = storageGet(STORAGE_KEYS.altura, "");
+      const fechaNacimiento = storageGet(STORAGE_KEYS.fechaNacimiento, "");
+      const pesoObjetivo = storageGet(STORAGE_KEYS.pesoObjetivo, "");
+
+      $("fecha").value = fechaLocalISO();
+      $("genero").value = generoGuardado || "";
+      $("altura").value = alturaGuardada || "";
+      $("fechaNacimiento").value = fechaNacimiento || "";
+      $("pesoObjetivo").value = pesoObjetivo || "";
+
+      $("guardarBtn").addEventListener("click", guardarRegistro);
+      $("borrarTodoBtn").addEventListener("click", limpiarTodo);
+
+      $("genero").addEventListener("change", guardarGenero);
+      $("fechaNacimiento").addEventListener("change", guardarFechaNacimiento);
+      $("pesoObjetivo").addEventListener("change", guardarPesoObjetivo);
+
+      $("peso").addEventListener("keydown", (e) => {
+        if (e.key === "Enter") guardarRegistro();
+      });
+
+      $("altura").addEventListener("keydown", (e) => {
+        if (e.key === "Enter") guardarRegistro();
+      });
+
+      actualizarTodo(false);
     }
 
     init();
