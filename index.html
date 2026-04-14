@@ -78,16 +78,22 @@
 
     .hero-copy h1{
       margin:0;
+      font-size:2.1rem;
+      font-weight:800;
+      letter-spacing:-1px;
+      line-height:1.2;
+      word-break:break-word;
+      overflow:visible;
+    }
+    .hero-copy h1 span{
+      display:inline;
       background:linear-gradient(135deg, #00f0ff 0%, #8a72ff 50%, #ff67b3 100%);
       -webkit-background-clip:text;
       -webkit-text-fill-color:transparent;
       background-clip:text;
-      font-size:2.1rem;
-      font-weight:800;
-      letter-spacing:-1px;
-      line-height:1.12;
-      padding-bottom:0.1em;
-      word-break:break-word;
+      padding-bottom:0.18em;
+      -webkit-box-decoration-break:clone;
+      box-decoration-break:clone;
     }
 
     .hero-copy p{
@@ -553,7 +559,7 @@
         <img src="data:image/jpeg;base64,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" alt="" width="54" height="54" style="width:54px;height:54px;border-radius:14px;object-fit:cover;display:block;" />
       </div>
       <div class="hero-copy">
-        <h1>Desgrasa y Arrasa</h1>
+        <h1><span>Desgrasa y Arrasa</span></h1>
         <p>Registra tu peso, vigila tu tendencia y deja de negociar con la báscula.</p>
       </div>
     </section>
