@@ -696,42 +696,362 @@
     };
 
     const frasesBajada = [
-      "Bien. Menos teatro y más consistencia.",
-      "Eso ya parece intención convertida en números.",
-      "Un poco menos de peso, un poco menos de cuento.",
-      "Vas bajando. Sigue sin hacer el idiota.",
-      "La báscula hoy no te ha vacilado.",
-      "Esto no es magia. Es repetir lo correcto.",
-      "Buena señal: tu disciplina empieza a dejar huella.",
-      "Menos lastre. Más control.",
-      "Hoy toca disfrutarlo cinco segundos y seguir.",
-      "No cantes victoria. Repite lo que funciona."
+      "Menos de ayer. La báscula no miente, aunque tú a veces sí.",
+
+      "Bajando. Igual es la ropa que encoge.",
+
+      "Hoy la física está de tu lado. Mañana no lo des por seguro.",
+
+      "Vas bajando. El frigorífico te odia.",
+
+      "Progreso confirmado. Ahora no lo celebres con pan.",
+
+      "Bajada real. No como esa dieta de tres días que duró dos.",
+
+      "La báscula dice que sí. La nevera dice que te quiere. No la escuches.",
+
+      "Cada gramo menos es una excusa menos que inventarte.",
+
+      "Vas en la dirección correcta. Casi parece que lo haces a propósito.",
+
+      "Bajando como los precios que nunca bajan. O sea, de verdad.",
+
+      "Tu metabolismo te ha hecho un favor. Devuélveselo mañana.",
+
+      "Eso es. Sin drama, sin discurso, sin foto llorando en Instagram.",
+
+      "La tendencia baja. Tú también podrías bajar al gimnasio alguna vez.",
+
+      "Buenas noticias para el pantalón que lleva dos años de testigo silencioso.",
+
+      "Bajada. El cuerpo cumple cuando el cerebro no lo sabotea. Cuídalo.",
+
+      "Funciona. Qué novedad cuando haces las cosas bien.",
+
+      "Vas bajando más rápido que tus excusas se acumulan. Eso es récord.",
+
+      "Disciplina: 1. Capricho: 0. Aunque sea por hoy.",
+
+      "Bajada detectada. No lo digas en voz alta que lo gafas.",
+
+      "Un paso más cerca del pantalón que creías muerto.",
+
+      "Hoy has ganado. Mañana empieza otro día. No te relajes.",
+
+      "Tu cuerpo te hace caso. Sorprendente, dado quién manda aquí.",
+
+      "Baja. Raro. Sigue haciendo lo mismo antes de que se te ocurra cambiarlo.",
+
+      "Menos peso, misma cara de sueño. Algo es algo.",
+
+      "El cuerpo responde. No era mentira lo que decían.",
+
+      "Bajando. No hagas ruido, que se despierta el hambre.",
+
+      "A este ritmo, en seis meses el armario te dará las gracias.",
+
+      "Hoy la báscula y tú sois amigos. Es una relación que puede durar.",
+
+      "Menos. La chaqueta de hace dos años ya ve la luz al fondo del túnel.",
+
+      "El número baja. La autoestima puede subir un poco. Solo un poco.",
+
+      "Buena racha. No la rompas con el menú del mediodía.",
+
+      "Menos de ayer. Hoy hasta el espejo está de buen humor.",
+
+      "Eso. Sin proclamas, sin hashtags, sin ese ayuno intermitente que te dura dos horas.",
+
+      "Menos kilos. El sofá te perdonará, pero la báscula recuerda.",
+
+      "Progreso silencioso. El mejor tipo. Sin stories, sin testigos.",
+
+      "El cuerpo responde. Qué raro resulta cuando uno no lo boicotea.",
+
+      "A este ritmo hasta el ascensor se va a quedar sin trabajo.",
+
+      "Menos. Bien. No empieces a negociar con el postre de celebración.",
+
+      "Pequeño descenso, gran paso para los pantalones.",
+
+      "Vas para abajo en el buen sentido. Que conste.",
+
+      "La báscula tiene buenas noticias. No la decepciones en la cena.",
+
+      "Menos kilos. Más tú. No pares.",
+
+      "La báscula hoy está de humor. Aprovéchalo antes de que se le pase.",
+
+      "Bien hecho. Y eso que esta báscula tiene tres años y quizás pesa mal.",
+
+      "Bajada. El cuerpo ha decidido colaborar. No le falles esta noche.",
+
+      "Tu cuerpo se está poniendo de tu parte. Cuándo te lo esperabas menos.",
+
+      "Hoy sí. Sin más. Hoy sí.",
+
+      "Menos que ayer. Que siga la racha y que no la cortes tú.",
+
+      "Bajando. No lo cuentes en la cena o pedirán repetir para celebrarlo.",
+
+      "Un número menos. Sin ayuno, sin gurú, sin milagro. Solo constancia.",
     ];
 
     const frasesSubida = [
-      "La báscula ha hablado. Ahora te toca responder.",
-      "Un mal día no arruina nada. Una racha de excusas sí.",
-      "Hoy toca apretar, no dramatizar.",
-      "No pasa nada por subir. Pasa por hacerte el sordo.",
-      "Revísalo todo: sueño, hambre, picoteo y autoengaño.",
-      "La tendencia se corrige con hábitos, no con lamentos.",
-      "Esto no es fracaso. Es aviso.",
-      "Un rebote no manda. Mandan las decisiones de esta semana.",
-      "No negocies con la nevera porque siempre gana.",
-      "Menos castigo mental y más orden."
+      "La báscula dice que ayer pasó algo. Tú sabes perfectamente qué.",
+
+      "Más que ayer. El cuerpo no olvida, aunque tú finjas que sí.",
+
+      "Subida detectada. El interrogatorio lo haces tú solo esta vez.",
+
+      "Algo comiste. O bebiste. O las dos. O bastante más de las dos.",
+
+      "La báscula no miente. Ojalá lo hiciera, pero no.",
+
+      "El cuerpo ha facturado el equipaje extra de ayer con recargo.",
+
+      "Subida. No pasa nada una vez. Pasa cuando no haces nada al respecto.",
+
+      "Un pequeño paso para la báscula, un gran motivo para cerrar la nevera.",
+
+      "Arriba. Hoy no es día de celebrar con tarta. Ni con nada.",
+
+      "El cuerpo lleva la cuenta aunque tú hagas como que no hay cuenta.",
+
+      "Más que ayer. El espejo ya lo sabía pero no quiso meterse.",
+
+      "Subida. No es el fin del mundo, pero tampoco es para brindarlo.",
+
+      "El cuerpo ha archivado lo de ayer en la carpeta de las consecuencias.",
+
+      "La báscula tiene memoria. Mejor que tú cuando decides qué cenar.",
+
+      "Subida confirmada. El sofá y la nevera han vuelto a conspirar contra ti.",
+
+      "Un rebote. Al menos lo estás midiendo. Muchos ni abren la app.",
+
+      "Más kilos. Los mismos pantalones. Haz lo que quieras con esa información.",
+
+      "Sube. Los que bajan todos los días no existen. Los que se rinden, sí.",
+
+      "Hoy la báscula viene de malas. Mañana puedes cambiarle el humor.",
+
+      "El cuerpo suma lo que tú restas de la cuenta mental.",
+
+      "Subida. Nada de autocastigo, pero sí un poco de orden.",
+
+      "El número ha subido. La motivación no tiene por qué hacerlo también.",
+
+      "Más kilos. La nevera sonríe. Tú no tienes por qué.",
+
+      "Sube. Una vez es un día. Dos semanas seguidas es una elección.",
+
+      "La báscula informa, no juzga. El juez eres tú. Y te perdonas demasiado rápido.",
+
+      "El miércoles puede ser distinto si el martes no repites lo de ayer.",
+
+      "El cuerpo habla. Hoy dice: oye, ojo.",
+
+      "Más que ayer. Hoy el agua es tu mejor amiga. La única que no engorda.",
+
+      "Sube. Respira. No te rajes. Pero tampoco lo ignores.",
+
+      "El cuerpo no perdona, pero olvida rápido si te portas bien unos días.",
+
+      "Subida. Lo que no es normal es mirarlo y hacer como que no va contigo.",
+
+      "Más que ayer. Esta semana puede terminar mejor de lo que ha empezado.",
+
+      "El número sube. El sofá celebra. Deja al sofá sin motivos esta tarde.",
+
+      "Sube. Vale. Ahora cierra la nevera y sal aunque sea a dar una vuelta.",
+
+      "Más kilos. Menos teatro. Más orden en lo que entra por la boca.",
+
+      "Sube. Pasa. Lo que no pasa es ignorarlo durante dos semanas seguidas.",
+
+      "La báscula te da noticias, no collejas. Aunque a veces lo parece.",
+
+      "Más peso. La misma persona. Que la segunda parte no cambie antes que la primera.",
+
+      "Subida. El drama no adelgaza. El orden sí. Elige.",
+
+      "Más kilos que ayer. Y ayer tampoco era el día de tu vida.",
+
+      "Más. Vale. A ver qué hacemos hoy para compensar. Algo habrá.",
+
+      "Un número no te define. Pero ignorarlo tampoco te ayuda.",
+
+      "El cuerpo acusa recibo. No siempre puntual, pero acusa.",
+
+      "La báscula hoy está en modo antipático. Cámbiale el humor mañana.",
+
+      "Más que ayer. Al menos has venido a verlo. Muchos ni abren la app.",
+
+      "Sube. La gravedad existe. Lo que no tiene excusa es ayudarla.",
+
+      "Más. Bien. Ahora a moverse un poco y a no repetir la jugada.",
+
+      "El cuerpo suma. Tú decides si también restas o solo pones.",
+
+      "Más kilos. Mismos pantalones. Esa conversación va a pasar, antes o después.",
+
+      "Subida. El cuerpo lleva la cuenta aunque tú hayas decidido no llevarla.",
+    ];
+
+    const frasesIgual = [
+      "Ni fu ni fa. La báscula también tiene sus días de indiferencia.",
+      "Igual que ayer. El cuerpo está pensándoselo. Dale un motivo.",
+      "Estabilidad. O estancamiento. Tú decides cómo llamarlo.",
+      "La báscula dice paso. Mañana que decida algo de una vez.",
+      "Empate técnico. El cuerpo no se moja. Mójar le tú.",
+      "Igual. El universo ha optado por la neutralidad hoy.",
+      "Ni sube ni baja. Como ciertos políticos pero en versión grasa.",
+      "El cuerpo en modo espera. Está procesando. O de huelga. No está claro.",
+      "Sin cambios. La báscula en modo zen. Tú en modo acción.",
+      "Empate. Mañana que gane alguien. Preferiblemente tú.",
+      "Igual que ayer. El cuerpo no se ha enterado de que hay que bajar.",
+      "Meseta. La parte más aburrida del proceso y también la más necesaria.",
+      "Sin novedad en el frente. El frente eres tú.",
+      "La báscula hoy no tiene opinión. Tú sí puedes tenerla.",
+      "Igual. Ni premio ni castigo. Solo datos. Los datos no mienten.",
+      "El cuerpo ha decidido quedarse como está. Convéncele de lo contrario.",
+      "Empate. Nadie ha ganado. Nadie ha perdido. Todavía.",
+      "La báscula dice igual. Tú decides si eso es noticia buena o señal de alerta.",
+      "Sin movimiento. El cuerpo hace lo mínimo igual que tú ciertos lunes.",
+      "Igual que ayer. Al menos no has subido. Pequeñas victorias.",
+      "Meseta detectada. No es el fin. Es el intermedio. Que no te gane.",
+      "El mismo número. El mismo tú. Algo tendrá que ceder. Que no sea tú.",
+      "Sin cambios visibles. El cuerpo trabaja en silencio. O no trabaja. No se sabe.",
+      "Empate técnico entre lo que comes y lo que quemas. Revisa alguno de los dos.",
+      "La báscula hoy es el árbitro que no pita nada. Alguien tiene que moverse.",
+      "Igual. No es un fracaso. Es el cuerpo recalibrando. O haciéndose el remolón.",
+      "Mismo peso. Distinto día. A ver si el día hace algo que el peso no hace.",
+      "La báscula bosteza. Dale un motivo para despertarse mañana.",
+      "Igual. Clásico del proceso. Aburridísimo pero completamente normal.",
+      "El número no se mueve. Tú sí puedes. De hecho, deberías.",
+      "Empate. Como todos los empates, sirve de algo si después pones más.",
+      "Sin cambios. El cuerpo en modo ahorro energético. Gástalo tú por él.",
+      "Igual que ayer. Hoy es un buen día para que mañana sea diferente.",
+      "Meseta. La odia todo el mundo. Solo la supera quien no se rinde.",
+      "La báscula ha dicho paso. Tú no puedes permitirte ese lujo.",
+      "Mismo número. Puede que la diferencia la hagas precisamente hoy.",
+      "Sin movimiento en báscula. Haz que haya movimiento en algún otro sitio.",
+      "Igual. El proceso no siempre pone fuegos artificiales. Qué le vamos a hacer.",
+      "La báscula hoy está gris. No le hagas caso y sigue de todas formas.",
+      "Empate. El cuerpo lleva la cuenta aunque hoy no marque diferencia.",
+      "Igual que ayer. Menos mal que registras. Si no, pensarías que no sirve.",
+      "Sin variación. Eso también es información. No la ignores.",
+      "El cuerpo no se ha pronunciado hoy. Tú sí puedes pronunciarte.",
+      "Igual. Una semana de igual puede terminar en bajada si no te rindes.",
+      "La báscula mira para otro lado. Sigue registrando de todas formas.",
+      "Sin cambios. La constancia se nota cuando llevas semanas, no días.",
+      "Empate. El que más aguante gana. Y no es el kilo.",
+      "Igual. Mañana será otro número. Asegúrate de que sea mejor.",
+      "Ni para arriba ni para abajo. El cuerpo en huelga. Rómpela tú.",
+      "Mismo peso dos días seguidos. El cuerpo te está mirando fijamente. Míralo tú también.",
     ];
 
     const frasesGenerales = [
-      "Registra. Mira. Corrige. Repite.",
-      "Tu cuerpo no necesita discursos, necesita constancia.",
-      "Lo que no se mide se convierte en fantasía.",
-      "La báscula no juzga. Solo cuenta.",
-      "No busques perfección. Busca continuidad.",
-      "Entrenar ayuda. Dormir ayuda. Comer con cabeza ayuda más de lo que crees.",
-      "No hace falta ir a cero errores. Hace falta dejar de repetir siempre los mismos.",
-      "Tu progreso no necesita épica. Necesita rutina.",
-      "Un buen plan aburrido gana a una motivación brillante que dura dos días.",
-      "Menos improvisación, más sistema."
+      "El primer registro siempre es el más honesto. Y el más incómodo. Bienvenido.",
+
+      "Has abierto la app. Eso ya es más de lo que hace mucha gente.",
+
+      "Bienvenido al único método que funciona: medir, mirar y no mentirse.",
+
+      "Empezar es lo más difícil. Ya lo has hecho. El resto es repetir sin excusas.",
+
+      "Lo que no se registra no existe. Tú has decidido que exista.",
+
+      "La báscula es el único espejo que no miente. Acabas de mirarte en él.",
+
+      "No hace falta motivación. Hace falta un número y no mirar para otro lado.",
+
+      "El primer paso no es correr. Es saber desde dónde corres.",
+
+      "Registrar es el único hábito de salud que no duele al día siguiente.",
+
+      "Aquí empieza la parte aburrida que funciona. Sin hashtags ni stories.",
+
+      "Sin excusas, sin filtros, sin redondear a la baja. Así se empieza.",
+
+      "La honestidad con la báscula es el primer ejercicio del día. Ya lo has hecho.",
+
+      "Has venido. Ya eres mejor que el tú de ayer que no abrió la app.",
+
+      "Medir no adelgaza. Pero no medir sí engorda, porque uno se miente.",
+
+      "El dato de hoy es el punto de partida. No el punto de vergüenza.",
+
+      "Aquí no hay juicio. Solo números. Los juicios te los pones tú solo.",
+
+      "Lo primero es saber dónde estás. Ya lo sabes. Ahora a decidir adónde vas.",
+
+      "La báscula no te va a aplaudir, pero tampoco te va a mentir. Es lo que tiene.",
+
+      "Datos primero. Drama después. Preferiblemente ninguno de los dos.",
+
+      "Un número. Sin historia, sin contexto, sin excusas. Solo un número.",
+
+      "Empiezas a medirte. El cuerpo lleva tiempo midiéndote a ti. Ya era hora.",
+
+      "Esto es lo contrario de negarlo. Bien hecho.",
+
+      "El autoengaño engorda más que el pan. Has decidido cortarlo.",
+
+      "Registrar es gratis. Ignorar tiene un coste que ya conoces.",
+
+      "Hoy es el día uno. O el día que retomas. Da igual. Cuenta igual.",
+
+      "Sin apps milagrosas, sin batidos verdes, sin gurús de Instagram. Solo datos.",
+
+      "La coherencia empieza por mirarse a los ojos. O a la báscula.",
+
+      "Has abierto la app antes de abrirte la nevera. Eso dice mucho de ti hoy.",
+
+      "El primer registro siempre pesa más psicológicamente que en kilos.",
+
+      "Datos. Sin ellos todo es intuición. Y la intuición suele equivocarse en sentido favorable.",
+
+      "Medir es el primer paso. El segundo es no dejar de medir cuando el número no gusta.",
+
+      "Hoy has elegido saber. No todo el mundo toma esa decisión.",
+
+      "La báscula es neutral. Lo que hagas con la información no lo es.",
+
+      "Empezar sin excusas es el ejercicio más difícil que existe. Ya lo has hecho.",
+
+      "El número de hoy no define lo que serás. Define desde dónde empiezas.",
+
+      "Sin magia. Sin milagros. Solo tú, la báscula y la verdad.",
+
+      "Registrar cada día es el hábito más barato y efectivo que existe. Y el más odiado.",
+
+      "Hoy has mirado de frente. No todo el mundo puede decir lo mismo.",
+
+      "El primer número siempre es el peor. A partir de aquí, tú decides.",
+
+      "Has venido a medir. No a juzgarte. La diferencia es importante.",
+
+      "Lo que se mide, se gestiona. Lo que se ignora, se acumula. Sin excepción.",
+
+      "Cero excusas, cero rodeos, cero filtros. Así se empieza bien de verdad.",
+
+      "La constancia empieza hoy. No el lunes que viene. Hoy.",
+
+      "Un registro diario. Sin dramatismo. Sin abandonar cuando el número no gusta.",
+
+      "Aquí no se aplaude ni se castiga. Solo se mide. El resto lo pones tú.",
+
+      "Datos honestos, decisiones mejores. La única fórmula que funciona.",
+
+      "Hoy has elegido la verdad. Mañana también. Y así hasta que el número cambie.",
+
+      "Cada día que registras es un día que no te engañas. Eso vale más de lo que parece.",
+
+      "Bienvenido. O bienvenido de nuevo. En ambos casos, bien. Ahora a trabajar.",
+
+      "El que mide, sabe. El que sabe, puede. El que puede, decide. Empieza por medir.",
     ];
 
     let chart = null;
@@ -864,6 +1184,7 @@
       return {
         bajada: Array.isArray(data.bajada) ? data.bajada : [],
         subida: Array.isArray(data.subida) ? data.subida : [],
+        igual: Array.isArray(data.igual) ? data.igual : [],
         general: Array.isArray(data.general) ? data.general : []
       };
     }
@@ -913,10 +1234,12 @@
         const anterior = registros.at(-2).peso;
         const delta = Number((ultimo - anterior).toFixed(1));
 
-        if (delta < 0) {
+        if (delta < -0.2) {
           frase = sacarFraseSinRepetir("bajada", frasesBajada);
-        } else if (delta > 0) {
+        } else if (delta > 0.2) {
           frase = sacarFraseSinRepetir("subida", frasesSubida);
+        } else {
+          frase = sacarFraseSinRepetir("igual", frasesIgual);
         }
       }
 
